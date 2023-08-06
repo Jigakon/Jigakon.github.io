@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="../../index.html">
+        <link rel="stylesheet" href="Styles-Portfolio.css">
+        <link rel="stylesheet" href="transitions.css">
+        <script type="module" src="swup.js"></script>
+        <title>PN Portfolio</title>
+    </head>
+
+    <body>
+        <main id="swup">
+            <p class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="pages/projects.html">🡄</a>
+            </p>
+
+            <div id="mySidePanel" class="sidepanel">
+                <p>Projets</p>
+                <a href="pages/tools.html" onclick="closeNav()" target="_self">Outils</a>
+                <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
+                <a href="pages/contact.html" onclick="closeNav()" target="_self">Contact</a>
+            </div>
+
+            <div class ="transition-main" id="proskynitis-project">
+                <h1 class="title">Proskynitis</h1>
+            </div>
+        </main>
+        <script src="js/Portfolio-JS.js"></script>
+    </body>
+</html>
+
+

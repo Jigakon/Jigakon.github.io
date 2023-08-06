@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="index.html">
+        <link rel="stylesheet" href="Styles-Portfolio.css">
+        <link rel="stylesheet" href="transitions.css">
+        <script type="module" src="swup.js"></script>
+        <title>PN Portfolio</title>
+    </head>
+
+    <body style="background-color: rgb(22, 22, 22);">
+        
+        <script src="js/Portfolio-JS.js"></script>
+
+        <main id="swup">
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()" aria-expanded="false">☰</button>
+            </div>
+
+            <div id="mySidePanel" class="sidepanel">
+                <a href="pages/projects.html" onclick="closeNav()" target="_self">Projets</a>
+                <a href="pages/tools.html" onclick="closeNav()" target="_self">Outils</a>
+                <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
+                <a href="pages/contact.html" onclick="closeNav()" target="_self">Contact</a>
+            </div>
+            
+            <div class="transition-fade">
+                <br><br>
+                <h1 style="translate: 200px 0; z-index: -100;">hello</h1>
+            </div>
+        </main>
+    </body>
+</html>

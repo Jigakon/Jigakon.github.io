@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>PN Portfolio</title>
+        <base href="../index.html">
+        <link rel="stylesheet" href="Styles-Portfolio.css">
+    </head>
+
+    <body>
+        <main id = "swup"> 
+            <div id="mySidePanel" class="sidepanel">
+                <a href="pages/projects.html" onclick="closeNav()" target="_self">Projets</a>
+                <p>Outils</p>
+                <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
+                <a href="pages/contact.html" onclick="closeNav()" target="_self">Contact</a>
+            </div>
+
+            <p class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="index.html">🡄</a>
+            </p>
+        </main>
+        <script src="js/Portfolio-JS.js"></script>
+    </body>
+</html>
+
+
