@@ -16,10 +16,10 @@
                 <a href="pages/contact.html">Contact</a>
             </div>
             
-            <div class="topbar">
-                <button class="customBtn" id="openBtn" onclick="flipflopPanel()" aria-expanded="false">☰</button>
-                <button class="customBtn" id="returnBtn" onclick="location.href='index.html'">➦</button>
-            </div>
+            <p class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="index.html">🡄</a>
+            </p>
         </main>
             
         <script src="js/Portfolio-JS.js"></script>
