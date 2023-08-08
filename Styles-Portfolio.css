@@ -350,7 +350,7 @@ body{
                 margin-right: auto;
             }
 
-            @media screen and (min-width: 750px) and (orientation: portrait) {
+            @media screen and (min-width: 750px) and (hover: none) and (pointer: coarse) {
                 .main {
                     position: relative;
                     z-index: -100;
