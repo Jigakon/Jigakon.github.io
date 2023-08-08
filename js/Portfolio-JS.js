@@ -33,8 +33,7 @@ class ProjectCreator
                         <div class="separator horizontal"></div>
                         <p class="project-description"><b>`+description+`</b></p>
                     </a>
-                </div>
-                <button class="customBtn downloadBtn `+active+`"><i class="fa fa-download"></i></button>
+                </div>` + (isMobile() ? `` : `<button class="customBtn downloadBtn `+active+`"><i class="fa fa-download"></i></button>`) + `
             </div>
         </div>`;
         document.getElementById("swup").append(elem.content);
