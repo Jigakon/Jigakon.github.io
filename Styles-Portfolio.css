@@ -154,7 +154,7 @@ body{
     align-items: center;
 }
 
-@media screen and (max-width: 750px)
+@media screen and (max-width: 100vh)
 {
     .project-btn{
         width:30%;
@@ -395,7 +395,7 @@ body{
                 margin-right: auto;
             }
 
-            @media screen and (min-width: 750px) {
+            @media screen and (min-width: 100vh) {
                 .main {
                     font-size: 100px;
                 }
