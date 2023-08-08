@@ -17,13 +17,14 @@ body{
 
 /* -------------- top bar style -------------- */
 .topbar{
-    position: relative;
-    overflow: hidden;
+    position: fixed;
     height: 60px;
-    border: none;
+    width: 100%;
     background-color: var(--back-elem-color);
+    top: 0;
+    border: none;
     z-index: 999;
-    margin-top: 0;
+    overflow: hidden;
 }
 .topbarElem{
     margin: 0;
@@ -263,12 +264,12 @@ body{
 /*--------------------------*/
             #flood-title-blur { background-image: url(res/imgs/flood_title_a.png); }
             #flood-snap-blur { background-image: url(res/imgs/flood_snapshot_a.png); background-size: cover; }
-            #orca-title-blur { background-image: url(res/imgs/orcawaga_title_a.png); }
-            #orca-snap-blur { background-image: url(res/imgs/orcawaga_snapshot_a.png); background-size: cover;}
-            #orbi-title-blur { background-image: url(res/imgs/orbitaldecay_title_a.png); }
-            #orbi-snap-blur { background-image: url(res/imgs/orbitaldecay_snapshot_a.png); background-size: cover;}
-            #pros-title-blur { background-image: url(res/imgs/proskynitis_title_a.png); }
-            #pros-snap-blur { background-image: url(res/imgs/proskynitis_snapshot_a.png); background-size: cover;}
+            #orcawaga-title-blur { background-image: url(res/imgs/orcawaga_title_a.png); }
+            #orcawaga-snap-blur { background-image: url(res/imgs/orcawaga_snapshot_a.png); background-size: cover;}
+            #orbitladecay-title-blur { background-image: url(res/imgs/orbitaldecay_title_a.png); }
+            #orbitaldecay-snap-blur { background-image: url(res/imgs/orbitaldecay_snapshot_a.png); background-size: cover;}
+            #proskynitis-title-blur { background-image: url(res/imgs/proskynitis_title_a.png); }
+            #proskynitis-snap-blur { background-image: url(res/imgs/proskynitis_snapshot_a.png); background-size: cover;}
         
             .page-separator{
                 height: 5px;
@@ -306,7 +307,7 @@ body{
                 margin-right: auto;
                 width: max-content;
                 font-weight: bold;
-                margin-top: 5%;
+                margin-top: 13vh;
             }
             .main {
                 position: relative;
@@ -329,13 +330,24 @@ body{
             .intro{
                 color: var(--text-color);
                 font-weight: 1000;
-                font-size: calc(2.5 * 1vw);
+                font-size: calc(4 * 1vw);
                 text-align: left;
                 width:fit-content;
                 margin-top: 12%;
                 transform-origin: center;
                 margin-right: auto;
                 margin-left: auto;
+                width: 80%;
+            }
+            .link-buttons{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+                justify-content: center;
+                align-items: center;
+                width:80%;
+                margin-top:10vh;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             @media screen and (min-width: 750px) {
@@ -368,18 +380,24 @@ body{
                     margin-right: auto;
                     margin-left: auto;
                 }
+                .link-buttons{
+                    display:grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    justify-content: center;
+                    align-items: center;
+                    width:50%;
+                    margin-top:10vh;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
+            }
+
+            @media screen and (max-width: 750px) {
+                
             }
             
-            .link-buttons{
-                display:grid;
-                grid-template-columns: repeat(2, 1fr);
-                justify-content: center;
-                align-items: center;
-                width:50%;
-                margin-top:10vh;
-                margin-left: auto;
-                margin-right: auto;
-            }
+            
             
             .link-button{
                 background-color: var(--btns-color);

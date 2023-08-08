@@ -20,5 +20,17 @@ import Swup from 'https://unpkg.com/swup@4?module';
 
 const swup = new Swup();
 
-load_imgs();
-swup.hooks.on('content:replace', load_imgs)
+swup.hooks.on('content:replace', (visit) => {
+        if(visit.to.url == "/pages/projects.html") {
+            CreateAllProjects();
+        }
+        load_imgs();
+    });
+
+document.addEventListener('DOMContentLoaded', () => {
+    if(window.location.pathname == "/pages/projects.html")
+    {
+        CreateAllProjects();
+        load_imgs()
+    }
+});

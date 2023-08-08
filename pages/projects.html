@@ -6,7 +6,7 @@
         <base href="../index.html">
         <link rel="stylesheet" href="Styles-Portfolio.css">
         <link rel="stylesheet" href="transitions.css">
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="module" src="swup.js"></script>
         <title>Projects</title>
     </head>
@@ -25,118 +25,17 @@
                 <a href="pages/contact.html" onclick="closeNav()" target="_self">Contact</a>
             </div>
             
-            <div class ="transition-main" id="Flood-project">
+            <div class ="transition-main">
                 <h1 class="title">Projets</h1>
                 <div class="page-separator" id="separator-title-1st-projects"></div>
                 <div class="page-description">Voici une liste de différents projets sur lesquelles j'ai pu travaillé en groupe ou seul.</div>
                 <div class="page-separator" id="separator-title-projects"></div>
             </div>
 
-            <div class ="transition-main" id="Flood-project"> <!-- for swup transitions -->
-                <div class="project">
-                    <div class="project-tag-grid">
-                        <img class="project-tag" src="res/imgs/cpp.png"/>
-                        <img class="project-tag" src="res/imgs/opengl.png"/>
-                        <img class="project-tag" src="res/imgs/soloproject.png"/>
-                    </div>
-                    <div class="project-btn">  <!-- to make it look good, somehow <a> doesn't render the same way -->
-                        <a class="project-link" href="pages/flood.html"> <!-- to link the entire button to new page -->
-                            <div class="project-images"> <!-- to render images in button -->
-                                <div class="blur-load" id="flood-title-blur">
-                                    <img class="project-title" src="res/imgs/flood_title.png" atl="Proskynitis_title" loading="lazy"/>
-                                </div>
-                                <div class="separator vertical"></div>
-                                <div class="blur-load" id="flood-snap-blur">
-                                    <img class="project-snapshot" src="res/imgs/flood_snapshot.png" alt="Proskynitis_snapshot" loading="lazy"/>
-                                </div>
-                            </div>
-                            <div class="separator horizontal"></div> <!-- horizontal separator -->
-                            <p class="project-description"><b>Flood est un petit moteur de jeu 2D permettant de réaliser des petites productions. Il est en cours de développement.</b></p>
-                        </a>
-                    </div>
-                    <button class="downloadBtn unactive"><i class="fa fa-download"></i></button>
-                </div>
-            </div>
-            
-            <div class ="transition-main" id="orca-waga-project">
-                <div class="project">
-                    <div class="project-tag-grid">
-                        <img class="project-tag" src="res/imgs/cpp.png"/>
-                        <img class="project-tag" src="res/imgs/ue5.png"/>
-                        <img class="project-tag" src="res/imgs/groupproject.png"/>
-                    </div>
-                    <div class="project-btn">    
-                        <a class="project-link" href="pages/orcaWaga.html" target="_self">
-                            <div class="project-images">
-                                <div class="blur-load" id="orca-title-blur">
-                                    <img class="project-title" src="res/imgs/orcawaga_title.png" loading="lazy"/>
-                                </div>
-                                <div class="separator vertical"></div>
-                                <div class="blur-load" id="orca-snap-blur">
-                                    <img class="project-snapshot" src="res/imgs/orcawaga_snapshot.png" alt="Orca-Waga_snapshot" loading="lazy"/>
-                                </div>
-                            </div>
-                            <div class="separator horizontal"></div>
-                            <p class="project-description">Orca-Waga est un projet étudiant. C'est un tower defense inpiré par Tribes of Midgard et ajoute la possibilité de construire sa base.</p>
-                        </a>
-                    </div>
-                    <button class="downloadBtn unactive"><i class="fa fa-download"></i></button>
-                </div>
-            </div>
-
-            <div class ="transition-main" id="orbital-decay-project">
-                <div class="project">
-                    <div class="project-tag-grid">
-                        <img class="project-tag" src="res/imgs/cs.png"/>
-                        <img class="project-tag" src="res/imgs/unity.png"/>
-                        <img class="project-tag" src="res/imgs/groupproject.png"/>
-                    </div>
-                    
-                    <div class="project-btn">
-                        <a class="project-link" href="pages/orbitalDecay.html">
-                            <div class="project-images">
-                                <div class="blur-load" id="orbi-title-blur">
-                                    <img class="project-title" src="res/imgs/orbitaldecay_title.png" loading="lazy"/>
-                                </div>
-                                <div class="separator vertical"></div>
-                                <div class="blur-load" id="orbi-snap-blur">
-                                    <img class="project-snapshot" src="res/imgs/orbitaldecay_snapshot.png" alt="orbitaldecay_snapshot" loading="lazy"/>
-                                </div>
-                            </div>
-                            <div class="separator horizontal"></div>
-                            <p class="project-description"><b>Orbital Decay est un projet étudiant, il s'inspire de Star Wars Battlefront 2 sur ps2. C'est un jeu multijoueur de combat dans des vaisseaux spaciaux.</b></p>
-                        </a>
-                    </div>
-                    <button class="downloadBtn unactive"><i class="fa fa-download"></i></button>
-                </div>
-            </div>
-
-            <div class ="transition-main" id="proskynitis-project">
-                <div class="project">
-                    <div class="project-tag-grid">
-                        <img class="project-tag tooltip" src="res/imgs/c.png"/>
-                        <img class="project-tag" src="res/imgs/sfml.png"/>
-                        <img class="project-tag" src="res/imgs/groupproject.png"/>
-                    </div>
-                    <div class="project-btn">
-                        <a class="project-link" href="pages/proskynitis.html">
-                            <div class="project-images">
-                                <div class="blur-load" id="pros-title-blur">
-                                    <img class="project-title" src="res/imgs/proskynitis_title.png" loading="lazy"/>
-                                </div>
-                                <div class="separator vertical"></div>
-                                <div class="blur-load" id="pros-snap-blur">
-                                    <img class="project-snapshot" src="res/imgs/proskynitis_snapshot.png" alt="Proskynitis_snapshot" loading="lazy"/>
-                                </div>
-                            </div>
-                            <div class="separator horizontal"></div>
-                            <p class="project-description"><b>Proskynitis est un projet étudiant inspiré du jeu Faster Than Light (FTL) et ajoute une dimension de récolte de ressources sur des planètes.</b></p>
-                        </a>
-                    </div>
-                    <button class="downloadBtn unactive"><i class="fa fa-download"></i></button>
-                </div>
-            </div>            
+            <script src="js/Portfolio-JS.js">
+                CreateAllProjects();
+            </script>
         </main>
-        <script src="js/Portfolio-JS.js"></script>
     </body>
+        
 </html>
