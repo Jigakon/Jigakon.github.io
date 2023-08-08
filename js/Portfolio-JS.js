@@ -25,8 +25,8 @@ class ProjectCreator
                             <div class="blur-load" id="`+name+`-title-blur">
                                 <img class="project-title" src="res/imgs/`+name+`_title.png" loading="lazy"/>
                             </div>
-                            <div class="separator vertical"></div>
-                            <div class="blur-load" id="`+name+`-snap-blur">
+                            <div class="separator vertical mobileHide"></div>
+                            <div class="blur-load mobileHide" id="`+name+`-snap-blur">
                                 <img class="project-snapshot" src="res/imgs/`+name+`_snapshot.png" alt="`+name+`_snapshot" loading="lazy"/>
                             </div>
                         </div>
@@ -34,7 +34,7 @@ class ProjectCreator
                         <p class="project-description"><b>`+description+`</b></p>
                     </a>
                 </div>
-                <button class="downloadBtn `+active+`"><i class="fa fa-download"></i></button>
+                <button class="customBtn downloadBtn `+active+`"><i class="fa fa-download"></i></button>
             </div>
         </div>`;
         document.getElementById("swup").append(elem.content);
@@ -79,7 +79,7 @@ function CreateAllProjects()
 
     pc.createProject("orcawaga", 
     ["res/imgs/cpp.png", "res/imgs/ue5.png", "res/imgs/groupproject.png"],
-    "Orca-Waga est un projet étudiant. C'est un tower defense inpiré par Tribes of Midgard et ajoute la possibilité de construire sa base.",
+    "Orca-Waga est un projet étudiant. C'est un tower defense inspiré par Tribes of Midgard et ajoute la possibilité de construire sa base.",
     false, 2);
 
     pc.createProject("orbitaldecay", 
@@ -92,3 +92,9 @@ function CreateAllProjects()
     "Proskynitis est un projet étudiant inspiré du jeu Faster Than Light (FTL) et ajoute une dimension de récolte de ressources sur des planètes",
     false, 4);
 }
+
+function isMobile()
+{
+    return /Android|iPhone/i.test(navigator.userAgent) && navigator.maxTouchPoints > 0;
+}
+
