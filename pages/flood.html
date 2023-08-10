@@ -7,7 +7,43 @@
         <link rel="stylesheet" href="Styles-Portfolio.css">
         <link rel="stylesheet" href="transitions.css">
         <script type="module" src="swup.js"></script>
-        <title>PN Portfolio</title>
+        <title>Projet - Flood</title>
+        <style>
+            #flood-header {
+                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--main-bg-color)), url("/res/imgs/flood_snapshot.png");
+                background-repeat:no-repeat;
+                background-size: cover;
+                background-position: 0,0;
+            }
+            .description {
+                font-size : 20px;
+                color: var(--text-color);
+                width: 80%;
+                max-width:1000px;
+                justify-content:center;
+                margin-top: 100px;
+                margin-left:10vw;
+            }
+
+            .page-project-tags{
+                display:grid;
+                grid-template-columns: repeat(3, 1fr);
+                position: absolute;
+                width:10vw;
+                justify-content: center;
+                
+            }
+            #flood-logo-title{
+                display: flex;
+                flex-direction: line;
+                height:clamp(50px, 19vw, 330px);
+            }
+            .flood-title-text{
+
+                translate:-8.2vw 4.3vw;
+            }
+        </style>
+
     </head>
 
     <body>
@@ -25,9 +61,27 @@
             </div>
 
             <div class ="transition-main" id="proskynitis-project">
-                <h1 class="title">Flood</h1>
-            </div>
-        </main>
+                <div id="flood-header">
+                   
+                    <div class="title" id="flood-logo-title"> 
+                        <img src="/res/imgs/flood_title.png">
+                            <div class="flood-title-text">lood</div>
+                        </img>
+                    </div>
+                    <div class="page-project-tags">
+                        <img class="project-tag" src="/res/imgs/cpp.png"/>
+                        <img class="project-tag" src="/res/imgs/cpp.png"/>
+                        <img class="project-tag" src="/res/imgs/cpp.png"/>
+                        <img class="project-tag" src="/res/imgs/cpp.png"/>
+                    </div>
+                </div>
+                <div class ="description">
+                    Flood est un projet de moteur de jeu 2D ayant pour but initial d'apprendre comment ils fonctionnent. 
+                    Il est inspiré par la série de <a href="https://www.youtube.com/@TheCherno" target="_blank">TheCherno</a> sur la création d'un moteur 2D "<a href="https://hazelengine.com/" target="_blank":>Hazel</a>".
+                    Flood a commencé comme un projet de fin d'étude et continue encore son développement.
+                    </div>
+                </div>
+            </main>
         <script src="js/Portfolio-JS.js"></script>
     </body>
 </html>
