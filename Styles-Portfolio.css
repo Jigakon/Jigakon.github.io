@@ -107,12 +107,12 @@ body{
 
 .title{
     color:var(--text-color);
-    font-size: clamp(20px, 10vw, 175px);
+    font-size: clamp(52px, 10vw, 175px);
     font-weight: 1000;
     padding-top: 75px;
     padding-bottom: 75px;
     padding-left: 10vw;
-    translate: 0 var(--toolbar-height);
+    transform: translateY(var(--toolbar-height));
 }
 
 .project{
@@ -417,4 +417,59 @@ body{
                 }   
             }
             
-            
+/* --------------------------- flood ------------------------ */
+:root{
+    --flood-logo-height:clamp(100px, 19vw, 330px);
+}
+
+#flood-header {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--main-bg-color)), url("/res/imgs/flood_snapshot.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: 0,0;
+    overflow: hidden;
+}
+.description {
+    font-size : 20px;
+    color: var(--text-color);
+    width: 80%;
+    max-width:1000px;
+    justify-content:center;
+    margin-top: 100px;
+    margin-left:10vw;
+}
+
+.page-project-tags{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    width:auto;
+    float:right;
+    translate: -17vw -13vw;
+
+    background: linear-gradient(to bottom, #243969ff, #11111150);
+    border-radius: 15px;
+}
+
+@media (width < 750px)
+{
+    .page-project-tags{
+        display: flex;
+        float: left;
+        translate:10vw -30px;
+        height: 30px; 
+    }
+
+    .project-tag{
+        height: 40px;
+    }   
+}
+
+#flood-logo-title{
+    display: flex;
+    flex-direction: line;
+    height:var(--flood-logo-height);
+}
+.flood-title-text{
+
+    translate:calc(var(--flood-logo-height)*-0.43) calc(var(--flood-logo-height)*0.125);
+}
