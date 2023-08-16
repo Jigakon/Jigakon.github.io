@@ -73,7 +73,7 @@ function CreateAllProjects()
 {
     pc.createProject("flood", 
     ["res/imgs/cpp.png", "res/imgs/opengl.png", "res/imgs/soloproject.png"],
-    "Flood est un petit moteur de jeu 2D permettant de réaliser des petits prototypes. Il est en cours de développement.",
+    "Flood est un petit moteur de jeu 2D permettant de réaliser des prototypes. Il est en cours de développement.",
     false);
 
     pc.createProject("orcawaga", 

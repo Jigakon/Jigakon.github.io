@@ -38,7 +38,7 @@
                     </div>
                     <div class="page-project-tags">
                         <img class="project-tag" src="/res/imgs/cpp.png"/>
-                        <img class="project-tag" src="/res/imgs/unity.png"/>
+                        <img class="project-tag" src="/res/imgs/opengl.png"/>
                         <img class="project-tag" src="/res/imgs/soloproject.png"/>
                     </div>
                 </div>
@@ -46,7 +46,26 @@
                     Flood est un projet de moteur de jeu 2D ayant pour but initial d'apprendre comment ils fonctionnent. 
                     Il est inspiré par la série de <a href="https://www.youtube.com/@TheCherno" target="_blank">TheCherno</a> sur la création d'un moteur 2D "<a href="https://hazelengine.com/" target="_blank":>Hazel</a>".
                     Flood a commencé comme un projet de fin d'étude et continue encore son développement.
-                    </div>
+                </div>
+
+                <p>
+                    Le moteur contient un éditeur, l'interface est réalisée avec dear ImGUI, permettant de modifier différentes ressources et fonctionnalités d'un projet
+                    <br> Il est possible d'ouvrir, sauvegarder et fermer des "scènes". Vous pourrez retrouver vos assets et fichiers compatibles dans l'exlorateur de ressources.
+                    <br> Vous pourrez voir le contenu d'une "scène" dans l'inspecteur de hiérarchie et selectionner les différentes entités qu'elles pourraient contenir.
+                    Pour modifier les valeurs et composants d'une entités il suffit d'utiliser l'inspecteur d'entités.
+                    <br> Toutes ces éléments sont dockables dans la fenêtre princiale du moteur.
+                </p>
+                <p>
+                    La gestion des "objets" de jeu est réalisée par l'utilisation d'une technologie ECS, Entity Component System, j'ai conçue cette dernière pour le projet Flood et est aussi en cours de dévelopement et d'amélioration.
+                </p>
+                <p>
+                    Flood n'est, pour le moment, disponible que sous Windows et utilise OpenGL pour le rendu, il sera a terme multiplateforme et permettra de choisir l'API graphique.
+                    <br>Roadmap:
+                    <br>Ajouter un gestionnaire d'assets.
+                    <br>Ajouter du son avec OpenAL ou via un moteur de son disponible (FMod, Wwise...).
+                    <br>Retravailler l'API graphique en ajoutant Vulkan.
+                    <br>Modifier l'API ECS afin d'en améliorer les performance générale (mémoire, simplicitée d'utilisation, automatisation, etc...)
+                </p>
                 </div>
             </main>
         <script src="js/Portfolio-JS.js"></script>
