@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <base href="../../index.html">
         <link rel="stylesheet" href="Styles-Portfolio.css">
+        <link rel="stylesheet" href="Styles-Projects.css">
         <link rel="stylesheet" href="transitions.css">
         <script type="module" src="swup.js"></script>
-        <title>PN Portfolio</title>
+        <title>Projet - Proskynitis</title>
     </head>
 
     <body>
@@ -19,13 +20,40 @@
 
             <div id="mySidePanel" class="sidepanel">
                 <p>Projets</p>
-                <a href="pages/tools.html" onclick="closeNav()" target="_self">Outils</a>
                 <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
                 <a href="pages/contact.html" onclick="closeNav()" target="_self">Contact</a>
             </div>
 
             <div class ="transition-main" id="proskynitis-project">
-                <h1 class="title">Proskynitis</h1>
+                <div id="proskynitis-header">
+                    <div class="title" id="proskynitis-logo-title"> 
+                        <img src="/res/imgs/proskynitis_title.png"/>
+                    </div>
+                    <div class="page-project-tags" id="proskynitis-page-tags">
+                        <img class="project-tag" src="/res/imgs/c.png"/>
+                        <img class="project-tag" src="/res/imgs/sfml.png"/>
+                        <img class="project-tag" src="/res/imgs/groupproject.png"/>
+                    </div>
+                </div>
+
+                <p>
+                    Date : courant 2021, durée de production : 6 semaines
+                </p>
+
+                <div class="description">
+                    Proskynitis est un projet étudiant réalisé avec une équipe de 4 graphistes et 5 programmeurs. Le jeu est inspiré par <a href="https://subsetgames.com/ftl.html">FTL</a> de <a href="https://subsetgames.com/">Subset Games</a>.
+                    <br>Le but du jeu est de vaincre un Vaisseau amiral puissant, vous devrez parcourir différents systèmes stéllaires afin de récolter des ressources sur des planètes ou lors d'évènements sur votre chemin pour améliorer les capacités de votre vaisseau et de votre personnage.
+                    <br>Le jeu est réalisé avec l'API multimedia CSFML dérivée de la <a href="https://www.sfml-dev.org/index-fr.php">SFML</a> en C pur.
+                </div>
+
+                <pre><p>Crédits :
+Graphistes :                Programmeurs : 
+<a href="https://fr.linkedin.com/in/antoine-bernoud">Antoine Bernoud</a>                 <a href="https://fr.linkedin.com/in/valentin-brun-4141181aa">Valentin Brun</a>
+<a href="https://fr.linkedin.com/in/thomasdalmasso">Thomas Dalmasso</a>                 <a href="https://fr.linkedin.com/in/alexis-clement-technicien-maintenance-industrielle">Alexis Clement</a>
+<a href="https://fr.linkedin.com/in/romain-espinosa">Romain Espinosa</a>                 <a href="https://fr.linkedin.com/in/basilemillereux">Basile Millereux</a>
+<a href="https://fr.linkedin.com/in/alexandrelaguigner">Alexandre Laguignier</a>            <a href="https://fr.linkedin.com/in/philippe-naud-">Philippe Naud</a>
+                                <a href="https://fr.linkedin.com/in/yannpatoux">Yann Patoux</a>
+                                                        </p></pre>
             </div>
         </main>
         <script src="js/Portfolio-JS.js"></script>

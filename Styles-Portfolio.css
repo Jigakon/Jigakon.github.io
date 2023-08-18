@@ -320,6 +320,44 @@ p{
     color:#111111
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--back-elem-color);
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100px;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--back-elem-color);
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
 /*--------------------------*/
             #flood-title-blur { background-image: url(res/imgs/flood_title_a.png); }
             #flood-snap-blur { background-image: url(res/imgs/flood_snapshot_a.png); background-size: cover; }
@@ -428,58 +466,3 @@ p{
             }
             
 /* --------------------------- flood ------------------------ */
-:root{
-    --flood-logo-height:clamp(100px, 19vw, 330px);
-}
-
-#flood-header {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--main-bg-color)), url("/res/imgs/flood_snapshot.png");
-    background-repeat:no-repeat;
-    background-size: cover;
-    background-position: 0,0;
-    overflow: hidden;
-}
-.description {
-    font-size : 20px;
-    color: var(--text-color);
-    width: 80%;
-    max-width:1000px;
-    justify-content:center;
-    margin-top: 100px;
-    margin-left:10vw;
-}
-
-.page-project-tags{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    width:auto;
-    float:right;
-    translate: -17vw -13vw;
-
-    background: linear-gradient(to bottom, #243969ff, #11111150);
-    border-radius: 15px;
-}
-
-@media (width < 750px)
-{
-    .page-project-tags{
-        display: flex;
-        float: left;
-        translate:10vw -30px;
-        height: 30px; 
-    }
-
-    .project-tag{
-        height: 40px;
-    }   
-}
-
-#flood-logo-title{
-    display: flex;
-    flex-direction: line;
-    height:var(--flood-logo-height);
-}
-.flood-title-text{
-
-    translate:calc(var(--flood-logo-height)*-0.43) calc(var(--flood-logo-height)*0.125);
-}

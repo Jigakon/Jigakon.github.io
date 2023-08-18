@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <base href="../../index.html">
         <link rel="stylesheet" href="Styles-Portfolio.css">
+        <link rel="stylesheet" href="Styles-Projects.css">
         <link rel="stylesheet" href="transitions.css">
         <script type="module" src="swup.js"></script>
-        <title>PN Portfolio</title>
+        <title>Projet - Orbital Decay</title>
     </head>
 
     <body>
@@ -19,14 +20,44 @@
 
             <div id="mySidePanel" class="sidepanel">
                 <p>Projets</p>
-                <a href="pages/tools.html" onclick="closeNav()" target="_self">Outils</a>
                 <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
                 <a href="pages/contact.html" onclick="closeNav()" target="_self">Contact</a>
             </div>
 
-            <div class ="transition-main" id="proskynitis-project">
-                <h1 class="title">Orbital Decay</h1>
+            <div class ="transition-main" id="orbitaldeca-project">
+                <div id="orbitaldecay-header">
+                    <div class="title" id="orbitaldecay-logo-title"> 
+                        <img src="/res/imgs/orbitaldecay_title.png">
+                            <div class="orbitaldecay-title-text">Orbital<br>Decay</div>
+                        </img>
+                    </div>
+                    <div class="page-project-tags">
+                        <img class="project-tag" src="/res/imgs/cs.png"/>
+                        <img class="project-tag" src="/res/imgs/unity.png"/>
+                        <img class="project-tag" src="/res/imgs/groupproject.png"/>
+                    </div>
+                </div>
+
+                <p>
+                    Date : courant 2022, Durée de production : 6 semaines
+                </p>
+
+                <div class ="description">
+                    Orbital Decay est un projet étudiant réalisé avec une équipe de 5 graphistes et 5 programmeurs avec Unity 2021. C'est une jeu inspiré de Star Wars Battlefont 2 de <a href="https://fr.wikipedia.org/wiki/Pandemic_Studios">Pandemic Studios</a>.
+                    <br>L'objectif est détruire le vaisseau adverse en attaquant ces points sensibles à l'intérieur et a l'exterieur du vaisseau ou de vaincre suffisement de membres de l'équipe opposée. 
+                    <br>Le jeu est orienté multijoueurs et utilise l'API <a href="https://mirror-networking.com/">Mirror</a> pour la gestion du Online. 
+                </div>
+
+                <pre><p>Crédits :
+Graphistes :                Programmeurs : 
+    <a href="https://fr.linkedin.com/in/antoine-bernoud">Antoine Bernoud</a>             <a href="https://fr.linkedin.com/in/valentin-brun-4141181aa">Valentin Brun</a>
+    <a href="https://fr.linkedin.com/in/timbernoud">Tim Bernoud</a>                 <a href="https://fr.linkedin.com/in/noah-burnel">Noah Burnel</a>
+    <a href="https://fr.linkedin.com/in/romain-espinosa">Romain Espinosa</a>             <a href="https://fr.linkedin.com/in/basilemillereux">Basile Millereux</a>
+    <a href="https://fr.linkedin.com/in/alexandrelaguigner">Alexandre Laguignier</a>        <a href="https://fr.linkedin.com/in/philippe-naud-">Philippe Naud</a>
+    <a href="https://fr.linkedin.com/in/quentinnedelec">Quentin Nedelec</a>             <a href="https://fr.linkedin.com/in/yannpatoux">Yann Patoux</a>
+                                    </p></pre>
             </div>
+            
         </main>
         <script src="js/Portfolio-JS.js"></script>
     </body>

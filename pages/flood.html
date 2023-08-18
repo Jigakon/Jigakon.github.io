@@ -5,13 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <base href="../../index.html">
         <link rel="stylesheet" href="Styles-Portfolio.css">
+        <link rel="stylesheet" href="Styles-Projects.css">
         <link rel="stylesheet" href="transitions.css">
         <script type="module" src="swup.js"></script>
         <title>Projet - Flood</title>
-        <style>
-            
-        </style>
-
     </head>
 
     <body>
@@ -23,7 +20,6 @@
 
             <div id="mySidePanel" class="sidepanel">
                 <p>Projets</p>
-                <a href="pages/tools.html" onclick="closeNav()" target="_self">Outils</a>
                 <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
                 <a href="pages/contact.html" onclick="closeNav()" target="_self">Contact</a>
             </div>
@@ -37,11 +33,25 @@
                         </img>
                     </div>
                     <div class="page-project-tags">
-                        <img class="project-tag" src="/res/imgs/cpp.png"/>
-                        <img class="project-tag" src="/res/imgs/opengl.png"/>
-                        <img class="project-tag" src="/res/imgs/soloproject.png"/>
+                        <div class="tooltip">
+                            <img class="project-tag" src="/res/imgs/cpp.png"/>
+                            <span class="tooltiptext">Langage: C++</span>
+                        </div>
+                        <div class="tooltip">
+                            <img class="project-tag" src="/res/imgs/opengl.png"/>
+                            <span class="tooltiptext">API Graphique : OpenGL</span>
+                        </div>
+                        <div class="tooltip">
+                            <img class="project-tag" src="/res/imgs/soloproject.png"/>
+                            <span class="tooltiptext">Personnel</span>
+                        </div>
                     </div>
                 </div>
+
+                <p>
+                    Démarré en : 2023
+                </p>
+
                 <div class ="description">
                     Flood est un projet de moteur de jeu 2D ayant pour but initial d'apprendre comment ils fonctionnent. 
                     Il est inspiré par la série de <a href="https://www.youtube.com/@TheCherno" target="_blank">TheCherno</a> sur la création d'un moteur 2D "<a href="https://hazelengine.com/" target="_blank":>Hazel</a>".
@@ -55,9 +65,11 @@
                     Pour modifier les valeurs et composants d'une entités il suffit d'utiliser l'inspecteur d'entités.
                     <br> Toutes ces éléments sont dockables dans la fenêtre princiale du moteur.
                 </p>
+
                 <p>
                     La gestion des "objets" de jeu est réalisée par l'utilisation d'une technologie ECS, Entity Component System, j'ai conçue cette dernière pour le projet Flood et est aussi en cours de dévelopement et d'amélioration.
                 </p>
+                
                 <p>
                     Flood n'est, pour le moment, disponible que sous Windows et utilise OpenGL pour le rendu, il sera a terme multiplateforme et permettra de choisir l'API graphique.
                     <br>Roadmap:
@@ -66,8 +78,8 @@
                     <br>Retravailler l'API graphique en ajoutant Vulkan.
                     <br>Modifier l'API ECS afin d'en améliorer les performance générale (mémoire, simplicitée d'utilisation, automatisation, etc...)
                 </p>
-                </div>
-            </main>
+            </div>
+        </main>
         <script src="js/Portfolio-JS.js"></script>
     </body>
 </html>

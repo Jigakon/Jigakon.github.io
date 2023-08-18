@@ -1,9 +1,13 @@
 
 class ProjectCreator
 {
-    createTag(imagePath)
+    createTag(imagePath, typeTag="tag: undefined")
     {
-        return '<img class="project-tag" src="' + imagePath + '"/>'
+        return `
+        <div class="tooltip">
+            <img class="project-tag" src="` + imagePath + `"/>
+            <span class="tooltiptext">` + typeTag + `</span>
+        </div>`
     }
 
     createProject(name, tags, description, canDownload, delay = 1)
@@ -73,7 +77,7 @@ function CreateAllProjects()
 {
     pc.createProject("flood", 
     ["res/imgs/cpp.png", "res/imgs/opengl.png", "res/imgs/soloproject.png"],
-    "Flood est un petit moteur de jeu 2D permettant de réaliser des prototypes. Il est en cours de développement.",
+    "Flood est un prototype moteur de jeu 2D permettant de réaliser des prototypes. Il est en cours de développement.",
     false);
 
     pc.createProject("orcawaga", 
