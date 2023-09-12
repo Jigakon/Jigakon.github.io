@@ -1,51 +1,128 @@
-
-class ProjectCreator
+class Tag
 {
-    createTag(imagePath, typeTag="tag: undefined")
+    constructor (imagePath, typeTag="tag: undefined")
+    {
+        this.imagePath = imagePath;
+        this.typeTag = typeTag;
+    }
+
+    CreateElement()
     {
         return `
         <div class="tooltip">
-            <img class="project-tag" src="` + imagePath + `"/>
-            <span class="tooltiptext">` + typeTag + `</span>
+            <img class="project-tag" src="` + this.imagePath + `"/>
+            <span class="tooltiptext">` + this.typeTag + `</span>
         </div>`
     }
+}
 
-    createProject(name, tags, description, canDownload, delay = 1)
+class Project
+{
+    constructor(name, tagsID, description, downloadLink = "")
     {
-        let allTags = "";
-        for (let i=0; i<tags.length; i++){
-            allTags += this.createTag(tags[i]);
-        }
-        const active = canDownload ? "" : "unactive";
-        const elem = document.createElement("template");
-        elem.innerHTML = `
-        <div class ="transition-main delay`+delay+`" id="`+name+`-project">
+        this.name = name;
+        this.tagsIDs = tagsID;
+        this.description = description;
+        this.downloadLink = downloadLink;
+    }
+
+    GetTagsIDs()
+    {
+        return this.tagsIDs;
+    }
+
+    // passing one variable containing all the HTML elements in one
+    CreateElement(tagsElement, delay = 1)
+    {
+        // is the project downloadable ?
+        const active = this.downloadLink != "" ? "" : "unactive";
+        return `
+        <div class ="transition-main delay`+delay+`" id="`+this.name+`-project">
             <div class="project">
-                <div class="project-tag-grid">` + allTags + `
+                <div class="project-tag-grid">` + tagsElement + `
                 </div>
                 <div class="project-btn">
-                    <a class="project-link" href="pages/`+name+`.html">
+                    <a class="project-link" href="pages/`+this.name+`.html">
                         <div class="project-images">
-                            <div class="blur-load" id="`+name+`-title-blur">
-                                <img class="project-title" src="res/imgs/`+name+`_title.png" loading="lazy"/>
+                            <div class="blur-load" id="`+this.name+`-title-blur">
+                                <img class="project-title" src="res/imgs/`+this.name+`_title.png" loading="lazy"/>
                             </div>
                             <div class="separator vertical mobileHide"></div>
-                            <div class="blur-load mobileHide" id="`+name+`-snap-blur">
-                                <img class="project-snapshot" src="res/imgs/`+name+`_snapshot.png" alt="`+name+`_snapshot" loading="lazy"/>
+                            <div class="blur-load mobileHide" id="`+this.name+`-snap-blur">
+                                <img class="project-snapshot" src="res/imgs/`+this.name+`_snapshot.png" alt="`+this.name+`_snapshot" loading="lazy"/>
                             </div>
                         </div>
                         <div class="separator horizontal"></div>
-                        <p class="project-description"><b>`+description+`</b></p>
+                        <p class="project-description"><b>`+this.description+`</b></p>
                     </a>
                 </div>` + (isMobile() ? `` : `<button class="customBtn downloadBtn `+active+`"><i class="fa fa-download"></i></button>`) + `
             </div>
         </div>`;
-        document.getElementById("swup").append(elem.content);
+    }
+}
+
+class ProjectCreator
+{
+    constructor()
+    {
+        this.tags = new Map();
+        this.projects = new Map();
+        this.projectCount = 0;
+    }
+
+    RegisterTag(id, tag)
+    {
+        this.tags.set(id, tag);
+    }
+
+    GetTag(id)
+    {
+        return this.tags.get(id);
     }
     
+    CreateAllTagsElements(ProjectID)
+    {
+        // get tags
+        let tagsIDs = this.GetProject(ProjectID).GetTagsIDs();
+        let tagsElement = ``;
+        for(let i = 0; i < tagsIDs.length; i++)
+            tagsElement += this.tags.get(tagsIDs[i]).CreateElement();
+        // create HTML element
+        return tagsElement;
+    }
+
+    GetProject(id)
+    {
+        return this.projects.get(id);
+    }
+
+    
+
+    PushProjectsElements()
+    {
+        const keys = this.projects.keys();
+        for(let i = 0; i < this.projects.size; i++)
+        {
+            const elem = document.createElement("template");
+            elem.innerHTML = this.CreateProjectElement(keys.next().value, i+1);
+            document.getElementById("swup").append(elem.content);
+        }
+    }
+
+    RegisterProject(name, project)
+    {
+        this.projects.set(name, project);
+    }
+    
+    CreateProjectElement(name, delay)
+    {
+        let tagsElement = this.CreateAllTagsElements(name);
+        return this.GetProject(name).CreateElement(tagsElement, delay);
+    }
+
     resetCount()
     {
-        projectCount = 0;
+        this.projectCount = 0;
     }
 }
 
@@ -71,29 +148,6 @@ function closeNav(){
     const btn = document.getElementById("mySidePanel");
     btn.style.transform = "translateX(-250px)";
     btn.ariaExpanded = false;
-}
-
-function CreateAllProjects()
-{
-    pc.createProject("flood", 
-    ["res/imgs/cpp.png", "res/imgs/opengl.png", "res/imgs/soloproject.png"],
-    "Flood est un prototype moteur de jeu 2D permettant de réaliser des prototypes. Il est en cours de développement.",
-    false);
-
-    pc.createProject("orcawaga", 
-    ["res/imgs/cpp.png", "res/imgs/ue5.png", "res/imgs/groupproject.png"],
-    "Orca-Waga est un projet étudiant. C'est un tower defense inspiré par Tribes of Midgard et ajoute la possibilité de construire sa base.",
-    false, 2);
-
-    pc.createProject("orbitaldecay", 
-    ["res/imgs/cs.png", "res/imgs/unity.png", "res/imgs/groupproject.png"],
-    "Orbital Decay est un projet étudiant, il s'inspire de Star Wars Battlefront 2 sur ps2. C'est un jeu multijoueur de combat dans des vaisseaux spaciaux.",
-    false, 3);
-
-    pc.createProject("proskynitis", 
-    ["res/imgs/c.png", "res/imgs/sfml.png", "res/imgs/groupproject.png"],
-    "Proskynitis est un projet étudiant inspiré du jeu Faster Than Light (FTL) et ajoute une dimension de récolte de ressources sur des planètes",
-    false, 4);
 }
 
 function isMobile()

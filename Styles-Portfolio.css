@@ -26,6 +26,22 @@ p{
     margin-left:10vw;
 }
 
+
+
+.hlink:link {
+  color: var(--btns-color);
+}
+
+/* visited link */
+.hlink:visited {
+  color: var(--back-elem-color);
+}
+
+/* mouse over link */
+.hlink:hover {
+  color: var(--text-color);
+}
+
 /* -------------- top bar style -------------- */
 .topbar{
     position: fixed;
@@ -119,7 +135,7 @@ p{
     color:var(--text-color);
     font-size: clamp(52px, 10vw, 175px);
     font-weight: 1000;
-    padding-top: 75px;
+    padding-top: 30px;
     padding-bottom: 75px;
     padding-left: 10vw;
     transform: translateY(var(--toolbar-height));
@@ -182,7 +198,7 @@ p{
         max-width:80px;
         max-height:80px;
         padding: 10px;
-        height:80px;
+        max-height:80px;
     }
     .blur-load.loaded{
         width:auto;

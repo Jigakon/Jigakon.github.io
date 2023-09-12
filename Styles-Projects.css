@@ -38,11 +38,10 @@
         display: flex;
         float: left;
         translate:10vw -30px;
-        height: 30px; 
     }
 
     .project-tag{
-        height: 40px;
+        max-height: 40px;
     }   
 }
 
@@ -52,7 +51,7 @@
     height:var(--flood-logo-height);
 }
 .flood-title-text{
-    translate:calc(var(--flood-logo-height)*-0.43) calc(var(--flood-logo-height)*0.125);
+    translate:calc(var(--flood-logo-height)*-0.43) calc(var(--flood-logo-height)*0.230);
 }
 
 #orcawaga-logo-title{
@@ -110,4 +109,19 @@
     background-size: cover;
     background-position: 0,0;
     overflow: hidden;
+}
+
+aside 
+{
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    margin-right: 26vw;
+    float: right;
+    text-align: center;  
+    min-height: 200px;
+}
+span
+{
+    color:var(--btns-color);
 }
