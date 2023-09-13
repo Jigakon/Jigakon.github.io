@@ -1,5 +1,5 @@
 :root{
-    --flood-logo-height:clamp(100px, 19vw, 330px);
+    --flood-logo-height:clamp(150px, 19vw, 330px);
 }
 
 #flood-header {
@@ -8,6 +8,7 @@
     background-size: cover;
     background-position: 0,0;
     overflow: hidden;
+    
 }
 .description {
     font-size : 20px;
@@ -47,11 +48,14 @@
 
 #flood-logo-title{
     display: flex;
-    flex-direction: line;
     height:var(--flood-logo-height);
 }
-.flood-title-text{
-    translate:calc(var(--flood-logo-height)*-0.43) calc(var(--flood-logo-height)*0.230);
+
+#flood-logo-title::after{
+    content:"lood";
+    font-size: clamp(80px, 10vw, 175px);
+    margin-left: calc(var(--flood-logo-height) * -0.44);
+    margin-top: calc(var(--flood-logo-height) * 0.23);
 }
 
 #orcawaga-logo-title{

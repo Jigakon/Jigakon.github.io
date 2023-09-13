@@ -133,7 +133,7 @@ p{
 
 .title{
     color:var(--text-color);
-    font-size: clamp(52px, 10vw, 175px);
+    font-size: clamp(75px, 10vw, 120px);
     font-weight: 1000;
     padding-top: 30px;
     padding-bottom: 75px;
@@ -394,7 +394,7 @@ p{
                 margin-top:0%;
             }
             .page-description{
-                margin-top: 4%;
+                margin-top: clamp(15px, 5vw,40px);
                 margin-left: 20%;
                 color: var(--text-color);
                 font-weight: 1000;
@@ -407,7 +407,7 @@ p{
             }
             #separator-title-projects{
                 margin-bottom: 2vh;
-                margin-top: 4%;
+                margin-top: clamp(15px, 5vw, 40px);
                 width:30%
             }
 
@@ -458,9 +458,15 @@ p{
                 justify-content: center;
                 align-items: center;
                 width:80%;
+                max-width:800px;
+                min-width: 500px;
                 margin-top:10vh;
                 margin-left: auto;
                 margin-right: auto;
+            }
+            .last-button-link{
+                grid-column-start: 1;
+                grid-column-end: 1;
             }
 
             @media (min-width: 750px) {
@@ -471,14 +477,19 @@ p{
                     font-size: 33.5px;
                 }
                 .intro {
-                    font-size: 18.75px;
+                    font-size: 22px;
                     width:fit-content;
+                    max-width:80%;
                     margin-top: 90px;
                 }
                 .link-buttons{
                     grid-template-columns: repeat(2, 1fr);
                     width:50%;
                 }   
+                .last-button-link{
+                    grid-column-start: 1;
+                grid-column-end:  3;
+                }
             }
             
 /* --------------------------- flood ------------------------ */
