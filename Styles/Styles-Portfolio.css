@@ -20,13 +20,23 @@ p{
     font-size : 20px;
     color: var(--text-color);
     width: 80%;
-    max-width:1000px;
+    max-width:1500px;
     justify-content:center;
-    margin-top: 100px;
-    margin-left:10vw;
 }
 
+article{
+    font-size : 20px;
+    color: var(--text-color);
+    width: 100%;
+    max-width:1500px;
+    justify-content:center;
+}
 
+.Header-1
+{
+    font-size: 25px;
+    font-weight: 1000;
+}
 
 .hlink:link {
   color: var(--btns-color);
@@ -375,14 +385,14 @@ p{
   }
 
 /*--------------------------*/
-            #flood-title-blur { background-image: url(res/imgs/flood_title_a.png); }
-            #flood-snap-blur { background-image: url(res/imgs/flood_snapshot_a.png); background-size: cover; }
-            #orcawaga-title-blur { background-image: url(res/imgs/orcawaga_title_a.png); }
-            #orcawaga-snap-blur { background-image: url(res/imgs/orcawaga_snapshot_a.png); background-size: cover;}
-            #orbitladecay-title-blur { background-image: url(res/imgs/orbitaldecay_title_a.png); }
-            #orbitaldecay-snap-blur { background-image: url(res/imgs/orbitaldecay_snapshot_a.png); background-size: cover;}
-            #proskynitis-title-blur { background-image: url(res/imgs/proskynitis_title_a.png); }
-            #proskynitis-snap-blur { background-image: url(res/imgs/proskynitis_snapshot_a.png); background-size: cover;}
+            #flood-title-blur { background-image: url(../res/imgs/flood_title_a.png); }
+            #flood-snap-blur { background-image: url(../res/imgs/flood_snapshot_a.png); background-size: cover; }
+            #orcawaga-title-blur { background-image: url(../res/imgs/orcawaga_title_a.png); }
+            #orcawaga-snap-blur { background-image: url(../res/imgs/orcawaga_snapshot_a.png); background-size: cover;}
+            #orbitladecay-title-blur { background-image: url(../res/imgs/orbitaldecay_title_a.png); }
+            #orbitaldecay-snap-blur { background-image: url(../res/imgs/orbitaldecay_snapshot_a.png); background-size: cover;}
+            #proskynitis-title-blur { background-image: url(../res/imgs/proskynitis_title_a.png); }
+            #proskynitis-snap-blur { background-image: url(../res/imgs/proskynitis_snapshot_a.png); background-size: cover;}
         
             .page-separator{
                 height: 5px;

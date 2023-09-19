@@ -1,0 +1,56 @@
+#flood-header {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--main-bg-color)), url("/res/imgs/flood_snapshot.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: 0,0;
+    overflow: hidden;
+}
+
+#flood-logo-title{
+    display: flex;
+    height:var(--flood-logo-height);
+}
+
+#flood-logo-title::after{
+    content:"lood";
+    font-size: clamp(80px, 10vw, 175px);
+    margin-left: calc(var(--flood-logo-height) * -0.44);
+    margin-top: calc(var(--flood-logo-height) * 0.23);
+}
+
+#editor{
+    float:left;
+    width:60%;
+}
+
+#aside-flood1{
+    float:right;
+    width: 38%;
+    align-content: center;
+    height: auto;
+}
+
+#ECS{
+    float:left;
+}
+
+
+@media (width < 1200px){
+    #editor{
+        float:none;
+        width:100%;
+    }
+    #aside-flood1{
+        float: none;
+        width:100%;
+
+        margin-top: 25px;
+    }
+    #aside-flood1-img{
+        width:70vw;
+        height:auto;
+        max-height: none;
+        min-height: none;
+    }
+}
+

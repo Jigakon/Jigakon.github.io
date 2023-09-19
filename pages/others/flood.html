@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="../../index.html">
+        <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+        <link rel="stylesheet" href="Styles/Styles-Projects.css">
+        <link rel="stylesheet" href="Styles/Styles-Flood.css">
+        <link rel="stylesheet" href="transitions.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="module" src="swup.js"></script>
+        <title>Projet - Flood</title>
+    </head>
+
+    <body>
+        <main id="swup">
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="pages/projects.html">🡄</a>
+            </div>
+
+            <div id="mySidePanel" class="sidepanel">
+                <p>Projets</p>
+                <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
+                <a href="pages/contact.html" onclick="closeNav()" target="_self">Contact</a>
+            </div>
+
+            <div class ="transition-main" id="flood-project">
+                <div id="flood-header">
+                    <div class="title" id="flood-logo-title"> 
+                        <img id="aaaa" src="/res/imgs/flood_title.png"></img>
+                    </div>
+                    <div class="page-project-tags">
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    <p class="text">
+                        Démarré en : 2023
+                    </p>
+                    
+                    <div class ="text description">
+                        Flood est un projet de moteur de jeu 2D ayant pour but initial d'apprendre comment ils fonctionnent. 
+                        Il est inspiré par la série de <a class="hlink" href="https://www.youtube.com/@TheCherno" target="_blank">TheCherno</a> sur la création d'un moteur 2D "<a class="hlink" href="https://hazelengine.com/" target="_blank":>Hazel</a>".
+                        Flood a commencé comme un projet de fin d'étude et continue encore son développement.
+                    </div>
+                    
+                    <div class="paragraph">
+                        <article class="text" id="editor">
+                            Le moteur contient un éditeur, l'interface est réalisée avec <a class="hlink" href="https://github.com/ocornut/imgui">dear ImGUI</a>, permettant de modifier différentes ressources et fonctionnalités d'un projet.
+                            Il est possible d'ouvrir, sauvegarder et fermer des "scènes". Vous pourrez retrouver vos assets et fichiers compatibles dans <span>l'explorateur de ressources</span><sup style="color:rgb(34, 177, 76)">1</sup>.
+                            Vous pourrez voir le contenu d'une "scène" dans <span>l'inspecteur de hiérarchie</span><sup style="color:rgb(237, 28, 36)">2</sup> et selectionner les différentes entités qu'elles pourraient contenir.
+                            Pour modifier les valeurs et composants d'une entités il suffit d'utiliser <span>l'inspecteur d'entités</span><sup style="color:rgb(255, 127, 39)">3</sup>.
+                            Toutes ces éléments sont dockables dans la fenêtre princiale du moteur.
+                        </article>
+                        <img id="aside-flood1" src="/res/imgs/flood_1.png"/> 
+                    </div>
+                    
+                    <div class="paragraph">
+                        <article class="text" id="ECS">
+                            La gestion des "objets" de jeu est réalisée par l'utilisation d'une technologie <abbr title="Entity Component System">ECS</abbr> conçue pour le projet Flood et est encore cours de développement et d'amélioration.
+                        </article>
+                    </div>
+
+                    <div class="paragraph">    
+                        <article class="text" id="roadmap">
+                            Flood n'est, pour le moment, disponible que sous Windows et utilise OpenGL pour le rendu, il sera a terme multiplateforme et permettra de choisir l'API graphique.
+                            <br><br>Roadmap:
+                            <br>Ajouter un gestionnaire d'assets.
+                            <br>Ajouter du son avec OpenAL ou via un moteur de son disponible (FMod, Wwise...).
+                            <br>Retravailler l'API graphique en ajoutant Vulkan.
+                            <br>Modifier l'API ECS afin d'en améliorer les performance générale (mémoire, simplicitée d'utilisation, automatisation, etc...)
+                        </article>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+        <script src="js/Portfolio-JS.js">
+            PushTagsInGrid("flood");
+        </script>
+    </body>
+</html>
+
+

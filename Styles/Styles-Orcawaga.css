@@ -1,0 +1,19 @@
+#orcawaga-logo-title{
+    display: flex;
+    flex-direction: line;
+    height:clamp(200px, 19vw, 300px);
+}
+#orcawaga-header {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--main-bg-color)), url("/res/imgs/orcawaga_snapshot.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: 0,0;
+    overflow: hidden;
+}
+#orcawaga-trailer{    
+    border-radius: 15px; 
+    width: 560px; 
+    height: 315px;
+    float: right;
+    margin-left: 15px;;
+}

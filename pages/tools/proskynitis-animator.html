@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="../../../index.html">
+        <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+        <link rel="stylesheet" href="Styles/Styles-Projects.css">
+        <link rel="stylesheet" href="transitions.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="module" src="swup.js"></script>
+        <title>Projet - Proskynitis</title>
+    </head>
+
+    <body>
+        <main id="swup">
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="pages/games/proskynitis.html">🡄</a>
+            </div>
+
+            <div id="mySidePanel" class="sidepanel">
+                <p>Projets</p>
+                <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
+                <a href="pages/contact.html" onclick="closeNav()" target="_self">Contact</a>
+            </div>
+
+            <div class ="transition-main" id="proskynitis-project">
+                <div id="proskynitis-header">
+                    <div style="height:300px; translate:0px 75px;">
+                        <div class="title" id="proskynitis-logo-title" > 
+                            <img src="/res/imgs/proskynitis_title.png"/>
+                        </div>
+                    </div>
+                    <div class="page-project-tags" id="proskynitis-page-tags">
+                    </div>
+                </div>
+                <div class="content">    
+                    <div class="paragraph text" style="margin-top: 100px; margin-bottom: 100px;">
+                        <p class="text">Projet créé dans le cadre d'étude à <a class="hlink" href="www.creajeux.fr">Creajeux</a> l'école des métiers du jeu-vidéo à Nîmes en France.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="js/Portfolio-JS.js"></script>
+    </body>
+</html>
+
+

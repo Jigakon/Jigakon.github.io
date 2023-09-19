@@ -1,0 +1,132 @@
+#proskynitis-logo-title{
+    display: flex;
+    flex-direction: line;
+    height:clamp(10px, 8vw, 50px);
+}
+
+#proskynitis-page-tags{
+    translate:-17vw calc(-8vw + 20px);
+}
+
+#prokynitis-description{
+    width:45%;
+    margin-top: 0;
+}
+
+#proskynitis-trailer{    
+    width: 52%; 
+    border-radius: 15px; 
+    height: 315px;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+#FTL_Map{
+    flex:0.1;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    height:300px;
+}
+
+#proskynitis_Map{
+    margin-right: auto;
+    margin-left: auto;
+    flex:0.1;
+    padding: 15px;
+    border-radius: 30px; 
+    height:300px;
+} 
+
+#proskynitis_Map_diagram{
+    width: 45%; 
+    border-radius: 15px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+#proskynitis-map-text-2{
+    width: 50%; 
+}
+
+#proskynitis_Map-2{
+    width: 40%; 
+    border-radius: 15px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+#proskynitis-map-text-3{
+    width: 55%; 
+}
+
+#proskynitis-header {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--main-bg-color)), url("/res/imgs/proskynitis_snapshot.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: 0,0;
+    overflow: hidden;
+}
+
+@media (width < 750px){
+    #proskynitis-page-tags{
+        translate:10vw -30px;
+    }
+}
+
+@media (width < 1000px){
+    #intro-p1{
+        display:inline-block; 
+        align-items:none;
+    }
+    #proskynitis-trailer{    
+        width:100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+    }
+    #prokynitis-description{
+        width:100%;
+    }
+
+    #paragraph-map-system{
+        display:inline-block; 
+        align-items:none;
+    }
+    #proskynitis_Map_diagram{
+        width: 90%; 
+        border-radius: 15px; 
+        margin-left: 5%; 
+        margin-right: auto; 
+    }
+    #proskynitis-map-text-2
+    {
+        width: 100%; 
+        margin-bottom: 30px;
+    }
+
+    #paragraph-map-render{
+        display:inline-block; 
+        align-items:none;
+    }
+    #proskynitis_Map-2{
+        width: 90%; 
+        border-radius: 15px; 
+        margin-left: 5%; 
+        margin-top: 30px;
+        margin-right: auto;  
+    }
+    #proskynitis-map-text-3
+    {
+        width: 100%; 
+        margin-top: 30px;
+    }
+}
+
+@media (width < 1500px){
+    #proskynitis_Map, #FTL_Map{
+        height:clamp(100px, 22vw, 300px);
+    }
+}
+

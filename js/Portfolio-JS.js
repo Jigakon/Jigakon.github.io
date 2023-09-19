@@ -18,19 +18,20 @@ class Tag
 
 class Project
 {
-    constructor(name, tagsID, description, downloadLink = "")
+    constructor(name, tagsID, description, type, downloadLink = "")
     {
         this.name = name;
         this.tagsIDs = tagsID;
         this.description = description;
         this.downloadLink = downloadLink;
+        this.type = type;
     }
-
+    
     GetTagsIDs()
     {
         return this.tagsIDs;
     }
-
+    
     // passing one variable containing all the HTML elements in one
     CreateElement(tagsElement, delay = 1)
     {
@@ -42,7 +43,7 @@ class Project
                 <div class="project-tag-grid">` + tagsElement + `
                 </div>
                 <div class="project-btn">
-                    <a class="project-link" href="pages/`+this.name+`.html">
+                    <a class="project-link" href="pages/`+this.type+`/`+this.name+`.html">
                         <div class="project-images">
                             <div class="blur-load" id="`+this.name+`-title-blur">
                                 <img class="project-title" src="res/imgs/`+this.name+`_title.png" loading="lazy"/>
@@ -155,3 +156,18 @@ function isMobile()
     return /Android|iPhone/i.test(navigator.userAgent) && navigator.maxTouchPoints > 0;
 }
 
+function FlipFlopSeeMore(id) {
+    let btn = document.getElementById(id+"-btn");
+    let text = document.getElementById(id);
+    if (text.style.display == "block")
+    {
+        text.style.display = "none";
+        btn.innerText = "(voir plus)";
+    }
+    else
+    {
+        text.style.display = "block";
+        btn.innerText = "(voir moins)";
+    }
+    
+}
