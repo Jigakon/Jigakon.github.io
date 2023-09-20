@@ -64,7 +64,7 @@ span
     font-family: "Lato", sans-serif;
     color:var(--text-color);
     font-size : 20px;
-    margin-right: clamp(15px, 4vw, 50px);
+    /*margin-right: clamp(15px, 4vw, 50px);*/
 }
 
 .hidden-text{

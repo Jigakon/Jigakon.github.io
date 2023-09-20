@@ -97,8 +97,6 @@ class ProjectCreator
         return this.projects.get(id);
     }
 
-    
-
     PushProjectsElements()
     {
         const keys = this.projects.keys();

@@ -24,10 +24,10 @@ let app = new App();
 
 function PushProject(path)
 {
-    if(path == "/pages/flood.html") app.PushTags("flood");
-    if(path == "/pages/orcawaga.html") app.PushTags("orcawaga");
-    if(path == "/pages/orbitaldecay.html") app.PushTags("orbitaldecay");
-    if(path == "/pages/proskynitis.html") app.PushTags("proskynitis");
+    if(path == "/pages/others/flood.html") app.PushTags("flood");
+    if(path == "/pages/games/orcawaga.html") app.PushTags("orcawaga");
+    if(path == "/pages/games/orbitaldecay.html") app.PushTags("orbitaldecay");
+    if(path == "/pages/games/proskynitis.html") app.PushTags("proskynitis");
 }
 
 swup.hooks.on('content:replace', (visit) => {

@@ -5,16 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <base href="../../../index.html">
         <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
-        <link rel="stylesheet" href="Styles/Styles-Projects.css">
-        <link rel="stylesheet" href="Styles/Styles-Proskynitis.css">
         <link rel="stylesheet" href="transitions.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="module" src="swup.js"></script>
         <title>Projet - Proskynitis</title>
     </head>
-
+    
     <body>
         <main id="swup">
+            <link rel="stylesheet" href="Styles/Styles-Projects.css">
+            <link rel="stylesheet" href="Styles/Styles-Proskynitis.css">
             <div class="topbar">
                 <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
                 <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="pages/projects.html">🡄</a>
@@ -63,7 +63,7 @@
                         </div>
                     </article>
 
-                    <article class="text article">
+                    <article class="article" id="overview">
                         <p class="text Header-1">Mes implications dans le projet:</p>
                         <p class="text">Le jeu étant un projet étudiant dans une petite équipe nous avons tous été plus ou moins touche à tout, cependant voici les principales tâches que j'ai réalisé.
                             <ul>
@@ -75,15 +75,20 @@
                         </p>
                     </article>
 
-                    <article class="text article" id="map-gen">
-                        <div class="text" style="margin-bottom:30px;font-weight: 1000;text-decoration: underline;">
+                    <article class="article" id="map-gen">
+                        <div class="text Header-2">
                             Génération de la carte de jeu :<br>
                         </div>
                         <div class="text">
                             Me première tâche a été de créer la carte de jeu pour pouvoir se déplacer. Nous avons choisi d'avoir une carte similaire a FTL a la différence de n'avoir aucun chemin se superposant.
-                            Pour se faire j'ai choisi la triangulation de Delaunay avec l'algorithme de Bowyer-Watson. <div class="hidden-text" id="prosk-delaunay">contenu des liste chainées et de l'algo</div><a class="hlink" id="prosk-delaunay-btn" href="javascript:FlipFlopSeeMore('prosk-delaunay')">(voir plus)</a><br>
+                            Pour se faire j'ai choisi la triangulation de Delaunay avec l'algorithme de Bowyer-Watson. 
+                            <div class="hidden-text" id="prosk-delaunay">contenu des liste chainées et de l'algo</div>
+                            <div class="tooltip">
+                                <a class="hlink" id="prosk-delaunay-btn" href="javascript:FlipFlopSeeMore('prosk-delaunay')">(voir plus)</a><br>
+                                <span class="tooltiptext" style="bottom: 50px;">Détails technique</span>
+                            </div>
                         </div>
-                        <div class="paragraph-illu">
+                        <div class="paragraph-illu" style="margin-top: 20px;">
                             <img src="/res/imgs/FTL_map.png" id="FTL_Map"></img>
                             <img src="/res/imgs/proskynitis_map_1.png" id="proskynitis_Map"></img>
                         </div>
@@ -104,59 +109,59 @@
                         </div>
                     </article>
 
-                    <article class="text article" id="render">
-                            <div class="text" style="font-weight: 1000;text-decoration: underline;">
-                                Animation et affichage :<br><br>
-                            </div>
-                            <div class="text">
-                                La SFML n'étant qu'une librairie et non un moteur de jeu complet, il nous fallait un système complet d'animation et rendu de "profondeur" des entités en mode exploration. J'ai donc conçu un animateur lisant un fichier texte contenant les informations concernant les dites animations.
-                                Pour permettre une certaine flexibilité aux graphistes j'ai mis en place la possibilté de donner le temps qu'un sprite restera à l'image. Les fichiers d'animation commençant a être de plus en plus complexe a rédiger, j'ai réalisé un petit outil permetant de les générer automatiquement, réduisant ainsi les erreurs d'écritures
-                                et fluidifiant grandement le processus de création de l'animation. Plus de détails sur l'<a class="hlink" href="pages/tools/proskynitis-animator.html">outil d'animation</a>.
-                                Je me suis ensuite occupé du rendu de la profondeur, notamment pour la partie exploration de planète, avec cette vue top-down inspirée de <a class="hlink" href="https://enterthegungeon.com/">Enter the Gungeon</a> de <a class="hlink" href="https://dodgeroll.com/">Dodgeroll</a>.  
-                                ...
-                            </div>
+                    <article class="article" id="render">
+                        <div class="text Header-2">
+                            Animation et affichage :<br><br>
+                        </div>
+                        <div class="text">
+                            La SFML n'étant qu'une librairie et non un moteur de jeu complet, il nous fallait un système complet d'animation et rendu de "profondeur" des entités en mode exploration. J'ai donc conçu un animateur lisant un fichier texte contenant les informations concernant les dites animations.
+                            Pour permettre une certaine flexibilité aux graphistes j'ai mis en place la possibilté de donner le temps qu'un sprite restera à l'image. Les fichiers d'animation commençant a être de plus en plus complexe a rédiger, j'ai réalisé un petit outil permetant de les générer automatiquement, réduisant ainsi les erreurs d'écritures
+                            et fluidifiant grandement le processus de création de l'animation. Plus de détails sur l'<a class="hlink" href="pages/tools/proskynitis-animator.html">outil d'animation</a>.
+                            Je me suis ensuite occupé du rendu de la profondeur, notamment pour la partie exploration de planète, avec cette vue top-down inspirée de <a class="hlink" href="https://enterthegungeon.com/">Enter the Gungeon</a> de <a class="hlink" href="https://dodgeroll.com/">Dodgeroll</a>.  
+                            ...
+                        </div>
                     </article>
 
-                    <article class="text article" id="mini-games">
-                            <div class="text" style="font-weight: 1000;text-decoration: underline;">
-                                Mini-jeux :<br><br>
-                            </div>
-                            <div class="text">
-                                Afin de rendre la partie combat spatial un peu plus dynamique nous avons décidé d'ajouter dans les salles du vaisseau des mini-jeux permettant soit d'augmenter les capacitées d'un salle pendant un lapse de temps donné, soit de réparer le vaisseau afin que l'oxygène ne s'en échappe pas, ou bien encore permettant de se soigner.
-                            </div>
+                    <article class="article" id="mini-games">
+                        <div class="text Header-2">
+                            Mini-jeux :<br><br>
+                        </div>
+                        <div class="text">
+                            Afin de rendre la partie combat spatial un peu plus dynamique nous avons décidé d'ajouter dans les salles du vaisseau des mini-jeux permettant soit d'augmenter les capacitées d'un salle pendant un lapse de temps donné, soit de réparer le vaisseau afin que l'oxygène ne s'en échappe pas, ou bien encore permettant de se soigner.
+                        </div>
                     </article>
 
-                    <article class="text article" id="shop">
-                            <div class="text" style="font-weight: 1000;text-decoration: underline;">
-                                Magasin :<br><br>
-                            </div>
-                            <div class="text">
-                                Après tout cela je me suis occupé des magasins disponible sur les planètes gazeuses, ces derniers ne sont pas présents dans tous les systèmes stellaire, mais ils sont indiqués sur les planètes par un sprite.
-                                Vous pourrez y acheter des armes, des munitions, du carburant ou encore y faire réparer votre vaisseau. Vous pourrez aussi y vendre des ressources que vous avez récolté au préalable.
-                            </div>
+                    <article class="article" id="shop">
+                        <div class="text Header-2">
+                            Magasin :<br><br>
+                        </div>
+                        <div class="text">
+                            Après tout cela je me suis occupé des magasins disponible sur les planètes gazeuses, ces derniers ne sont pas présents dans tous les systèmes stellaire, mais ils sont indiqués sur les planètes par un sprite.
+                            Vous pourrez y acheter des armes, des munitions, du carburant ou encore y faire réparer votre vaisseau. Vous pourrez aussi y vendre des ressources que vous avez récolté au préalable.
+                        </div>
                     </article>
 
-                    <article class="text article" id="prosk-footer">
-                            <div style="display: flex; align-items:center;margin-top: 50px;">
-                                <div class="text" id="prosk-footer" style="float:left; width:75%">
-                                    Il s'agit un projet étudiant de fin de premère année d'étude, par conséquent beaucoup de chose sont a revoir, notamment l'équilibrage ou encore l'impossibilité de sauvegarder une partie. Gardez cela en tête si vous voulez tester le jeu.
-                                </div><br>
-                                <button class="customBtn downloadBtn" id="prosk-dl-btn" style="float:right; width:20%;" onclick="window.location.href='https://jigakon.itch.io/proskynitis';"><i class="fa fa-download"></i></button>
-                            </div>
+                    <article class="article" id="prosk-footer">
+                        <div style="display: flex; align-items:center;margin-top: 50px;">
+                            <div class="text" id="prosk-footer" style="float:left; width:75%">
+                                Il s'agit un projet étudiant de fin de première année d'étude, par conséquent beaucoup de chose sont a revoir, notamment l'équilibrage ou encore l'impossibilité de sauvegarder une partie. Gardez cela en tête si vous voulez tester le jeu.
+                            </div><br>
+                            <button class="customBtn downloadBtn" id="prosk-dl-btn" style="float:right; width:20%;" onclick="window.location.href='https://jigakon.itch.io/proskynitis';"><i class="fa fa-download"></i></button>
+                        </div>
                     </article>
 
-                    <div class="paragraph" style="margin-top: 100px;">
-                        <p class="text">Crédits :</p>
-                        <div style="display:flex">
-                            <div class="text" id="graphs">
-                                <div>Graphistes :</div>
+                    <article class="article" id="credit">
+                        <p class="text" style="margin-left: auto;margin-right: auto;">Crédits :</p>
+                        <div style="display: flex; justify-content: center;">
+                            <div id="graphs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Graphistes :</div>
                                 <a class="hlink" href="https://fr.linkedin.com/in/antoine-bernoud">Antoine Bernoud</a><br>   
                                 <a class="hlink" href="https://fr.linkedin.com/in/thomasdalmasso">Thomas Dalmasso</a><br>    
                                 <a class="hlink" href="https://fr.linkedin.com/in/romain-espinosa">Romain Espinosa</a><br>     
                                 <a class="hlink" href="https://fr.linkedin.com/in/alexandrelaguigner">Alexandre Laguignier</a><br>
                             </div>
-                            <div id="progs">
-                                <div class="text">Programmeurs :</div>
+                            <div id="progs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Programmeurs :</div>
                                 <a class="hlink" href="https://fr.linkedin.com/in/valentin-brun-4141181aa">Valentin Brun</a><br>
                                 <a class="hlink" href="https://fr.linkedin.com/in/alexis-clement-technicien-maintenance-industrielle">Alexis Clement</a><br>
                                 <a class="hlink" href="https://fr.linkedin.com/in/basilemillereux">Basile Millereux</a><br>
@@ -164,9 +169,9 @@
                                 <a class="hlink" href="https://fr.linkedin.com/in/yannpatoux">Yann Patoux</a><br>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="paragraph text" style="margin-top: 100px; margin-bottom: 100px;">
+                    <div class="paragraph text" style="margin-bottom: 100px;">
                         <p class="text">Projet créé dans le cadre d'étude à <a class="hlink" href="www.creajeux.fr">Creajeux</a> l'école des métiers du jeu-vidéo à Nîmes en France.</p>
                     </div>
                 </div>

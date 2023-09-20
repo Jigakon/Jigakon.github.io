@@ -5,16 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <base href="../../../index.html">
         <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
-        <link rel="stylesheet" href="Styles/Styles-Projects.css">
-        <link rel="stylesheet" href="Styles/Styles-Orcawaga.css">
         <link rel="stylesheet" href="transitions.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="module" src="swup.js"></script>
         <title>Projet - Orca-Waga</title>
     </head>
-
+    
     <body>
         <main id="swup">
+            <link rel="stylesheet" href="Styles/Styles-Projects.css">
+            <link rel="stylesheet" href="Styles/Styles-Orcawaga.css">
             <div class="topbar">
                 <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
                 <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="pages/projects.html">🡄</a>
@@ -35,45 +35,104 @@
                     </div>
                 </div>
                     
-                <div class="content">  
-                    <iframe id="orcawaga-trailer"
-                    src="https://www.youtube-nocookie.com/embed/6gtWzXTQxcc?rel=0&amp;controls=0&amp;showinfo=0"
-                    frameborder="0"
-                    allowfullscreen=""></iframe>
-                    <p class="text">Date : courant 2023, durée de production : 8 semaines</p>
-                    
-                    <div class ="text description">
-                        Orca-Waga est un projet étudiant dont le but est de protéger un crystal magique des vagues d'ennemis tout en construisant votre base.
-                        Le jeu est réalisé avec Unreal Engine 5 avec une équipe de 5 graphistes et 5 programmeurs. Le jeu et inspiré de <a class="hlink" href="https://www.tribesofmidgard.com/">Tribes of Midgard</a> de <a class="hlink" href="https://norsfell.com">Norsfell</a>.
-                    </div>
-                    
-                    <div class="paragraph">
-                        <article class="text">
-                            Le moteur contient un éditeur, l'interface est réalisée avec <a class="hlink" href="https://github.com/ocornut/imgui">dear ImGUI</a>, permettant de modifier différentes ressources et fonctionnalités d'un projet.
-                            Il est possible d'ouvrir, sauvegarder et fermer des "scènes". Vous pourrez retrouver vos assets et fichiers compatibles dans <span>l'explorateur de ressources</span><sup style="color:rgb(34, 177, 76)">1</sup>.
-                            Vous pourrez voir le contenu d'une "scène" dans <span>l'inspecteur de hiérarchie</span><sup style="color:rgb(237, 28, 36)">2</sup> et selectionner les différentes entités qu'elles pourraient contenir.
-                            Pour modifier les valeurs et composants d'une entités il suffit d'utiliser <span>l'inspecteur d'entités</span><sup style="color:rgb(255, 127, 39)">3</sup>.
-                            Toutes ces éléments sont dockables dans la fenêtre princiale du moteur.
-                        </article>
-                    </div>
+                <div class="content">                     
+                    <p class="text Header-1" id="orcawaga-prod">
+                        Date : courant 2023, durée de production : 12 semaines
+                    </p>  
+                    <article class="article" id="intro">
+                        <div class="paragraph-illu" id="intro-p1">
+                            <div class="text description" id="orcawaga-description">
+                                Orca-Waga est un projet étudiant dont le but est de protéger un crystal magique des vagues d'ennemis tout en construisant et améliorant votre base ainsi que vos capacités. Vous devrez explorer la carte de jeu pour obtenir des ressources de plus haut niveau et pour découvrir de nouveau lieux. 
+                                Le jeu est réalisé avec Unreal Engine 5 avec une équipe de 5 graphistes et 5 programmeurs et été inspiré par <a class="hlink" href="https://www.tribesofmidgard.com/">Tribes of Midgard</a> de <a class="hlink" href="https://norsfell.com">Norsfell</a>.
+                            </div>
+                            <iframe id="orcawaga-trailer"
+                            src="https://www.youtube-nocookie.com/embed/6gtWzXTQxcc?rel=0&amp;controls=0&amp;showinfo=0"
+                            frameborder="0"
+                            allowfullscreen=""></iframe>  
+                        </div>
+                        
+                        <div class="text">
+                            Inspiré par Tribes of Midgard et clash of clan, vous commencerez votre partie en temps qu'orc dans une vieille forêt. Il vous faudra récolter vos premières ressources pour commencer a construire votre base et défendre
+                            votre crystal. Rapidement des ennemis à distance et au corps à corps viendrons tenter de le détruire et de vous battre, améliorer votre armure et vos capacités grâce aux ressources et aux dépouilles de vos ennemis pour facilter votre partie.
+                            Continuez a combattre vos ennemis et à défendre votre crystal jusqu'a ce qu'ils renoncent a vous faire partir.
+                        </div>
+                    </article>
 
-                    <div class="paragraph">
-                        <p class="text">Crédits :</p>
-                        <div class="text" id="graphs">
-                            <div>Graphistes :</div>
-                            <a class="hlink" href="https://fr.linkedin.com/in/amandinebrun">Amandine Brun</a><br>
-                            <a class="hlink" href="https://fr.linkedin.com/in/eve-itema">Eve Itema</a><br>
-                            <a class="hlink" href="https://fr.linkedin.com/in/l%C3%A9amaillard">Léa Maillard</a><br>
-                            <a class="hlink" href="https://fr.linkedin.com/in/ludivine-poplawski-133725288">Ludivine Poplawski</a><br>
+                    <article class="article" id="overview">
+                        <p class="text Header-1">Mes implications dans le projet:</p>
+                        <p class="text">Le jeu étant un projet étudiant dans une petite équipe nous avons tous été plus ou moins touche à tout, cependant voici les principales tâches que j'ai réalisé.
+                            <ul>
+                                <li>Construction de la base</li>
+                                <li>IAs ennemis</li>
+                                <li>Statistiques et améliorations</li>
+                                <li>Batiments et ressources</li>
+                                <li>Integration Assets</li>
+                            </ul>
+                        </p>
+                    </article>
+
+                    <article class="article" id="base-building">
+                        <div class="text Header-2">
+                            Construction de la base :<br>
                         </div>
-                        <div id="progs">
-                            <div class="text">Programmeurs :</div>
-                            <a class="hlink" href="https://fr.linkedin.com/in/valentin-brun-4141181aa">Valentin Brun</a><br>               
-                            <a class="hlink" href="https://fr.linkedin.com/in/peterlandriau">Peter Landriau</a><br>
-                            <a class="hlink" href="https://fr.linkedin.com/in/philippe-naud-">Philippe Naud</a><br>
-                            <a class="hlink" href="https://fr.linkedin.com/in/linoninni">Lino Ninni</a><br>
-                            <a class="hlink" href="https://fr.linkedin.com/in/yannpatoux">Yann Patoux</a><br>
+                    </article>
+
+                    <article class="article" id="ias-enemies">
+                        <div class="text Header-2">
+                            IAs ennemis :<br>
                         </div>
+                    </article>
+
+                    <article class="article" id="stats-upgrades">
+                        <div class="text Header-2">
+                            Statistiques et améliorations :<br>
+                        </div>
+                    </article>
+
+                    <article class="article" id="building-ressources">
+                        <div class="text Header-2">
+                            Bâtiments et ressources :<br>
+                        </div>
+                    </article>
+
+                    <article class="article" id="assets">
+                        <div class="text Header-2">
+                            Integration d'assets :<br>
+                        </div>
+                    </article>
+
+                    <article class="article" id="orca-footer">
+                        <div style="display: flex; align-items:center;margin-top: 50px;">
+                            <div class="text" id="orca-footer" style="float:left; width:75%">
+                                Il s'agit un projet étudiant de fin de première année d'étude, par conséquent beaucoup de chose sont a revoir, notamment l'équilibrage ou encore l'impossibilité de sauvegarder une partie. Gardez cela en tête si vous voulez tester le jeu.
+                            </div><br>
+                            <button class="customBtn downloadBtn" id="orca-dl-btn" style="float:right; width:20%;" onclick="window.location.href='https://jigakon.itch.io/orca-waga';"><i class="fa fa-download"></i></button>
+                        </div>
+                    </article>
+
+                    <article class="article" id="credit">
+                        <p class="text" style="margin-left: auto;margin-right: auto;">Crédits :</p>
+                        <div style="display: flex; justify-content: center;">
+                            <div id="graphs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Graphistes :</div>
+                                <a class="hlink" href="https://fr.linkedin.com/in/amandinebrun">Amandine Brun</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/eve-itema">Eve Itema</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/l%C3%A9amaillard">Léa Maillard</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/ludivine-poplawski-133725288">Ludivine Poplawski</a><br>
+                            </div>
+                            <div id="progs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Programmeurs :</div>
+                                <a class="hlink" href="https://fr.linkedin.com/in/valentin-brun-4141181aa">Valentin Brun</a><br>               
+                                <a class="hlink" href="https://fr.linkedin.com/in/peterlandriau">Peter Landriau</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/philippe-naud-">Philippe Naud</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/linoninni">Lino Ninni</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/yannpatoux">Yann Patoux</a><br>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="paragraph text" style="margin-bottom: 100px;">
+                        <p class="text">Projet créé dans le cadre d'étude à <a class="hlink" href="www.creajeux.fr">Creajeux</a> l'école des métiers du jeu-vidéo à Nîmes en France.</p>
                     </div>
                 </div>
             </div>

@@ -19,15 +19,19 @@
 }
 
 #editor{
-    float:left;
-    width:60%;
+    margin-top: 30px;
+}
+
+#editor-text{
+    width: 48%;
 }
 
 #aside-flood1{
-    float:right;
-    width: 38%;
+    width: 50%;
     align-content: center;
     height: auto;
+    margin-left: auto;
+    margin-right: 0px;
 }
 
 #ECS{
@@ -36,18 +40,23 @@
 
 
 @media (width < 1200px){
-    #editor{
-        float:none;
-        width:100%;
-    }
     #aside-flood1{
         float: none;
-        width:100%;
-
+        width:90%;
+        margin-left: 5%;
+        margin-right: 5%;
         margin-top: 25px;
     }
+    #editor-text{
+        width: 100%;
+    }
+    #editor-p1{
+        display:inline-block; 
+        align-items:none;
+    }
+
     #aside-flood1-img{
-        width:70vw;
+        width:0vw;
         height:auto;
         max-height: none;
         min-height: none;
