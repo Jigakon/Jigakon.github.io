@@ -4,24 +4,105 @@
         <title>PN Portfolio</title>
         <base href="../index.html">
         <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="Styles/Styles-Projects.css">
     </head>
 
     <body style="background-color: rgb(22, 22, 22);">
-        
-        <main id="swup">
+        <main id = "swup"> 
+            <style>
+                .contactBtn{
+                    height:100px; 
+                    margin: 20px;
+                    transition: 0.2s;
+                }
+                
+                .contactBtn:hover{
+                    transform: scale(1.1);
+                    transition: 0.2s;
+                }
+
+                .pack{
+                    width:max-content; 
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                #all-links{
+                    width:max-content; 
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top:50px;
+                    margin-bottom: 0px;
+                }
+                @media (width < 750px) {
+                    #all-links{
+                        display:inline-block; 
+                        width:100%;
+                    }
+                }
+            </style>
+
             <div class="topbar">
                 <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
                 <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="index.html">🡄</a>
             </div>
-
+            
             <div id="mySidePanel" class="sidepanel">
-                <a href="pages/projects.html">Projets</a>
-                <p>A Propos</p>
-                <a href="pages/contact.html">Contact</a>
+                <a href="pages/projects.html"onclick="closeNav()" target="_self">Projets</a>
+                <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
+                <p>Contact</p>
+            </div>
+            <div class ="transition-main" id="contact">
+                <div class="title" style="text-align: center;margin-right: 10%;">
+                    A Propos
+                </div>
+                <div class="content">                     
+                    <article class="article" id="intro" style="margin-top:75px;">
+                        <div class="text description" id="orcawaga-description">
+                            Je suis un jeune programmeur en sortie d'étude depuis juillet 2023. J'aime la programmation bas niveau et été formé
+                            a la programmation généraliste de jeu vidéo. Voici les différents moyen de me contacter ou de voir mes projets
+                            personnels ou de groupe.<br>
+                            Je suis à la recherche d'un premier emplois dans le milieu du jeu-vidéo.
+                        </div>
+                        <div class="paragraph-illu" id="all-links"></a>
+                            <div class="paragraph-illu pack" id="projects-link"></a>
+                                <a href="https://github.com/Jigakon" target="_blank"><img class="contactBtn" src="res/svgs/github.svg" alt="github"/></a>
+                                <a href="https://jigakon.itch.io/" target="_blank"><img class="contactBtn" src="res/svgs/itchio.svg" alt="itchio"/></a>
+                            </div>
+                            <div class="paragraph-illu pack" id="contact-link"></a>
+                                <a href="https://www.linkedin.com/in/philippe-naud-/" target="_blank"><img class="contactBtn" src="res/imgs/linkedin.png" alt="linkedin"/></a>
+                                <a href="mailto: philippenaud.pn@gmail.com" target="_blank"><img class="contactBtn" src="res/svgs/email.svg" alt="email"/></a>
+                            </div>
+                        </div>
+                        <div class="text description" id="orcawaga-description" style="text-align: center;width: auto; margin-top: 0px;">
+                            Voici aussi un cv si vous en avez besoin.
+                        </div>
+                        <button class="customBtn downloadBtn" onclick="download()" style="margin-left: auto;margin-right: auto; width: 50vw;max-width: 250px; margin-top: 30px;"><i class="fa fa-download"></i></button>
+                    </article>
+                </div>
             </div>
         </main>
-            
         <script src="js/Portfolio-JS.js"></script>
+        <script>
+            function download(){
+                alert("aaaaaa");
+                axios({
+                    url:'https://jigakon.github.io/res/pdfs/CV_PhilippeNaud.pdf',
+                    method:'GET',
+                    responseType: 'blob'
+                 })
+                .then((response) => {
+                       const url = window.URL
+                    .createObjectURL(new Blob([response.data]));
+                            const link = document.createElement('a');
+                            link.href = url;
+                            link.setAttribute('download', 'image.jpg');
+                            document.body.appendChild(link);
+                            link.click();
+                    });
+            }
+             
+         </script>
     </body>
 </html>
 

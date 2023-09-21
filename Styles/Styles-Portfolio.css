@@ -59,6 +59,14 @@ article{
   color: var(--text-color);
 }
 
+.content{
+    width: 80%;
+    max-width: 1250px;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #project-footer{
     margin-bottom: 100px;
     text-align: center;
@@ -208,8 +216,7 @@ article{
     align-items: center;
 }
 
-@media (max-width: 100vh)
-{
+@media (max-width: 100vh){
     .project-btn{
         width:40%;
     }
@@ -314,7 +321,7 @@ article{
 .customBtn{
     background-color: var(--btns-color);
     margin-bottom: 30px;
-    margin-left: 30px;
+    margin-left: 20px;
     margin-right: 20px;
     font-size: 50px;
     height: 100px;
@@ -481,9 +488,8 @@ article{
     grid-template-columns: repeat(1, 1fr);
     justify-content: center;
     align-items: center;
-    width:80%;
-    max-width:800px;
-    min-width: 500px;
+    max-width:500px;
+    min-width: 0px;
     margin-top:10vh;
     margin-left: auto;
     margin-right: auto;
@@ -508,10 +514,15 @@ article{
     .link-buttons{
         grid-template-columns: repeat(2, 1fr);
         width:50%;
+        min-width: 500px;
+        max-width:800px;
     }   
+    .customBtn{
+        min-width: 0;
+    }
     .last-button-link{
         grid-column-start: 1;
-    grid-column-end:  3;
+        grid-column-end:  3;
     }
 }
             

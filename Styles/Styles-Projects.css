@@ -33,12 +33,40 @@ span
     color:var(--btns-color);
 }
 
-.content{
-    width: 80%;
-    max-width: 1250px;
+.project-tag{
+    max-width:60px;
+    max-height:60px;
     
-    margin-left: auto;
-    margin-right: auto;
+    padding: 10px;
+    margin: 0;
+    transition: 0.2s;
+}
+
+.project-tag:hover{
+    scale:1.1;
+    transition: 0.2s;
+}
+
+.project-link{
+    text-decoration: none;
+    font-weight: 1000;
+}
+
+.project-images {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: var(--projects-images-height);
+    background-color: #010101;
+}
+
+.project-title{
+    width: 100%;
+    max-height: var(--projects-images-height);
+    object-fit: contain;
+    object-position: center;
 }
 
 .paragraph{
