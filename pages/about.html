@@ -34,6 +34,15 @@
                     margin-top:50px;
                     margin-bottom: 0px;
                 }
+
+                #cvBtn{
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 30px;
+                    width: 50vw;
+                    max-width: 250px; 
+                }
+
                 @media (width < 750px) {
                     #all-links{
                         display:inline-block; 
@@ -77,32 +86,12 @@
                         <div class="text description" id="orcawaga-description" style="text-align: center;width: auto; margin-top: 0px;">
                             Voici aussi un cv si vous en avez besoin.
                         </div>
-                        <button class="customBtn downloadBtn" onclick="download()" style="margin-left: auto;margin-right: auto; width: 50vw;max-width: 250px; margin-top: 30px;"><i class="fa fa-download"></i></button>
+                        <a class="customBtn downloadBtn" id="cvBtn" href="res/pdfs/CV_PhilippeNaud.pdf" download="CV_PhilippeNaud"><i class="fa fa-download"></i></a>
                     </article>
                 </div>
             </div>
         </main>
         <script src="js/Portfolio-JS.js"></script>
-        <script>
-            function download(){
-                alert("aaaaaa");
-                axios({
-                    url:'https://jigakon.github.io/res/pdfs/CV_PhilippeNaud.pdf',
-                    method:'GET',
-                    responseType: 'blob'
-                 })
-                .then((response) => {
-                       const url = window.URL
-                    .createObjectURL(new Blob([response.data]));
-                            const link = document.createElement('a');
-                            link.href = url;
-                            link.setAttribute('download', 'image.jpg');
-                            document.body.appendChild(link);
-                            link.click();
-                    });
-            }
-             
-         </script>
     </body>
 </html>
 
