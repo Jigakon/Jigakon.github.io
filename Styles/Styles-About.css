@@ -1,0 +1,38 @@
+.contactBtn{
+    height:100px; 
+    margin: 20px;
+    transition: 0.2s;
+}
+
+.contactBtn:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.pack{
+    width:max-content; 
+    margin-left: auto;
+    margin-right: auto;
+}
+#all-links{
+    width:max-content; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    margin-bottom: 0px;
+}
+
+#cvBtn{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 50vw;
+    max-width: 250px; 
+}
+
+@media (width < 750px) {
+    #all-links{
+        display:inline-block; 
+        width:100%;
+    }
+}

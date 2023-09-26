@@ -99,6 +99,11 @@ span
     display:none;
 }
 
+.footer-crea{
+    width: 100%;
+    text-align: center;
+}
+
 @media (width < 750px)
 {
     .page-project-tags{

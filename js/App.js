@@ -30,25 +30,29 @@ export default class App
             new Project("flood", 
             ["CPP", "OPENGL", "SOLO"],
             "Flood est un prototype moteur de jeu 2D permettant de réaliser des prototypes. Il est en cours de développement.",
-            "others"));
+            "others",
+            "https://github.com/Jigakon/Flood"));
 
         this.pc.RegisterProject("orcawaga",    
             new Project("orcawaga",
             ["CPP", "UE5", "GROUP"],
             "Orca-Waga est un projet étudiant. C'est un tower defense inspiré par Tribes of Midgard et ajoute la possibilité de construire sa base.",
-            "games"));
+            "games",
+            "https://jigakon.itch.io/orcawaga"));
 
         this.pc.RegisterProject("orbitaldecay", 
             new Project("orbitaldecay", 
             ["CS", "UNITY", "GROUP"],
             "Orbital Decay est un projet étudiant, il s'inspire de Star Wars Battlefront 2 sur ps2. C'est un jeu multijoueur de combat dans des vaisseaux spaciaux.",
-            "games"));
+            "games",
+            "https://www.creajeux.fr/project/orbitaldecay"));
 
         this.pc.RegisterProject("proskynitis",  
             new Project("proskynitis", 
             ["C", "SFML", "GROUP"],
             "Proskynitis est un projet étudiant inspiré du jeu Faster Than Light (FTL) et ajoute une dimension de récolte de ressources sur des planètes",
-            "games"));
+            "games",
+            "https://jigakon.itch.io/proskynitis"));
     }
 
     PushProjects()

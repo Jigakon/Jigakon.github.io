@@ -35,8 +35,14 @@ class Project
     // passing one variable containing all the HTML elements in one
     CreateElement(tagsElement, delay = 1)
     {
-        // is the project downloadable ?
-        const active = this.downloadLink != "" ? "" : "unactive";
+        let btn = "";
+        if (!isMobile())
+        {
+            if (this.downloadLink == "")
+                btn = `<a class="customBtn downloadBtn unactive"><i class="fa fa-download"></i></a>`;
+            else
+                btn = `<a class="customBtn downloadBtn" href="`+this.downloadLink+`"><i class="fa fa-download"></i></a>`;
+        }
         return `
         <div class ="transition-main delay`+delay+`" id="`+this.name+`-project">
             <div class="project">
@@ -56,7 +62,7 @@ class Project
                         <div class="separator horizontal"></div>
                         <p class="project-description"><b>`+this.description+`</b></p>
                     </a>
-                </div>` + (isMobile() ? `` : `<button class="customBtn downloadBtn `+active+`"><i class="fa fa-download"></i></button>`) + `
+                </div>` + btn + `
             </div>
         </div>`;
     }
