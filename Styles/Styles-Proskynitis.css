@@ -132,59 +132,82 @@
 
 .container-minigames-elem{
     float:left; 
-    height:475px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    border: 5px var(--back-elem-color) solid;
+    border-radius: 15px;
+}
+
+.container-minigames-gif{
+    border-radius: 15px;
+    width: 90%;
+    margin-left:5%;
+    margin-top: 15px;
+}
+
+.container-minigames-text{
+    height:10em;
+    width:90%;
+    margin-left:5%;
+    border:none;
+}
+
+.container-minigames-title{
+    text-align: center;
+    width: 100%;
+    font-size:x-large;
+    font-weight: bolder;
     margin-top: 15px;
     margin-bottom: 30px;
 }
 
-.container-minigames-gif{
-    margin-top: 15px;
-    bottom: 0px;
-    max-height: 300px;
-}
-
-.container-minigames-text{
-    height:15em;
-    width:100%;
-    border:none;
+.container-minigames{
+    width: 100%;
 }
 
 @media (max-width:800px) { /*Extra small devices - Phones (<768px)*/
-    .container-minigames-elem:nth-child(n+2):before {
-        content:'';
-        border-bottom:8px solid var(--back-elem-color);
-        border-radius: 15px;
-        position:absolute;
-        display:block;
-        width: 80%;
-        margin-top: -20px;
-    }
     .container-minigames-elem {width: 100%;}
+    .container-minigames-text{height: auto;}
 }
 
-@media (min-width:800px) and (max-width:1100px) { /*Extra small devices - Phones (<768px)*/
-    .container-minigames-elem:nth-child(2n+3):before {
-        content:'';
-        border-bottom:8px solid var(--back-elem-color);
-        border-radius: 15px;
-        position:absolute;
-        display:block;
-        width: 77%;
-        margin-top: -20px;
-    }
+@media (min-width:800px) and (max-width:1400px) { /*Extra small devices - Phones (<768px)*/
     .container-minigames-elem {width: 46%;margin:2%}
+    .container-minigames-text{height: 10em;}
 }
 
-@media (min-width:1100px) { /*Small devices - Tablets (≥768px)*/
-    .container-minigames-elem:nth-child(3n+4):before {
-        content:'';
-        border-bottom:8px solid var(--back-elem-color);
-        border-radius: 15px;
-        position:absolute;
-        display:block;
-        width: 77%;
-        margin-top: -20px;
+@media (min-width:1400px) { /*Small devices - Tablets (≥768px)*/
+    .container-minigames-elem {width: 29.25%;max-width: 800px;margin: 2%;}
+    .container-minigames{max-width:1400px;}
+}
+
+#animator-file{
+    width:35%;
+    border-radius: 15px;
+    max-height: 200px;    
+    max-width: 300px;
+    margin-left: auto; 
+}
+
+#paragraph-animation-text{
+    width:60%;
+}
+
+@media (width < 750px)
+{
+    #paragraph-animation{
+        display:inline-block; 
+        align-items:none;
     }
-    .container-minigames-elem {width: 29.25%;max-width: 450px;margin: 2%;}
-    .container-minigames{max-width:1200px;}
+    #animator-file{
+        max-width: none;
+        max-height: none;
+        width: 90%; 
+        border-radius: 15px; 
+        margin-left: 5%; 
+        margin-top: 30px;
+        margin-right: auto;  
+    }
+    #paragraph-animation-text{
+        width:100%;
+    }
 }
