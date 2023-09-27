@@ -136,6 +136,7 @@
     margin-bottom: 30px;
     border: 5px var(--back-elem-color) solid;
     border-radius: 15px;
+    height:400px;
 }
 
 .container-minigames-gif{
@@ -181,25 +182,37 @@
 }
 
 #animator-file{
-    width:35%;
+    width:43%;
     border-radius: 15px;
-    max-height: 200px;    
-    max-width: 300px;
     margin-left: auto; 
 }
 
+#depth-file{
+    width:25%;
+    border-radius: 15px;
+    margin-left: 0px; 
+    
+}
+#depth-text{
+    width:73%;
+    border-radius: 15px;
+    margin-left: auto; 
+}
+#paragraph-depth{
+    margin-top: 30px;
+}
 #paragraph-animation-text{
-    width:60%;
+    width:55%;
 }
 
-@media (width < 750px)
+@media (width < 1200px)
 {
     #paragraph-animation{
         display:inline-block; 
         align-items:none;
     }
     #animator-file{
-        max-width: none;
+        max-width: 1000px;
         max-height: none;
         width: 90%; 
         border-radius: 15px; 

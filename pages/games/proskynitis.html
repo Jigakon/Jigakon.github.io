@@ -118,16 +118,19 @@
                                 La SFML n'étant qu'une librairie et non un moteur de jeu complet, il nous fallait un système complet d'animation et rendu de "profondeur" des entités en mode exploration. J'ai donc conçu un animateur lisant un fichier texte contenant les informations concernant les dites animations.
                                 Le fichier texte stocke le chemin relatif des images par rapport au sien ainsi le nombre d'images. Chaque animation est nommée, donne le nombre de sprite dans l'animation et son framerate.     
                             </div>
-                            <img src="/res/imgs/placeholder.png" alt="how animator file looks like" id="animator-file"/>
+                            <img src="/res/imgs/animation_file.png" alt="how animator file looks like" id="animator-file"/>
                         </div>
 
                         <div class="text">
                             Pour permettre une certaine flexibilité aux graphistes j'ai mis en place la possibilté de donner le temps qu'un sprite restera à l'image. Les fichiers d'animation commençant a être de plus en plus complexe a rédiger, j'ai réalisé un petit outil permetant de les générer automatiquement, réduisant ainsi les erreurs d'écritures
                             et fluidifiant grandement le processus de création de l'animation. Plus de détails sur l'<a class="hlink" href="pages/tools/proskynitis-animator.html">outil d'animation</a>.
                         </div>
-                        <div class="text">
-                            Je me suis ensuite occupé du rendu de la profondeur, notamment pour la partie exploration de planète, avec cette vue top-down inspirée de <a class="hlink" href="https://enterthegungeon.com/">Enter the Gungeon</a> de <a class="hlink" href="https://dodgeroll.com/">Dodgeroll</a>.  
-                            Pour se faire on trie les éléments "inscrit" comme devant être rendu en profondeur du plus haut au plus bas dans l'écran et ainsi dessiner les éléments les plus bas en dernier.   
+                        <div class="paragraph-illu" id="paragraph-depth">
+                            <img src="/res/gifs/depth.gif" alt="how depth render" id="depth-file"/>
+                            <div class="text" id="depth-text">
+                                Il a ensuite fallu s'occuper du rendu de la profondeur, notamment pour la partie exploration de planète, avec cette vue top-down inspirée de <a class="hlink" href="https://enterthegungeon.com/">Enter the Gungeon</a> de <a class="hlink" href="https://dodgeroll.com/">Dodgeroll</a>.  
+                                Pour se faire on trie les éléments "inscrit" comme devant être rendu en profondeur du plus haut au plus bas dans l'écran et ainsi dessiner les éléments les plus bas en dernier.   
+                            </div>
                         </div>
                     </article>
 
@@ -140,31 +143,14 @@
                         </div>
 
                         <div class="container-minigames">
-                            <table class="container-minigames-elem">
-                                <tr><td valign="top">             
-                                    <div class="text container-minigames-title">Mini-jeu de soin</div>
-                                    <div class="text container-minigames-text">Il consiste a faire tourner une poignée dans le sens horaire, le joueur se soigne a mesure qu'il tourne la poignée. Le joueur peut voir la quantité restante de point de vie qu'il a dans la croix centrale du mini-jeu.<br></div>    
-                                </td></tr>
-                                <tr><td valign="bottom">             
-                                    <img class="container-minigames-gif" src="res/gifs/placeholder1.gif" alt="placeholder"/>
-                                </td></tr>
-                            </table>
-                            <table class="container-minigames-elem">
-                                <tr><td valign="top">
-                                    <div class="text container-minigames-title">Mini-jeu de réparation</div>
-                                    <div class="text container-minigames-text">Pour réparer la coque du vaisseau suite a des dégats et laissent s'échapper l'oxygène. Les impacts apparaissent avec en quantité et en gravités différents en fonction de la quantité de dégats de la salle. Il faut cliquer dessus plusieurs fois pour les réparer.<br></div>
-                                </td></tr>
-                                <tr><td valign="top">
-                                    <img class="container-minigames-gif" src="res/gifs/placeholder1.gif" alt="placeholder"/>
-                                </td></tr>
-                            </table>
+                            
                             <table class="container-minigames-elem">
                                 <tr><td valign="top">
                                     <div class="text container-minigames-title">Mini-jeu d'armement</div>
                                     <div class="text container-minigames-text">Ce mini-jeu sert à activer et utiliser les armes secondaire du vaisseau. Pour ce faire il faut mettre la cellule dans le bas de l'interface et appuyer sur les boutons.<br></div>
                                 </td></tr>
-                                <tr><td valign="top">
-                                    <img class="container-minigames-gif" src="res/gifs/placeholder1.gif" alt="placeholder"/>
+                                <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/weapon.gif" alt="placeholder"/>
                                 </td></tr>
                             </table>
                             <table class="container-minigames-elem">
@@ -172,8 +158,35 @@
                                     <div class="text container-minigames-title">Mini-jeu de navigation</div>
                                     <div class="text container-minigames-text">Pendant un combat il permet d'augmenter les chances d'esquives. Pour activer ce bonus il faut appuyer sur les flèches de l'interface qui correspondront sur l'écran du mini-jeu.<br></div>
                                 </td></tr>
+                                <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/navigation.gif" alt="placeholder"/>
+                                </td></tr>
+                            </table>
+                            <table class="container-minigames-elem">
                                 <tr><td valign="top">
-                                    <img class="container-minigames-gif" src="res/gifs/placeholder1.gif" alt="placeholder"/>
+                                    <div class="text container-minigames-title">Mini-jeu de bouclier</div>
+                                    <div class="text container-minigames-text">Permet d'augmenter les capacités de defense pendant une courte période. Il faut ajuster les niveaux d'énergie de chaque zones du bouclier comme sur l'écran de référence de l'interface du mini-jeu.<br></div>
+                                </td></tr>
+                                <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/shield.gif" alt="placeholder"/>
+                                </td></tr>
+                            </table>
+                            <table class="container-minigames-elem">
+                                <tr><td valign="top">             
+                                    <div class="text container-minigames-title">Mini-jeu de soin</div>
+                                    <div class="text container-minigames-text">Il consiste a faire tourner une poignée dans le sens horaire, le joueur se soigne a mesure qu'il tourne la poignée. Le joueur peut voir la quantité restante de point de vie qu'il a dans la croix centrale du mini-jeu.<br></div>    
+                                </td></tr>
+                                <tr><td valign="bottom">             
+                                    <img class="container-minigames-gif" src="res/gifs/heal.gif" alt="placeholder"/>
+                                </td></tr>
+                            </table>
+                            <table class="container-minigames-elem">
+                                <tr><td valign="top">
+                                    <div class="text container-minigames-title">Mini-jeu de réparation</div>
+                                    <div class="text container-minigames-text">Pour réparer la coque du vaisseau suite a des dégats et laissent s'échapper l'oxygène. Les impacts apparaissent avec en quantité et en gravités différents en fonction de la quantité de dégats de la salle. Il faut cliquer dessus plusieurs fois pour les réparer.<br></div>
+                                </td></tr>
+                                <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/repair.gif" alt="placeholder"/>
                                 </td></tr>
                             </table>
                             <table class="container-minigames-elem">
@@ -181,17 +194,8 @@
                                     <div class="text container-minigames-title">Mini-jeu d'oxygène</div>
                                     <div class="text container-minigames-text">Pendant un court instant il augmente la production d'oxygène. Pour profiter de ce bonus temporaire il faut "brancher" le tube de la plante à la machine et cliquer sur un bouton.<br></div>
                                 </td></tr>
-                               <tr><td valign="top">
-                                    <img class="container-minigames-gif" src="res/gifs/placeholder1.gif" alt="placeholder"/>
-                                </td></tr>
-                            </table>
-                            <table class="container-minigames-elem" style="display:table-cell;">
-                                <tr><td valign="top">
-                                    <div class="text container-minigames-title">Mini-jeu de bouclier</div>
-                                    <div class="text container-minigames-text">Permet d'augmenter les capacités de defense pendant une courte période. Il faut ajuster les niveaux d'énergie de chaque zones du bouclier comme sur l'écran de référence de l'interface du mini-jeu.<br></div>
-                                </td></tr>
-                                <tr><td valign="bottom">
-                                        <img class="container-minigames-gif" src="res/gifs/placeholder1.gif" alt="placeholder"/>
+                               <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/oxygen.gif" alt="placeholder"/>
                                 </td></tr>
                             </table>
                         </div>
