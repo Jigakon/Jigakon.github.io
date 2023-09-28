@@ -115,7 +115,7 @@
                         </div>
                         <div class="paragraph-illu" id="paragraph-animation">
                             <div class="text" id="paragraph-animation-text">
-                                La SFML n'étant qu'une librairie et non un moteur de jeu complet, il nous fallait un système complet d'animation et rendu de "profondeur" des entités en mode exploration. J'ai donc conçu un animateur lisant un fichier texte contenant les informations concernant les dites animations.
+                                La SFML n'étant qu'une librairie et non un moteur de jeu complet, il nous fallait un système d'animation et rendu de "profondeur" des entités en mode exploration. J'ai donc conçu un animateur lisant un fichier texte contenant les informations concernant les dites animations.
                                 Le fichier texte stocke le chemin relatif des images par rapport au sien ainsi le nombre d'images. Chaque animation est nommée, donne le nombre de sprite dans l'animation et son framerate.     
                             </div>
                             <img src="/res/imgs/animation_file.png" alt="how animator file looks like" id="animator-file"/>
@@ -139,7 +139,7 @@
                             Mini-jeux :<br><br>
                         </div>
                         <div class="text">
-                            Afin de rendre la partie combat spatial un peu plus dynamique nous avons décidé d'ajouter dans les salles du vaisseau des mini-jeux permettant soit d'augmenter les capacitées d'un salle pendant un lapse de temps donné, soit de réparer le vaisseau afin que l'oxygène ne s'en échappe pas, ou bien encore permettant de se soigner.<br><br>
+                            Afin de rendre la partie combat spatial un peu plus dynamique nous avons décidé d'ajouter dans les salles du vaisseau des mini-jeux permettant soit d'augmenter les capacitées d'une salle pendant un lapse de temps donné, soit de réparer le vaisseau afin que l'oxygène ne s'en échappe pas, ou bien encore permettant de se soigner.<br><br>
                         </div>
 
                         <div class="container-minigames">
@@ -205,9 +205,12 @@
                         <div class="text Header-2">
                             Magasin :<br><br>
                         </div>
-                        <div class="text">
-                            Après tout cela je me suis occupé des magasins disponible sur les planètes gazeuses, ces derniers ne sont pas présents dans tous les systèmes stellaire, mais ils sont indiqués sur les planètes par un sprite.
-                            Vous pourrez y acheter des armes, des munitions, du carburant ou encore y faire réparer votre vaisseau. Vous pourrez aussi y vendre des ressources que vous avez récolté au préalable.
+                        <div class="paragraph-illu" id="paragraph-shop">
+                            <div class="text" id="shop-text">
+                                Après tout cela il restait a s'occuper des magasins disponible sur les planètes gazeuses, ces derniers ne sont pas présents dans tous les systèmes stellaire, mais ils sont indiqués sur les planètes par un sprite.
+                                Inspiré par le magasin de Faster Than Light vous pourrez y acheter des armes, des munitions, du carburant ou encore y faire réparer votre vaisseau. Vous pourrez aussi y vendre des ressources que vous avez récolté au préalable.
+                            </div>
+                            <img src="res/gifs/placeholder1.gif" alt="Shop-render" id="shop-gif"/>
                         </div>
                     </article>
 
