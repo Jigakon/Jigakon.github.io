@@ -58,6 +58,15 @@
                         </div>
                     </article>
 
+                    <article class="article" id="proto">
+                        <div class="text Header-2">
+                            Prototypage :<br>
+                        </div>
+                        <div class="text">
+                            iteration rapide + test gameplay => voir si idée fonctionnelles ou chose a revoir -> blueprint, puis passage C++ pour feature basique et garder bp pour feedback ou gestion simple d'assets.    
+                        </div>
+                    </article>
+
                     <article class="article" id="overview">
                         <p class="text Header-1">Mes implications dans le projet:</p>
                         <p class="text">Le jeu étant un projet étudiant dans une petite équipe nous avons tous été plus ou moins touche à tout, cependant voici les principales tâches que j'ai réalisé.
@@ -70,10 +79,13 @@
                             </ul>
                         </p>
                     </article>
-
                     <article class="article" id="base-building">
                         <div class="text Header-2">
                             Construction de la base :<br>
+                        </div>
+                        <div class="text">
+                            Suite création grille placement batiments, gestion placement batiment (qt ressources, sur case valide), amélioration batiments, destruction batiments.
+                            navigation UI mode de placement / destruction, controles placement des murs (ligne droite, diagonale).    
                         </div>
                     </article>
 
@@ -81,11 +93,20 @@
                         <div class="text Header-2">
                             IAs ennemis :<br>
                         </div>
+                        <div class="text">
+                            creation comportement ennemis cac de vagues, tente attaquer crystal, si mur détruire plus proche, si prend dégat attaque attaquant, si attaquant vaincu attaquer crystal.
+                            enemis distance même comportement + fuite si joueur un peu trop proche. Navmesh Unreal, dynamique, si batiments placés.
+                            Systeme de vagues et spawners.
+                        </div>
                     </article>
 
                     <article class="article" id="stats-upgrades">
                         <div class="text Header-2">
                             Statistiques et améliorations :<br>
+                        </div>
+                        <div class="text">
+                            Permettre joueur survivre facilement amélioration statistique joueur -> système stats applicable, batiments, enemis, joueur. Permet création ennemis spéciaux et amélioration.
+                            fait avec datatable pour faciliter flux et game design. Création interface amélioration joueur, pv, armure, vitesse... quantité aussi modifiable via datatable, plus flexible.  
                         </div>
                     </article>
 
@@ -93,11 +114,19 @@
                         <div class="text Header-2">
                             Bâtiments et ressources :<br>
                         </div>
+                        <div class="text">
+                            Modification inventaire et gestion ressources via enum et architecture code batiments, facilement iterable aujout nouveau batiments si prolongation projet ou temps supplémentaire (autre batiments prévu).
+                            
+                        </div>
                     </article>
 
                     <article class="article" id="assets">
                         <div class="text Header-2">
                             Integration d'assets :<br>
+                        </div>
+                        <div class="text">
+                            Suite création grille placement batiments, gestion placement batiment (qt ressources, sur case valide), amélioration batiments, destruction batiments.
+                            navigation UI mode de placement / destruction, controles placement des murs (ligne droite, diagonale).    
                         </div>
                     </article>
 

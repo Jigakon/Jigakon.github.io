@@ -226,11 +226,11 @@
 }
 
 #shop-text{
-    width: 55%;
+    width: 50%;
+    margin-right:3%;
 }
 
 #shop-gif{
-    width: 40%;
-    margin-left:5%;
+    width: 47%;
     border-radius: 15px;
 }
