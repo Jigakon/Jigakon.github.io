@@ -63,21 +63,12 @@
                         <p class="text Header-1">Mes implications dans le projet:</p>
                         <p class="text">Le jeu étant un projet étudiant dans une petite équipe nous avons tous été plus ou moins touche à tout, cependant voici les principales tâches que j'ai réalisé.
                             <ul>
-                                <li class="text">Intelligence artificielle des vaisseaux</li>
                                 <li class="text">Controles des vaisseaux</li>
                                 <li class="text">Controles du joueur au sol</li>
-                                <li class="text">Travail de optimisation/soutien</li>
+                                <li class="text">Intelligence artificielle des vaisseaux</li>
+                                <li class="text">Travail d'optimisation/soutien</li>
                             </ul>
                         </p>
-                    </article>
-
-                    <article class="article" id="AI-ships">
-                        <div class="text Header-2">
-                            Intelligence artificielle des vaisseaux :<br>
-                        </div>
-                        <div class="text">
-                            décollage, "tour de controle" décollage hangar, suivi courbe de bézier, activation controle IA, choix des cibles vaisseau mère adverse + attaque chasseur ennemies si trop proche.
-                        </div>
                     </article>
 
                     <article class="article" id="ships-ctrls">
@@ -85,8 +76,11 @@
                             Controles des vaisseaux :<br>
                         </div>
                         <div class="text">
-                            but arcade/réalisme, inertie mais freinage, controle rouli tangage et lacet, controle de la puissance des moteurs (acceleration) tout ça en usant moteur physique.
-                            controle direction vaisseau / des armes + aide a la visée ennemi trop proche.
+                            Ce que nous voulions pour le gameplay du combat spacial était entre l'arcade, façon Battlefront, et simulation, une partie de l'équipe étant fan de jeux de simulation spaciale.
+                            Donc nous avons choisi de pouvoir controler tous les angles de rotation (roulis, tangage et lacet) ainsi que dans les axes de translation mais en gardant un freinage par "frottements" permettant au joueur de ralentir automatiquement pour qu'il ne se perde pas.
+                            Pour cela nous avons choisi d'utiliser le moteur physique d'Unity, plus simple a mettre en place et facile d'utilisation pour une petite équipe.<br>
+                            Un autre point était de pouvoir tirer avec les armes du vaisseau quand le joueur en est le pilote. L'arme bouge selon un certain "point mort" et au dela d'un certain angle le vaisseau se mettra a tourner dans la direction de l'arme pour que le joueur ne peine pas trop a garder une cible en joue.
+                            Avec cela est venu un problème présent a cause de l'échelle de distance du jeu, la correction de visée. Si le joueur pointe son arme sur un ennemi au loin l'angle que devra pendre le support de l'arme servant la visée doit changer si l'ennemi est trop proche.
                         </div>
                     </article>
 
@@ -95,7 +89,25 @@
                            Controles du joueur au sol :<br>
                         </div>
                         <div class="text">
-                            courir, sauter, marcher, pentes.
+                            Durant la quite du projet nous avons fait face a quelques difficultés avec notre controlleur de personnage, nous avions convenu, suite à l'évolution de nos besoins et idées de gameplay, de le reprendre a zéro.
+                            Nous préfèrions utiliser le moteur physique de Unity pour effectuer les déplacements plutôt que d'utiliser le Character Controller embarqué d'Unity puisque le reste du projet était basé dessus.
+                            Il fallait donc revoir les mouvements classique, marcher, courir et sauter. Il nous fallait aussi pouvoir gerer les pentes avec les différentes zones élevée du terrain dans le hangar des vaisseau mère.
+                        </div>
+                    </article>
+
+                    <article class="article" id="AI-ships">
+                        <div class="text Header-2">
+                            Intelligence artificielle des vaisseaux :<br>
+                        </div>
+                        <div class="text">
+                            Pour avoir un peu de dynamisme avec peu de joueur humain il faillait développer une intelligence artificielle pour le combat spacial.
+                            La première étape était de faire décoller le vaisseau si un IA au sol montait dedans. Le vaisseau mère ayant 10 points d'apparition de vaisseaux et une seule porte de sortie il fallait organiser la sortie d'un vaisseau.
+                            Le faire avec un pilotage vraiment autonome aurait été beaucoup trop de travail, alors il suffisait de faire suivre une courbe de bezier au vaisseau jusqu'a la sortie. En parallèle un script servant de "tour de contrôle" permettait
+                            de savoir quel vaisseau était en train decoller et quel vaisseau demandais l'autorisation de décoller.<br>
+                            Une fois le vaisseau hors du hangar il fallait le faire piloter jusqu'a un point sensible du vaisseau adverse ou vers un ennemi en vol, le tout sans se crasher, challenge...
+                            Ayant déjà fait le contrôleur des vaisseaux une solution pour avoir une IA pas trop avantagée par rapport au joueur était d'influencer les contrôles grace a des tracés de rayon rendant le chasseur capable de "percevoir" son environnement.
+                            Pour se faire créer un éditeur de tracés de rayon (qu'on appelera RayCast), définissant sur quel contrôle(s) ils allaient influer permettrait d'ajuster le pilotage de l'IA en fonction du vaisseau utilisé.
+                            L'IA en suite se déplacera en fonction de poids donnés aux mouvements en fonction de leurs intensités, si un obstacle est proche, et de leur importance, l'objectif a détruire du vaisseau mère.
                         </div>
                     </article>
 
@@ -104,9 +116,16 @@
                             Travail de optimisation/soutien :<br>
                         </div>
                         <div class="text">
-                            optimisation globales, retravailler algorithme avec membres equipe quand trop gourmand.
-                            Optimisation et gestion lumière avec graphistes du groupe, gestion LOD, Occlusion culling et batching
-                            Integration Assets et retour de performance de ces derniers ().    
+                            Etant le membre avec le profil le plus orienté vers la technique et le bas niveau, je me suis chargé de garder un oeil sur l'optimisation générale du projet.
+                            J'ai assisté les membres de l'équipe de programmation avec leurs algorithmes quand ces derniers impactaient trop les performances du projet en réduisant leur complexité algorithmique (comparaison asymptotique, Big-O) ou en revoyant leur nécéssité et objectifs.
+                            Un des points principaux de l'optimisation mise en place était dûe au rendu en jeu. En voyant des solutions avec l'équipe artistique du projet nous avons tester des méthodes pour réduire le nombre d'éléments à l'écran ou en retravaillant la complexité des modèles.
+                            Nous avons aussi optimisé en permettant d'afficher des modèles de plus basse résolution en focntion de la distance a l'écran, les <abbr title="Level Of Detail">LODs</abbr>. En "fusionnant" plusieurs modèles 3D ensemble pour les rendre en une seule fois, du batching. 
+                            Ou encore en ne rendant pas les modèles qui ne seront pas visible depuis l'intérieur d'un vaisseau mère, de l'occlusion culling.
+                        </div>
+                        <div class="text">
+                            Un autre domaine influant grandement les performances d'un jeu sont les lumières, plus particulièrement les lumières dynamique. Cependant on ne peut pas se permettre de simplement les retirer pour des raisons de performances sans impacter l'estétique du jeu.
+                            J'ai donc travaillé en collaboration avec un membre de l'équipe des artistes pour trouver des compromis visuels / performances acceptable, en réduisant, par exemple, le nombre de lumières dynamiques ou en ne les activants qu'a certain moment ou encore en pré-calculant des lumières présentes en permanance.
+                            J'ai aussi assisté les graphistes lors de l'implémentation d'assets pour donner des retour sur les performances et de ce qu'il faudrait changer pour éviter des pertes de performances trop imporantes sur des modèles 3D.
                         </div>
                     </article>
 
