@@ -63,7 +63,9 @@
                             Prototypage :<br>
                         </div>
                         <div class="text">
-                            iteration rapide + test gameplay => voir si idée fonctionnelles ou chose a revoir -> blueprint, puis passage C++ pour feature basique et garder bp pour feedback ou gestion simple d'assets.    
+                            Dans un premier temps nous avons fait un permier sprint du projet en testant nos idées et le concept du projet afin de voir si le gameplay prévu fonctionnaient.
+                            Le projet étant fait sous Unreal Engine 5 le Blueprint était parfait pour accomplir cet objectif. Ensuite nous passerions le projet avec du code C++ pour les fonctionnalités primaire du projet
+                            et nous garderions du code Blueprint pour les itégration de son, <abbr title="Effets Spéciaux">FXs</abbr>, de feedback ou l'utilisation/gestion d'assets.
                         </div>
                     </article>
 
@@ -84,8 +86,12 @@
                             Construction de la base :<br>
                         </div>
                         <div class="text">
-                            Suite création grille placement batiments, gestion placement batiment (qt ressources, sur case valide), amélioration batiments, destruction batiments.
-                            navigation UI mode de placement / destruction, controles placement des murs (ligne droite, diagonale).    
+                            Après qu'un autre membre de l'équipe se soit occupé de la génération automatique d'une grille pour placer les bâtiments dans la base je me suis occupé de la partie placement des dis bâtiments.
+                            Vérifier si une case est occupée par un autre batiment, si le batiment ne dépasse pas de la grille ou encore si le joueur a assez de ressources pour le placer.
+                            Le jeu étant basé sur la protection d'un objectif il fallait pouvoir placer des murs facilement, concevoir une fonctionnalité permettant de placer plusieurs murs connectés les uns aux autres et actualisant leurs modèles 3D pour rendre le résultat homogène.
+                            Le joueur peut donc placer les murs en ligne droite ou en faisant des coudes en priorisant l'horizontale ou la verticale.
+                            Il fallait aussi avoir la possibilité d'améliorer les bâtiments, pour qu'ils fassent plus de dégâts, résistent mieux etc... actualisant ainsi leur statistiques et leurs modèles 3D ou encore de les détruires s'ils gènent le joueur.
+                            Pour que le joueur puisse choisir les différents bâtiments qui veut placer, améliorer ou détruire il fallait faire une interface lisible et rapide a utiliser, avec une membre de l'équipe d'artistes nous l'avons intégré selon ses croquis et les fonctionnalités désirées.
                         </div>
                     </article>
 
@@ -94,6 +100,8 @@
                             IAs ennemis :<br>
                         </div>
                         <div class="text">
+                            Après le prototype il fallait créer le comportement des IAs lors des vagues d'assault.<br>
+                            
                             creation comportement ennemis cac de vagues, tente attaquer crystal, si mur détruire plus proche, si prend dégat attaque attaquant, si attaquant vaincu attaquer crystal.
                             enemis distance même comportement + fuite si joueur un peu trop proche. Navmesh Unreal, dynamique, si batiments placés.
                             Systeme de vagues et spawners.
@@ -105,6 +113,8 @@
                             Statistiques et améliorations :<br>
                         </div>
                         <div class="text">
+                            
+                            
                             Permettre joueur survivre facilement amélioration statistique joueur -> système stats applicable, batiments, enemis, joueur. Permet création ennemis spéciaux et amélioration.
                             fait avec datatable pour faciliter flux et game design. Création interface amélioration joueur, pv, armure, vitesse... quantité aussi modifiable via datatable, plus flexible.  
                         </div>
@@ -115,8 +125,9 @@
                             Bâtiments et ressources :<br>
                         </div>
                         <div class="text">
+
+
                             Modification inventaire et gestion ressources via enum et architecture code batiments, facilement iterable aujout nouveau batiments si prolongation projet ou temps supplémentaire (autre batiments prévu).
-                            
                         </div>
                     </article>
 
@@ -125,8 +136,7 @@
                             Integration d'assets :<br>
                         </div>
                         <div class="text">
-                            Suite création grille placement batiments, gestion placement batiment (qt ressources, sur case valide), amélioration batiments, destruction batiments.
-                            navigation UI mode de placement / destruction, controles placement des murs (ligne droite, diagonale).    
+                            Pour batiments, projet unreal, animation -> skeletal mesh, travail avec animateurs/graphistes pour création assets 
                         </div>
                     </article>
 
