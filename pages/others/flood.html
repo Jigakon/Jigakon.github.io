@@ -48,29 +48,6 @@
                         </div>
                     </article>
                     
-                    <article class="article" id="detail">
-                        Détail de la création du moteur.
-                        <div class="hidden-text" id="flood-context">
-                            <br>
-                            <article class="article" id="context">
-                                <div class="text" id="context-text">
-                                    Pour ma dernière année d'étude il fallait que je réalise un projet personnel d'étude, étant intéressé par la programmation bas niveau, de part mes précédentes études, et par
-                                    la création d'outils permettant la fluidification de créations par d'autres personnes j'ai décidé de me lancer dans la création d'un moteur de jeu.<br>
-                                    Je voulais aussi une particularité spéciale a cette création j'ai donc choisi de créer et d'intégrer de l'<abbr title="Entity Component System">ECS</abbr> au moteur.
-                                </div>
-                            </article>
-
-                            <article class="article" id="ECS">
-                                <div class="text Header-2">Entity Component System :</div>
-                                <div class="text">
-                                    La gestion des "objets" de jeu est donc réalisée par l'utilisation d'une technologie <abbr title="Entity Component System">ECS</abbr>.
-                                </div>
-                            </article>
-
-                        </div>
-                        <a class="hlink" id="flood-context-btn" href="javascript:FlipFlopSeeMore('flood-context')">(voir plus)</a><br>                            
-                    </article>
-
                     <article class="article" id="editor">
                         <div class="paragraph-illu" id="editor-p1">
                             <div class="paragraph text" id="editor-text">
@@ -84,9 +61,68 @@
                         </div>
                     </article>
 
+                    <article class="article" id="detail">
+                        Détail de la création du moteur.
+                        <div class="hidden-text" id="flood-context">
+                            <br>
+                            <article class="article" id="context">
+                                <div class="text" id="context-text">
+                                    Pour ma dernière année d'étude il fallait que je réalise un projet personnel d'étude, étant intéressé par la programmation bas niveau, de part mes précédentes études en électronique, et par
+                                    la création d'outils permettant la fluidification de créations par d'autres personnes j'ai décidé de me lancer dans la création d'un prototype de moteur de jeu.<br>
+                                    Je voulais aussi une particularité spéciale à cette création, j'ai donc choisi de créer et d'intégrer de l'<abbr title="Entity Component System">ECS</abbr> au moteur.
+                                </div>
+                            </article>
+
+                            
+
+                        </div>
+                        <a class="hlink" id="flood-context-btn" href="javascript:FlipFlopSeeMore('flood-context')">(voir plus)</a><br>                            
+                    </article>
+
+                    <article class="article" id="ECS">
+                        <div class="text Header-2">Pourquoi l'Entity Component System ?</div>
+                        <div class="text">
+                            La gestion des "objets" de jeu est donc réalisée par l'utilisation d'une technologie <abbr title="Entity Component System">ECS</abbr>.
+                            L'ECS est une méthode de programmation basée sur le paradigme de programmation : <abbr title="Data Driven Programming">DDP</abbr> ou encore du <abbr title="Data Oriented Programming">DOP</abbr>.
+                            L'idée est de baser la programmation non plus sur des objets mais sur les informations qu'ils contiennent.
+                        </div>
+                        <div class="text">        
+                            Aujourd'hui le paradigme de programmation le plus enseigné est l'<abbr title="Object Oriented Programming">OOP</abbr>, celui comporte 2 défauts qui nous intéresses. 
+                            Un manque de flexibilité et le cache miss. Prenons pour exemple un jeu dans lequel vous avez une classe "human" et une classe "goblin", vous voulez pouvoir des gobelins guerrier et des humains vendeurs. Pour se faire on peut créer une classe HumainShopkeeper héritant de human et une classe goblinWarrior héritant de goblin.
+                            Mais pour faire un gobelin vendeur il vous faudra créer une troisième classe, ce qui n'est pas très flexible.
+                        </div>
+                        <div class="text">
+                            C'est pour cette raison que dans le monde du jeu vidéo le paradigme de programmation le plus utilisé aujourd'hui est le <abbr title="Component Based Programming">CBP</abbr>. 
+                            Ce dernier se base sur des objets, qu'on appelle "composants", que l'on rattache à d'autres objets pour leur donner des comportements ou données différentes sans augmenter la complexitée de l'architecture.
+                            En reprenant notre exemple précédent des humains et des gobelins, nous aurions deux objets principaux "Human" et "Goblin" et deux composants "Shopkeeper" et "Warrior" que l'on rattacheraient à nos objets principaux. C'est plus flexible et plus évolutif.
+                        </div>
+                        <div class="text">
+                            Cependant cela ne règle pas le problème du cache miss. Ce dernier est un problème lié à comment l'information est stockée en mémoire dans nos ordinateurs et comment le processeur y accède.
+                            Quand le processeur veut accéder à de la mémoire pour effectuer des actions il va prendre un "morceau" d'une certaine taille dans la RAM. Ce qui veut dire que s'il veut acceder aux informations d'un objet, il y a des chances qu'il prenne des informations inutiles a l'action qu'il doit effectuer.
+                            Cela peut causer des problèmes de performance notamment quand les informations sont stockés a des endroit différents dans la mémoire, comme cela pourrait être le cas avec des listes chainées.
+                            Ce que l'ECS tend à faire est de stocker toutes les informations les plus proche possible les unes des des autres, comme avec un tableau. Les composants en ECS sont composés exclusivement de données et le plus possible de données contiguë.
+                            Les Systèmes quand à eux sont exclusivements des actions, des fonctions, du code, qui influra sur les entités possedant les composant nécessaire à son fonctionnement. Ainsi comme les informations sont le plus constante et continue possible on évite le cache miss.
+                        </div>
+                        <div class="text">
+                            Suite à ces recherches sur l'ECS j'ai commencé à concevoir un début de bibliothèque logicielle que j'allais utiliser avec la SFML (API avec laquelle je suis familier) pour tester et apporter des modifications à cette library.
+                            Voici un diagramme de classe représentant son état lors de la présentation de fin d'année d'étude.  
+                        </div>
+                        <img id="ECS-UML" src="res/imgs/placeholder.png" alt="UML class diagram ECS"></img>
+                    </article>
+
+                    <article class="article" id="OpenGL">
+                        <div class="text Header-2">Choix de la bibliothèque graphique :</div>
+                        <div class="text">
+                            Un domaine de la programmation avec lequel j'étais le plus étranger était la programmation graphique. J'en connaissais les fondements et les principes mais pas comment utiliser les APIs.
+                            La première chose à faire était de choisir une API. Je savais qu'il existait : DirectX, Metal, Vulkan ou encore OpenGL. DirectX étant uniquement dédiée à Windows et Metal à MacOS  je les ait mises de coté pour commencer.
+                            Il me restait à choisir entre Vulkan et OpenGL. Vulkan étant plus récent et mis a jour, contrairement à OpenGL depuis 2016, je me suis renseigner dessus. Au vu de la complexité et de mon objectif final, qui était de faire un prototype de moteur
+                            et non uniquement un moteur de rendu j'ai préféré opter pour OpenGL. De plus ce dernier est encore très présent dans l'industrie et possède beaucoup plus de tutoriels pour apprendre son fonctionnement. 
+                        </div>
+                    </article>
+
                     <article class="article" id="roadmap">
                         <div class="paragraph">    
-                            Flood n'est, pour le moment, disponible que sous Windows et utilise OpenGL pour le rendu, il sera a terme multiplateforme et permettra de choisir l'API graphique.
+                            Flood n'est, pour le moment, disponible que sous Windows et utilise OpenGL pour le rendu, il sera a terme, dans l'idéal, multiplateforme et permettra de choisir l'API graphique.
                             <br><br>Roadmap:<br>
                             <br>Ajouter un gestionnaire d'assets.
                             <br>Ajouter du son avec OpenAL ou via un moteur de son disponible (FMod, Wwise...).

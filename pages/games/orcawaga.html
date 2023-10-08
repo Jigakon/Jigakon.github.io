@@ -37,7 +37,7 @@
                     
                 <div class="content">                     
                     <p class="text Header-1" id="orcawaga-prod">
-                        Date : courant 2023, durée de production : 12 semaines
+                        Date : courant 2023, durée de production : 10 semaines
                     </p>  
                     <article class="article" id="intro">
                         <div class="paragraph-illu" id="intro-p1">
@@ -75,9 +75,9 @@
                             <ul>
                                 <li class="text">Construction de la base</li>
                                 <li class="text">IAs ennemis</li>
-                                <li class="text">Statistiques et améliorations</li>
-                                <li class="text">Batiments et ressources</li>
-                                <li class="text">Integration Assets</li>
+                                <li class="text">Statistiques, équilibrage et améliorations</li>
+                                <li class="text">Bâtiments et ressources</li>
+                                <li class="text">Intégration Assets</li>
                             </ul>
                         </p>
                     </article>
@@ -100,23 +100,31 @@
                             IAs ennemis :<br>
                         </div>
                         <div class="text">
-                            Après le prototype il fallait créer le comportement des IAs lors des vagues d'assault.<br>
-                            
-                            creation comportement ennemis cac de vagues, tente attaquer crystal, si mur détruire plus proche, si prend dégat attaque attaquant, si attaquant vaincu attaquer crystal.
-                            enemis distance même comportement + fuite si joueur un peu trop proche. Navmesh Unreal, dynamique, si batiments placés.
-                            Systeme de vagues et spawners.
+                            Après le prototype il fallait créer le comportement des IAs lors des vagues d'assault. Les vagues sont paramétrables grâce à des points d'apparition d'ennemis, en indiquant la vague à laquelle l'ennemi apparaitra ainsi que ses statistiques (vitesse, dégâts, points de vie...).<br>
+                            Les ennemis ont deux façon de combattre différentes, au corps à corps ou à distance, leur comportement général sera le même.
+                        </div>
+                        <div class="text">
+                            Pour ces ennemis apparaissant lors des vagues leur objectif premier est d'attaquer le cristal pour faire perdre le joueur. Si, pour accéder au cristal, l'IA doit passer par des murs alors elles se mettront à l'attaquer pour pouvoir passer. 
+                            Si elles se font attaquer lors de leur trajet elles attaqueront le joueur ou le bâtiment à l'origine des dégâts. 
+                            Pour faciliter la production et profiter des outils de Unreal Engine 5 la majeure partie des IAs ont été faites en utilisant le système d'arbre de comportement (Behaviour Tree).
+                        </div>
+                        <div class="text">
+                            Pour que les IAs se déplacent nous avons utilisé le système de NavMesh de Unreal. Avec la possibilité de placer ou détruire des bâtiments, qui doivent servir d'obstacles, il fallait recalculer le NavMesh en utilisant la fonction dynamique des NavMesh de Unreal. 
+                            Mais un autre problème était survenu : placer, prévoir de placer ou détruire des bâtiments causait d'énormes pertes de performances car il fallait recalculer les chemins des ennemis présents en jeu.
+                            Une solution que nous avons mis en place est de ne pas faire participer au NavMesh les bâtiments que l'ont prévoit de placer et de ne recalculer le NavMesh qu'au placement des bâtiments. 
+                            Pour limiter le nombre de calculs de chemin simultanés j'ai mis en place un buffer de requêtes de calcul de chemin. De cette manière toutes les IAs ne recalculeront pas leur chemin pendant la même frame.  
                         </div>
                     </article>
 
                     <article class="article" id="stats-upgrades">
                         <div class="text Header-2">
-                            Statistiques et améliorations :<br>
+                            Statistiques, équilibrage et amélioration :<br>
                         </div>
                         <div class="text">
-                            
-                            
-                            Permettre joueur survivre facilement amélioration statistique joueur -> système stats applicable, batiments, enemis, joueur. Permet création ennemis spéciaux et amélioration.
-                            fait avec datatable pour faciliter flux et game design. Création interface amélioration joueur, pv, armure, vitesse... quantité aussi modifiable via datatable, plus flexible.  
+                            Pour permettre au joueur d'améliorer : sa vitesse, ses dégats, etc... j'ai donc créé un système de statistiques plus complètes et applicable à plus d'entités en jeu.
+                            En effet l'implémentation d'un objet, un composant, utilisable sur toutes nos entités en jeu nous permettait à la fois d'avoir la possiblité d'améliorer les dites statistiques mais aussi de faciliter la mise en place de l'équilibrage du jeu ou encore de créer des ennemis "élites".
+                            En jeu, les ennemis, les bâtiments et le joueur ont donc un composant de statistiques. J'ai décidé d'utiliser des "Datatables" de Unreal pour gérer les valeurs de bases ou d'améliorations ce qui nous a permis de gagner en fluidité pendant des phases d'équilibrage.
+                            En collaboration avec une membre de l'équipe des infographistes nous avons créé une interface pour que le joueur puisse améliorer ses statistiques, où il lui serait possible d'augmenter sa vitesse, son armure, ses points de vie, etc... 
                         </div>
                     </article>
 
@@ -125,25 +133,32 @@
                             Bâtiments et ressources :<br>
                         </div>
                         <div class="text">
-
-
-                            Modification inventaire et gestion ressources via enum et architecture code batiments, facilement iterable aujout nouveau batiments si prolongation projet ou temps supplémentaire (autre batiments prévu).
+                            Une des bases du projet étant de pouvoir construire des bâtiments aux utilités diverses contre des ressources. Il nous fallait une architecture de code pouvant permettre l'implémentation rapide et efficace de nouveaux bâtiments.
+                            Le concept d'origine du projet devait permettre au joueur de construire plus de bâtiments de nature différentes, comme une forge pour avoir de nouvelles armes ou les améliorer.
+                            Cependant avec les changements d'effectif de l'équipe nous avons revu nos priorités et avons enlevé des bâtiments tout en gardant la possibilité de travailler dessus si le temps nous le permettait.
+                            J'ai ensuite modifié le système d'inventaire pour permettre la recherche dans l'inventaire des matériaux nécessaires à la construction du bâtiment choisi ainsi que la quantité de bâtiments à construire en une fois (principalement pour les murs).  
+                            Les ressources, quand à elles, sont gérées grâce à une enum et une Datatable pour leur lier une icône ou autres informations nécessaires au gameplay.
+                            Les bâtiments ont une infrastructure similaire pour les informations dans la Datatable permettant ainsi de modifier rapidement leurs coûts en ressources à la construction ou à l'amélioration ou encore les modèles 3D qui y sont liés.
                         </div>
                     </article>
 
                     <article class="article" id="assets">
                         <div class="text Header-2">
-                            Integration d'assets :<br>
+                            Intégration d'assets :<br>
                         </div>
                         <div class="text">
-                            Pour batiments, projet unreal, animation -> skeletal mesh, travail avec animateurs/graphistes pour création assets 
+                            Pour ajouter du dynamisme et de la vie aux bâtiments nous avons décidé de les animer. Pour se faire j'ai travaillé en collaboration avec une membre de l'équipe des infographistes lors de l'implémentation des différents modèles 3D, animations, squelettes d'animation ou encore des matériaux à utiliser.
+                            Il a fallu voir ensemble, lors de l'integration, la nomenclature, la création d'assets spécifiques à Unreal Engine (SkeletalMesh, <abbr title="Animation Blueprint">ABP</abbr>...).
+                            J'ai aussi vu avec d'autres membres de l'équipe des infographistes lors de la création ou l'implémentation de leurs assets ce qu'il faudrait changer pour ne pas trop impacter les performances du projet.
+                            Par exemple nous avons utilisé le système de foliages de Unreal, cependant ces derniers étaient présents en grande quantité et non optimisable en complexité de modèles 3D pour simuler un effet de mouvement par le vent.
+                            Une chose que l'on a modifié sur les assets les plus petits était leur capacité à projetter une ombre, peu visible et très gourmande en ressources. 
                         </div>
                     </article>
 
                     <article class="article" id="orca-footer">
                         <div style="display: flex; align-items:center;margin-top: 50px;">
                             <div class="text" id="orca-footer" style="float:left; width:75%">
-                                Il s'agit un projet étudiant de fin de première année d'étude, par conséquent beaucoup de chose sont a revoir, notamment l'équilibrage ou encore l'impossibilité de sauvegarder une partie. Gardez cela en tête si vous voulez tester le jeu.
+                                Il s'agit un projet étudiant de dernière année d'étude, par conséquent beaucoup de choses sont à revoir, notamment l'équilibrage ou encore l'impossibilité de sauvegarder une partie. Gardez cela en tête si vous voulez tester le jeu.
                             </div><br>
                             <button class="customBtn downloadBtn" id="orca-dl-btn" style="float:right; width:20%;" onclick="window.location.href='https://jigakon.itch.io/orca-waga';"><i class="fa fa-download"></i></button>
                         </div>

@@ -34,8 +34,21 @@
     margin-right: 0px;
 }
 
+#detail{
+    outline: red solid 2px;
+    margin-top: 50px;
+}
+
 #ECS{
     float:left;
+}
+
+#ECS-UML{
+    margin-left: auto;
+    margin-right: auto;
+    float:none;
+    display:block;
+    border-radius: 15px;
 }
 
 
