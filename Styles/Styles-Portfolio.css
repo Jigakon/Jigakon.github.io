@@ -32,6 +32,10 @@ article{
     justify-content:center;
 }
 
+img{
+    border-radius: 15px;
+}
+
 .Header-1
 {
     font-size: 25px;

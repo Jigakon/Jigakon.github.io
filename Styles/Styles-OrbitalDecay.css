@@ -30,6 +30,66 @@
     margin-top: 0;
 }
 
+#aim{
+    margin-top:50px;
+}
+
+#aim-gif{
+    width:40%;
+    margin-left: 5%;
+}
+
+#aim-text{
+    width:55%;
+}
+#player-ctrls-base{
+    margin-top:15px;
+}
+#player-ctrls-slopes{
+    margin-top:15px;
+}
+
+#AI-controls{
+    margin-top: 25px;
+}
+
+#AI-controls-text{
+    width: 45%;
+}
+
+#AI-controls-gif{
+    width:50%;
+    margin-left: 5%;
+}
+
+
+#AI-Take-Off{
+    margin-top:0px;
+}
+
+#AI-Take-Off-gif{
+    border-radius: 15px;
+    width:50%
+}
+
+#AI-Take-Off-text{
+    width: 45%;
+    margin-left: 5%;
+}
+
+#optim-1{
+
+}
+
+#optim-1-text{
+    width:67%;
+}
+
+#optim-1-illu{
+    width:30%;
+    margin-left: 3%;
+}
+
 @media (width < 1000px){
     #intro-p1{
         display:inline-block; 

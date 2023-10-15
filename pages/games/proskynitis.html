@@ -56,9 +56,9 @@
                         
                         <div class="text">
                             Vous commencerez le jeu dans une galaxie et vous vous déplacerez entre les différents systèmes stellaires. Chaque déplacement dans un nouveau système provoquera un évènement aléatoire de nature diverse.
-                            Vous pourrez aussi vous déplacer au sein du système en sautant de planètes en planètes. Les planètes telluriques sont explorables et ont souvent des missions aléatoires à remplir pour obtenir différentes ressources. Les planètes sont divisés en 3 biomes contenant différents matériaux.
+                            Vous pourrez aussi vous déplacer au sein du système en sautant de planète en planète. Les planètes telluriques sont explorables et ont souvent des missions aléatoires à remplir pour obtenir différentes ressources. Les planètes sont divisées en 3 biomes contenant différents matériaux.
                             Ces matériaux servent à améliorer votre vaisseau, construire des armes pour l'exploration ou encore peuvent être vendus dans les magasins disponibles dans l'orbite de certaines géantes gazeuses.
-                            Il vous faudra améliorer suffisement votre équipement pour vaincre le boss final du jeu, indiqué d'un point rouge sur la carte, et ainsi gagner la partie.<br>
+                            Il vous faudra améliorer suffisament votre équipement pour vaincre le boss final du jeu, indiqué d'un point rouge sur la carte, et ainsi gagner la partie.<br>
                             Le jeu ne dispose pas de système de sauvegarde. 
                         </div>
                     </article>
@@ -67,7 +67,7 @@
                         <p class="text Header-1">Mes implications dans le projet:</p>
                         <p class="text">Le jeu étant un projet étudiant dans une petite équipe nous avons tous plus ou moins touché à tout, cependant voici les principales tâches que j'ai réalisées.
                             <ul>
-                                <li>Géneration de la carte de jeu</li>
+                                <li>Génération de la carte de jeu</li>
                                 <li>Système d'animation et rendu de profondeur</li>
                                 <li>Mini-jeux dans le vaisseau</li>
                                 <li>Magasin et inventaire</li>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="text">
                             Ma première tâche a été de créer la carte de jeu pour pouvoir se déplacer. Nous avons choisi d'avoir une carte similaire à celle de FTL à la différence qu'aucun chemin ne se superpose.
-                            Pour se faire j'ai choisi la triangulation de Delaunay avec l'algorithme de Bowyer-Watson. 
+                            Pour ce faire j'ai choisi la triangulation de Delaunay avec l'algorithme de Bowyer-Watson. 
                             <div class="hidden-text" id="prosk-delaunay">contenu des listes chainées et de l'algo</div>
                             <div class="tooltip">
                                 <a class="hlink" id="prosk-delaunay-btn" href="javascript:FlipFlopSeeMore('prosk-delaunay')">(voir plus)</a><br>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="paragraph-illu" id="paragraph-map-system">
                             <div class="text" id="proskynitis-map-text-2">
-                                Il fallait maintenant avoir la possibilité de se déplacer dans les systèmes stellaires. Pour se faire je "génère" quelques planètes. Deux types de planètes sont générables: les planètes gazeuses autour desquelles un magasin peut être en orbite et les planètes telluriques sur lesquelles le joueur peut se poser, accomplir une misson ou simplement récolter des ressources. 
+                                Il fallait maintenant avoir la possibilité de se déplacer dans les systèmes stellaires. Pour ce faire je "génère" quelques planètes. Deux types de planètes sont générables: les planètes gazeuses autour desquelles un magasin peut être en orbite et les planètes telluriques sur lesquelles le joueur peut se poser, accomplir une misson ou simplement récolter des ressources. 
                                 Les planètes se génèrent par 4 et prennent le nom le l'étoile de leur système. Il y a au maximum 3 planètes telluriques aux biomes différents qui se génèreront sur chaque système stellaire.
                             </div>
                             <img src="/res/imgs/Planet_gen.png" id="proskynitis_Map_diagram"></img>
