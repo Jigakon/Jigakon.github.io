@@ -24,6 +24,69 @@
     margin-top: 0;
 }
 
+#enemies{
+    margin-top:25px
+}
+
+#enemies-text{
+    width:45%;
+}
+
+#enemies-illu{
+    width:50%;
+    margin-left:5%;
+}
+
+#enemies-behaviour{
+    margin-top:15px;
+}
+#enemies-behaviour-text{
+    width:50%;
+    margin-left:5%;
+}
+#enemies-behaviour-illu{
+    width:45%;
+    height:20vw;
+    border-radius: 15px;
+    max-height:320px;
+}
+
+#build{
+
+}
+#build-text{
+    width:55%;
+}
+#build-illu{
+    width:40%;
+    height:20vw;
+    max-height:280px;
+    margin-left:5%;
+    border-radius: 15px;
+}
+
+#Building-Res{
+    margin-top:15px;
+}
+#Building-Res-text{
+    width:45%;
+}
+#Building-Res-illu{
+    width:50%;
+    margin-left:5%;
+    border-radius: 0px;
+}
+
+#upgrade{
+
+}
+#upgrade-illu{
+    width:40%;
+}
+#upgrade-text{
+    width:55%;
+    margin-left:5%;
+}
 @media (width < 1000px){
     #intro-p1{
         display:inline-block; 

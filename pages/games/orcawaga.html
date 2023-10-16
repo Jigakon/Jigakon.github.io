@@ -46,7 +46,7 @@
                                 Le jeu est réalisé avec Unreal Engine 5 avec une équipe de 5 graphistes et 5 programmeurs et été inspiré par <a class="hlink" href="https://www.tribesofmidgard.com/">Tribes of Midgard</a> de <a class="hlink" href="https://norsfell.com">Norsfell</a>.
                             </div>
                             <iframe id="orcawaga-trailer"
-                            src="https://www.youtube-nocookie.com/embed/6gtWzXTQxcc?rel=0&amp;controls=0&amp;showinfo=0"
+                            src="https://www.youtube-nocookie.com/embed/6gtWzXTQxcc?rel=0&amp;showinfo=0"
                             frameborder="0"
                             allowfullscreen=""></iframe>  
                         </div>
@@ -63,7 +63,7 @@
                             Prototypage :<br>
                         </div>
                         <div class="text">
-                            Dans un premier temps nous avons fait un permier sprint du projet en testant nos idées et le concept du projet afin de voir si le gameplay prévu fonctionnaient.
+                            Avant de commencer pour de bon la production nous avons fait un permier sprint du projet pour tester nos idées et le concept du projet afin de voir si le gameplay prévu fonctionnaient.
                             Le projet étant fait sous Unreal Engine 5 le Blueprint était parfait pour accomplir cet objectif. Ensuite nous passerions le projet avec du code C++ pour les fonctionnalités primaire du projet
                             et nous garderions du code Blueprint pour les itégration de son, <abbr title="Effets Spéciaux">FXs</abbr>, de feedback ou l'utilisation/gestion d'assets.
                         </div>
@@ -85,10 +85,17 @@
                         <div class="text Header-2">
                             Construction de la base :<br>
                         </div>
+                        <div class="paragraph-illu" id="build">
+                            <div class="text" id="build-text">
+                                Après qu'un autre membre de l'équipe se soit occupé de la génération automatique d'une grille pour placer les bâtiments dans la base je me suis occupé de la partie placement des dis bâtiments.
+                                Vérifier si une case est occupée par un autre batiment, si le batiment ne dépasse pas de la grille ou encore si le joueur a assez de ressources pour le placer.
+                                Le jeu étant basé sur la protection d'un objectif il fallait pouvoir placer des murs facilement, concevoir une fonctionnalité permettant de placer plusieurs murs connectés les uns aux autres et actualisant leurs modèles 3D pour rendre le résultat homogène.
+                            </div>
+                            <iframe id="build-illu"
+                            src="https://www.youtube-nocookie.com/embed/HyXHEVEkdpg?rel=0&version=3&autoplay=1&loop=1&amp;"
+                            frameborder="0"></iframe>
+                        </div>
                         <div class="text">
-                            Après qu'un autre membre de l'équipe se soit occupé de la génération automatique d'une grille pour placer les bâtiments dans la base je me suis occupé de la partie placement des dis bâtiments.
-                            Vérifier si une case est occupée par un autre batiment, si le batiment ne dépasse pas de la grille ou encore si le joueur a assez de ressources pour le placer.
-                            Le jeu étant basé sur la protection d'un objectif il fallait pouvoir placer des murs facilement, concevoir une fonctionnalité permettant de placer plusieurs murs connectés les uns aux autres et actualisant leurs modèles 3D pour rendre le résultat homogène.
                             Le joueur peut donc placer les murs en ligne droite ou en faisant des coudes en priorisant l'horizontale ou la verticale.
                             Il fallait aussi avoir la possibilité d'améliorer les bâtiments, pour qu'ils fassent plus de dégâts, résistent mieux etc... actualisant ainsi leur statistiques et leurs modèles 3D ou encore de les détruires s'ils gènent le joueur.
                             Pour que le joueur puisse choisir les différents bâtiments qui veut placer, améliorer ou détruire il fallait faire une interface lisible et rapide a utiliser, avec une membre de l'équipe d'artistes nous l'avons intégré selon ses croquis et les fonctionnalités désirées.
@@ -100,17 +107,27 @@
                             IAs ennemis :<br>
                         </div>
                         <div class="text">
-                            Après le prototype il fallait créer le comportement des IAs lors des vagues d'assault. Les vagues sont paramétrables grâce à des points d'apparition d'ennemis, en indiquant la vague à laquelle l'ennemi apparaitra ainsi que ses statistiques (vitesse, dégâts, points de vie...).<br>
+                            Après le prototype il fallait créer le comportement des IAs lors des vagues d'assault. Les vagues sont paramétrables grâce à des points d'apparition d'ennemis, en indiquant la vague à laquelle l'ennemi apparaitra ainsi que ses statistiques (vitesse, dégâts, points de vie...).
                             Les ennemis ont deux façon de combattre différentes, au corps à corps ou à distance, leur comportement général sera le même.
                         </div>
-                        <div class="text">
-                            Pour ces ennemis apparaissant lors des vagues leur objectif premier est d'attaquer le cristal pour faire perdre le joueur. Si, pour accéder au cristal, l'IA doit passer par des murs alors elles se mettront à l'attaquer pour pouvoir passer. 
-                            Si elles se font attaquer lors de leur trajet elles attaqueront le joueur ou le bâtiment à l'origine des dégâts. 
-                            Pour faciliter la production et profiter des outils de Unreal Engine 5 la majeure partie des IAs ont été faites en utilisant le système d'arbre de comportement (Behaviour Tree).
+                        <div class="paragraph-illu" id="enemies-behaviour">
+                            <iframe id="enemies-behaviour-illu"
+                            src="https://www.youtube-nocookie.com/embed/wdd3uX8WHv0?rel=0&version=3&autoplay=1&loop=1&amp;"
+                            frameborder="0"></iframe>
+                            <div class="text" id="enemies-behaviour-text">
+                                Pour ces ennemis apparaissant lors des vagues leur objectif premier est d'attaquer le cristal pour faire perdre le joueur. Si, pour accéder au cristal, l'IA doit passer par des murs alors elles se mettront à l'attaquer pour pouvoir passer. 
+                                Si elles se font attaquer lors de leur trajet elles attaqueront le joueur ou le bâtiment à l'origine des dégâts. 
+                                Pour faciliter la production et profiter des outils de Unreal Engine 5 la majeure partie des IAs ont été faites en utilisant le système d'arbre de comportement (Behaviour Tree).
+                            </div>
+                        </div>
+                        <div class="paragraph-illu" id="enemies">
+                            <div class="text" id="enemies-text">
+                                Pour que les IAs se déplacent nous avons utilisé le système de NavMesh de Unreal. Avec la possibilité de placer ou détruire des bâtiments, qui doivent servir d'obstacles, il fallait recalculer le NavMesh en utilisant la fonction dynamique des NavMesh de Unreal. 
+                                Mais un autre problème était survenu : placer, prévoir de placer ou détruire des bâtiments causait d'énormes pertes de performances car il fallait recalculer les chemins des ennemis présents en jeu.
+                            </div>
+                            <img src="res/imgs/NavMesh_OW.png" alt="dynamic navmesh" id="enemies-illu">
                         </div>
                         <div class="text">
-                            Pour que les IAs se déplacent nous avons utilisé le système de NavMesh de Unreal. Avec la possibilité de placer ou détruire des bâtiments, qui doivent servir d'obstacles, il fallait recalculer le NavMesh en utilisant la fonction dynamique des NavMesh de Unreal. 
-                            Mais un autre problème était survenu : placer, prévoir de placer ou détruire des bâtiments causait d'énormes pertes de performances car il fallait recalculer les chemins des ennemis présents en jeu.
                             Une solution que nous avons mis en place est de ne pas faire participer au NavMesh les bâtiments que l'ont prévoit de placer et de ne recalculer le NavMesh qu'au placement des bâtiments. 
                             Pour limiter le nombre de calculs de chemin simultanés j'ai mis en place un buffer de requêtes de calcul de chemin. De cette manière toutes les IAs ne recalculeront pas leur chemin pendant la même frame.  
                         </div>
@@ -120,11 +137,14 @@
                         <div class="text Header-2">
                             Statistiques, équilibrage et amélioration :<br>
                         </div>
-                        <div class="text">
-                            Pour permettre au joueur d'améliorer : sa vitesse, ses dégats, etc... j'ai donc créé un système de statistiques plus complètes et applicable à plus d'entités en jeu.
-                            En effet l'implémentation d'un objet, un composant, utilisable sur toutes nos entités en jeu nous permettait à la fois d'avoir la possiblité d'améliorer les dites statistiques mais aussi de faciliter la mise en place de l'équilibrage du jeu ou encore de créer des ennemis "élites".
-                            En jeu, les ennemis, les bâtiments et le joueur ont donc un composant de statistiques. J'ai décidé d'utiliser des "Datatables" de Unreal pour gérer les valeurs de bases ou d'améliorations ce qui nous a permis de gagner en fluidité pendant des phases d'équilibrage.
-                            En collaboration avec une membre de l'équipe des infographistes nous avons créé une interface pour que le joueur puisse améliorer ses statistiques, où il lui serait possible d'augmenter sa vitesse, son armure, ses points de vie, etc... 
+                        <div class="paragraph-illu" id="upgrade">
+                            <img src="res/imgs/upgrade_OW.png" alt="upgrade UI" id="upgrade-illu">
+                            <div class="text" id="upgrade-text">
+                                Pour permettre au joueur d'améliorer : sa vitesse, ses dégats, etc... j'ai créé un système de statistiques plus complètes et applicable à plus d'entités en jeu.
+                                En effet l'implémentation d'un objet, un composant, utilisable sur toutes nos entités en jeu nous permettait à la fois d'avoir la possiblité d'améliorer les dites statistiques mais aussi de faciliter la mise en place de l'équilibrage du jeu ou encore de créer des ennemis "élites".
+                                En jeu, les ennemis, les bâtiments et le joueur ont donc un composant de statistiques. J'ai décidé d'utiliser des "Datatables" de Unreal pour gérer les valeurs de bases ou d'améliorations ce qui nous a permis de gagner en fluidité pendant des phases d'équilibrage.
+                                En collaboration avec une membre de l'équipe des infographistes nous avons créé une interface pour que le joueur puisse améliorer ses statistiques, où il lui serait possible d'augmenter sa vitesse, son armure, ses points de vie, etc... 
+                            </div>
                         </div>
                     </article>
 
@@ -132,10 +152,15 @@
                         <div class="text Header-2">
                             Bâtiments et ressources :<br>
                         </div>
+                        <div class="paragraph-illu" id="Building-Res">
+                            <div class="text" id="Building-Res-text">
+                                Une des bases du projet étant de pouvoir construire des bâtiments aux utilités diverses contre des ressources. Il nous fallait une architecture de code pouvant permettre l'implémentation rapide et efficace de nouveaux bâtiments.
+                                Le concept d'origine du projet devait permettre au joueur de construire plus de bâtiments de nature différentes, comme une forge pour avoir de nouvelles armes ou les améliorer.
+                                Cependant avec les changements d'effectif de l'équipe nous avons revu nos priorités et avons enlevé des bâtiments tout en gardant la possibilité de travailler dessus si le temps nous le permettait.
+                            </div>
+                            <img src="res/imgs/Building_UML_CD.png" alt="Class Diagram Buildings" id="Building-Res-illu">
+                        </div>
                         <div class="text">
-                            Une des bases du projet étant de pouvoir construire des bâtiments aux utilités diverses contre des ressources. Il nous fallait une architecture de code pouvant permettre l'implémentation rapide et efficace de nouveaux bâtiments.
-                            Le concept d'origine du projet devait permettre au joueur de construire plus de bâtiments de nature différentes, comme une forge pour avoir de nouvelles armes ou les améliorer.
-                            Cependant avec les changements d'effectif de l'équipe nous avons revu nos priorités et avons enlevé des bâtiments tout en gardant la possibilité de travailler dessus si le temps nous le permettait.
                             J'ai ensuite modifié le système d'inventaire pour permettre la recherche dans l'inventaire des matériaux nécessaires à la construction du bâtiment choisi ainsi que la quantité de bâtiments à construire en une fois (principalement pour les murs).  
                             Les ressources, quand à elles, sont gérées grâce à une enum et une Datatable pour leur lier une icône ou autres informations nécessaires au gameplay.
                             Les bâtiments ont une infrastructure similaire pour les informations dans la Datatable permettant ainsi de modifier rapidement leurs coûts en ressources à la construction ou à l'amélioration ou encore les modèles 3D qui y sont liés.
