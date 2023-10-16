@@ -87,6 +87,14 @@
     width:55%;
     margin-left:5%;
 }
+
+#building-datatable-illu{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
 @media (width < 1000px){
     #intro-p1{
         display:inline-block; 
