@@ -118,6 +118,17 @@
     margin-left:5%;
 }
 
+#panels-illus{
+    margin-top:25px;
+}
+#hierarchy-panel{
+    width:47.5%;
+}
+#inspector-panel{
+    width:47.5%;
+    margin-left:5%;
+}
+
 @media (width < 1200px){
     #aside-flood1{
         float: none;

@@ -136,7 +136,7 @@
                                         Enfin il existe un dernier objet qui est spécifique a OpenGL : le vertex Array, de dernier lie le Vertex Buffer au Layout pour éviter de le définir à chaque image de rendu.
                                     </div>
                                     <div class="text" id="OGL-text-3">
-                                        Un autre point à voir est l'utilisation de textures. Pour pouvoir utiliser des texture il faut d'abord pouvoir les charger, pour cela j'ai utilisé une library standard : la <a href="https://github.com/nothings/stb">STB</a>, plus précisément pour charger une image, stb_image.
+                                        Un autre point à voir est l'utilisation de textures. Pour pouvoir utiliser des texture il faut d'abord pouvoir les charger, pour cela j'ai utilisé une library standard : la <a class="hlink" href="https://github.com/nothings/stb">STB</a>, plus précisément pour charger une image, stb_image.
                                         Une library simple d'utilisation est en un seul fichier. Il faut juste avec OpenGL penser a retourner les datas l'image car stb enregistre une image dehaut en bas et OpenGL lis l'information de bas en haut.  
                                         Ensuite j'ai appris comment utiliser les matrices de projection, ce qui servira pour les cameras. Pour les manipuler et les utiliser je me suis servi de la library de math GLM optimisée et prévue pour être utilisée avec OpenGL.
                                     </div>
@@ -149,7 +149,7 @@
                                 <div class="hidden-element" id="flood-create-Hidden">
                                     <div class="text">
                                         Maintenant que je m'étais renseigné et avait appris les 2 plus points les plus bloquant du projet Il était temps de vraiment commencer.
-                                        Comme pour mes essais avec OpenGL j'allais gérer les gestion des fenêtres et des Inputs grâce à la <a href="https://www.glfw.org/">GLFW</a>, qui est une API open source permettant la gestion des fênetres, du contexte de rendu ou encore des Inputs.
+                                        Comme pour mes essais avec OpenGL j'allais gérer les gestion des fenêtres et des Inputs grâce à la <a class="hlink" href="https://www.glfw.org/">GLFW</a>, qui est une API open source permettant la gestion des fênetres, du contexte de rendu ou encore des Inputs.
                                         Cette dernière est adapté pour OpenGL et Vulkan et est multiplateforme (Windows, macOS...).
                                     </div>
                                     <div class="paragraph-illu" id="event-system">
@@ -184,7 +184,7 @@
                                     </div>
                                     <div class="text">
                                         Dans cette API on arrêtera un Batch si l'ont dépasse un nombre de vertex, si l'on dépasse le nombre maximal de textures stockable au GPU par OpenGL (en général 32 pour un PC et 8 pour un téléphone). 
-                                            L'API ne gère pas encore la possibilté de changer de shader, n'étant qu'un projet pour rendre de la 2D, un seul Shader peut suffire pour a plus part des applications courantes. 
+                                        L'API ne gère pas encore la possibilté de changer de shader, n'étant qu'un projet pour rendre de la 2D, un seul Shader peut suffire pour a plus part des applications courantes. 
                                     </div>
                                 </div>
                                 <a class="hidden-element-btn" id="flood-GAPI-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-GAPI-Hidden')">(voir plus)</a><br>    
@@ -194,8 +194,10 @@
                                 <div class="text Header-2">Interface de test :</div>
                                 <div class="hidden-element" id="flood-ImGUI-Hidden">
                                     <div class="text">
-                                        Maintenant 
-                                        Bonne lib de rendu graphic user interface immédiate, facile a prendre en main et d'utilisation. Permettra des retour plus facile a lire qu'a la console et permettra du temps reel pour debug, compteur FPS, nb d'objets rendu a l'écrans, etc...
+                                        La base du rendu étant faite il faut maintenant un moyen d'avoir des retours ou de faire des modifications à la volée simplement. Et pour cela je vais utiliser <a class="hlink" href="https://github.com/ocornut/imgui">Dear ImGUI</a>. 
+                                        Dear ImGUI est une library d'interface graphique utilisateur immédiate, ou immediate graphic user interface, qui comme son nom l'indique permet de faire des interface utilisateur rapidement et facilement.
+                                        Cette library est facile à prendre en main et à utiliser, elle est utilisée dans beaucoup de domaines pour créer des outils custom.
+                                        Elle me permettra de faire des retours plus facile a lire qu'avec la console et aussi d'avoir les information en temps reel pour débugger en faisant par exemple un conteur de FPS, du nombre de triangles à l'écran, de draw call.
                                     </div>
                                 </div>
                                 <a class="hidden-element-btn" id="flood-ImGUI-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-ImGUI-Hidden')">(voir plus)</a><br>    
@@ -205,7 +207,11 @@
                                 <div class="text Header-2">Ajout de l'ECS et modifications de l'API  pour le moteur :</div>
                                 <div class="hidden-element" id="flood-ECS-Hidden">
                                     <div class="text">
-                                        Impl lib ECS custom dans moteur + ajouter modif : -manager capable lister entités -recuperer liste entité avec certains composants via queries -callback quand composant ajouté car vient la création éditeur
+                                        Mainenant que des interfaces sont disponibles et que l'ont peut rendre des objets à l'image il est temps d'implémenter dans le projet l'ECS précédemment étudié et conçu.<br>
+                                        Cepedant j'en ai profité pour apporter des modifications à l'API qui se verront utile dans le cas du projet. Par exemple, désormais le Manager garde lui-même en mémoire la liste des entités créés dans la scene, ontenant elle même le manager.
+                                        Ainsi nous avons un moyen d'acceder a toutes ces données a un endroit centralisé et de les afficher grâce à Dear ImGUI.
+                                        Il est aussi possible de récupérer une liste d'Entité possedant certains compansant via une requête (query). On pourra s'en servir dans les Systems par exemple pour faire les actions que l'on veut, ou encore au début ne pas utiliser les systems pour des tests ou faire des recherches dans la liste d'entité.
+                                        Aussi un ajout directement lié au moteur est l'ajout d'une fonction de rappel, une callback, qui s'effectue à l'ajout d'un composant, qui sera très pratique lors de la création de l'éditeur. 
                                     </div>
                                 </div>
                                 <a class="hidden-element-btn" id="flood-ECS-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-ECS-Hidden')">(voir plus)</a><br>    
@@ -216,13 +222,29 @@
                                 <div class="text Header-2">Création des outils de bases d'un moteur :</div>
                                 <div class="hidden-element" id="flood-Editor-Hidden">
                                     <div class="text">
-                                        création de tous les panneaux d'interfaces pour manipulation utilisateur
-                                        Viewport : creation de Framebuffer pour rendre scene dans une texture a afficher dans panneau ImGUI pour servir de rendu visuel + selectionner entités par click picking
-                                        Inspector : permet modifier toutes les infos entités selectionnées, ajouter/supprimer composants avant lancement de la scene, changer entité nom...
-                                        Hierarchy : Ajouter/supprimer Entités dans la scene, les selectionner et a terme, donc pas encore dispo, le parentage des entités entre elles 
+                                        Justement il est temps de commencer la création de l'éditeur, et comme ImGUI est déjà présent dans le projet et que la library est très complète, le docking ayant été ajouté, le choix est tout indiqué.
+                                        Je me suis donc attelé à la création des différents panneaux d'interface pour l'utilisateur. Dans un premier temps, le "Viewport". 
+                                    </div>
+                                    <div class="text"> 
+                                        Le Viewport est le panneau qui affichera le rendu du jeu et de l'éditeur. Il permettra aussi de sélectionner les entités dans la scene en cliquant dessus, du mouse picking. 
+                                        Pour faire tous cela il fallait crée des "framebuffer" qui, au lieu de rendre directement dans la fenêtre, se rende dans une texture qui elle sera affichée grâce a ImGI dans le panneau. 
+                                        Faire des framebuffer permet aussi le mouse picking en rendant dans une autre texture un applat de couleur pour tout un objet, si on clique sur un pixel d'une certaine couleur celà pour permet de savoir sur quel objet on a cliqué et ainsi le selectionner.
+                                    </div>
+                                    <div class="text">
+                                        Vient ensuite le panneau de hiérarchie de scene, il permettra d'ajouter, supprimer ou de selectionner les entités de la scene. 
+                                        A terme il pourra aussi afficher et de modifier la parentée des entités, cette mécanique n'étant pas encore présente pour le moment.
+                                    </div>
+                                    <div class="text">
+                                        J'ai aussi créé le panneau d'inspection des entités, l'Inspector. Il est similaire à celui de Unity, on selectionne une entité et il affichera ses information. On peut modifier le nom de l'entité, ajouter ou supprimer des composants et aussi de en modifier les informations.
+                                        Un cas particulier utilisant les callback précédement vu est le composant de caméra. En ajoutant ce dernier il faut modifier la taille du rendu de la caméra aux dimension Viewport, sinon l'image sera déformée.
+                                    </div>
+
+                                    <div class="paragraph-illu" id="panels-illus">
+                                        <img src="res/gifs/hierarchy_panel.gif" alt="Panneau de hiérarchie" id="hierarchy-panel"></img>
+                                        <img src="res/gifs/inspector_panel.gif" alt="Panneau d'Inspection" id="inspector-panel"></img>
                                     </div>
                                 </div>
-                                <a class="hidden-element-btn" id="flood-Editor-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-Editor-Hidden')">(voir plus)</a><br>    
+                                <a class="hidden-element-btn" id="flood-Editor-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-Editor-Hidden')">(voir plus)</a><br>
                                 
                             </article>
 
