@@ -32,10 +32,10 @@
     height: auto;
     margin-left: auto;
     margin-right: 0px;
+    border-radius: 0px;
 }
 
 #detail{
-    outline: red solid 2px;
     margin-top: 50px;
 }
 
@@ -51,6 +51,72 @@
     border-radius: 15px;
 }
 
+#OOP{
+    margin-top:15px;
+}
+#OOP-text{
+    width:55%;
+}
+#OOP-illu{
+    width:40%;
+    margin-left:5%;
+    border-radius: 0px;
+}
+
+#CBP-illu{
+    width:40%;
+    border-radius: 0px;
+}
+#CBP-text{
+    width:55%;
+    margin-left:5%;
+}
+
+#ECS-UML-text-2{
+    margin-top:15px;
+}
+
+#ECS-UML-text-3{
+    margin-top:15px;
+}
+
+#ECS-UML{
+    margin-top:25px;
+    width: 100%;
+    border-radius: 0px;
+}
+
+#OGL-buffer{
+    margin-top:15px;
+}
+#OGL-buffer-text{
+    width:50%;
+}
+#OGL-buffer-illu{
+    width:45%;
+    margin-left: 5%;
+}
+#event-system{
+    margin-top:15px;
+}
+#event-system-text{
+    width:45%;
+}
+#event-system-illu{
+    width:50%;
+    margin-left:5%;
+}
+
+#batching{
+    margin-top:15px;
+}
+#batching-text{
+    width:50%;
+}
+#batching-illu{
+    width:45%;
+    margin-left:5%;
+}
 
 @media (width < 1200px){
     #aside-flood1{

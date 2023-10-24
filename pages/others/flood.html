@@ -61,74 +61,211 @@
                         </div>
                     </article>
 
-                    <article class="article" id="detail">
-                        Détail de la création du moteur.
-                        <div class="hidden-text" id="flood-context">
+                    <article class="article text" id="detail">
+                        <div class="text Header-1">Détail de la création du moteur</div>
                             <br>
                             <article class="article" id="context">
                                 <div class="text" id="context-text">
                                     Pour ma dernière année d'étude il fallait que je réalise un projet personnel d'étude, étant intéressé par la programmation bas niveau, de part mes précédentes études en électronique, et par
                                     la création d'outils permettant la fluidification de créations par d'autres personnes j'ai décidé de me lancer dans la création d'un prototype de moteur de jeu.<br>
                                     Je voulais aussi une particularité spéciale à cette création, j'ai donc choisi de créer et d'intégrer de l'<abbr title="Entity Component System">ECS</abbr> au moteur.
-                                </div>
+                                </div>      
                             </article>
 
-                            
+                            <article class="article" id="ECS">
+                                <div class="text Header-2">Pourquoi l'Entity Component System ?</div>
+                                <div class="hidden-element" id="ECS-Hidden">
+                                    <div class="text">
+                                        La gestion des "objets" de jeu est donc réalisée par l'utilisation d'une technologie <abbr title="Entity Component System">ECS</abbr>.
+                                        L'ECS est une méthode de programmation basée sur le paradigme de programmation : <abbr title="Data Driven Programming">DDP</abbr> ou encore du <abbr title="Data Oriented Programming">DOP</abbr>.
+                                        L'idée est de baser la programmation non plus sur des objets mais sur les informations qu'ils contiennent.
+                                    </div>
+                                    <div class="paragraph-illu" id="OOP">
+                                        <div class="text" id="OOP-text">        
+                                            Aujourd'hui le paradigme de programmation le plus enseigné est l'<abbr title="Object Oriented Programming">OOP</abbr>, celui comporte 2 défauts qui nous intéresses. 
+                                            Un manque de flexibilité et le cache miss. Prenons pour exemple un jeu dans lequel vous avez une classe "human" et une classe "goblin", vous voulez pouvoir des gobelins guerrier et des humains vendeurs. Pour se faire on peut créer une classe HumainShopkeeper héritant de human et une classe goblinWarrior héritant de goblin.
+                                            Mais pour faire un gobelin vendeur il vous faudra créer une troisième classe, ce qui n'est pas très flexible.
+                                        </div>
+                                        <img src="res/imgs/OOP.png" alt="OOP Exemple CD" id="OOP-illu">
+                                    </div>
+                                    <div class="paragraph-illu" id="CBP">
+                                        <img src="res/imgs/CBP.png" alt="CBP Exemple CD" id="CBP-illu">
+                                        <div class="text" id="CBP-text">
+                                            C'est pour cette raison que dans le monde du jeu vidéo le paradigme de programmation le plus utilisé aujourd'hui est le <abbr title="Component Based Programming">CBP</abbr>. 
+                                            Ce dernier se base sur des objets, qu'on appelle "composants", que l'on rattache à d'autres objets pour leur donner des comportements ou données différentes sans augmenter la complexitée de l'architecture.
+                                            En reprenant notre exemple précédent des humains et des gobelins, nous aurions deux objets principaux "Human" et "Goblin" et deux composants "Shopkeeper" et "Warrior" que l'on rattacheraient à nos objets principaux. C'est plus flexible et plus évolutif.
+                                        </div>
+                                    </div>
+                                    <div class="text" id="ECS-UML-text-1">
+                                        Cependant cela ne règle pas le problème du cache miss. Ce dernier est un problème lié à comment l'information est stockée en mémoire dans nos ordinateurs et comment le processeur y accède.
+                                        Quand le processeur veut accéder à de la mémoire pour effectuer des actions il va prendre un "morceau" d'une certaine taille dans la RAM. Ce qui veut dire que s'il veut acceder aux informations d'un objet, il y a des chances qu'il prenne des informations inutiles a l'action qu'il doit effectuer.
+                                        Cela peut causer des problèmes de performance notamment quand les informations sont stockés a des endroit différents dans la mémoire, comme cela pourrait être le cas avec des listes chainées.
+                                    </div>
+                                    <div class="text" id="ECS-UML-text-2">    
+                                        Ce que l'ECS tend à faire est de stocker toutes les informations les plus proche possible les unes des des autres, comme avec un tableau. Les composants en ECS sont composés exclusivement de données et le plus possible de données contiguë.
+                                        Les Systèmes quand à eux sont exclusivements des actions, des fonctions, du code, qui influra sur les entités possedant les composant nécessaire à son fonctionnement. Ainsi comme les informations sont le plus constante et continue possible on évite le cache miss.
+                                    </div>
+                                    <div class="text" id="ECS-UML-text-3">
+                                        Suite à ces recherches sur l'ECS j'ai commencé à concevoir un début de bibliothèque logicielle que j'allais utiliser avec la SFML (API avec laquelle je suis familier) pour tester et apporter des modifications à cette library.
+                                        Voici un diagramme de classe représentant son état avant la création du projet Flood.  
+                                    </div>
+                                    <img id="ECS-UML" src="res/imgs/ECS_UML_CD.png" alt="UML class diagram ECS" id="ECS-UML"></img>
+                                </div>
+                                <a class="hidden-element-btn" id="ECS-Hidden-btn" href="javascript:FlipFlopSeeMore_2('ECS-Hidden')">(voir plus)</a><br>    
+                            </article>
+        
+                            <article class="article" id="OpenGL">
+                                <div class="text Header-2">Choix de la bibliothèque graphique :</div>
+                                <div class="hidden-element" id="OpenGL-Hidden">
+                                    <div class="text" id="OGL-text-1">
+                                        Un domaine de la programmation avec lequel j'étais le plus étranger était la programmation graphique. J'en connaissais les fondements et les principes mais pas comment utiliser les APIs.
+                                        La première chose à faire était de choisir une API. Je savais qu'il existait : DirectX, Metal, Vulkan ou encore OpenGL. DirectX étant uniquement dédiée à Windows et Metal à MacOS je les ait mises de coté pour commencer.
+                                        Il me restait à choisir entre Vulkan et OpenGL. Vulkan étant plus récent et mis a jour, contrairement à OpenGL depuis 2016, je me suis renseigné dessus. Au vu de la complexité et de mon objectif final, qui était de faire un prototype de moteur
+                                        et non uniquement un moteur de rendu j'ai préféré opter pour OpenGL. De plus ce dernier est encore très présent dans l'industrie et possède beaucoup plus de tutoriels pour apprendre son fonctionnement.                                     
+                                    </div>
+                                    <div class="paragraph-illu" id="OGL-buffer">
+                                        <div class="text" id="OGL-buffer-text">
+                                            Maintenant que j'avais choisi une API graphique je devais apprendre les fondamentaux de la programmation graphique. Par exemple un vertex c'est quoi ?
+                                            On pense souvent qu'un vertex, un sommet en français, est une position mais en fait c'est simplement de l'information. Un vertex peut contenir effectivement une position mais aussi une couleur, les coordonnées dans une texture pour l'afficher, etc... cette dernière doit être arrangée toujours de la même manière pour interpréter les données de façon cohérente, on appelle ça un Layout. <br>
+                                            Pour dessiner des triangles à l'écran on doit stocker dans l'ordre les vertices par trois formant les triangles. C'est le principe du Vertex Buffer, c'est dans ce dernier que l'on stockera tous les vertices. <br>
+                                            Un problème vient se poser quand a l'utilisation d'un Vertex Buffer seul est la répétition de l'information ce qui utilisera inutilement de la mémoire. C'est là qu'intervient l'Index Buffer, il va permettre de stocker les indexes des vertices pour former les triangles, ainsi on évite bien la répétion d'information.
+                                            </div>
+                                        <img id="OGL-buffer-illu" src="res/imgs/OpenGL_graph.png" alt="OpenGL buffers graphique"></img>
+                                    </div>
+                                    <div class="text" id="OGL-text-2">
+                                        Enfin il existe un dernier objet qui est spécifique a OpenGL : le vertex Array, de dernier lie le Vertex Buffer au Layout pour éviter de le définir à chaque image de rendu.
+                                    </div>
+                                    <div class="text" id="OGL-text-3">
+                                        Un autre point à voir est l'utilisation de textures. Pour pouvoir utiliser des texture il faut d'abord pouvoir les charger, pour cela j'ai utilisé une library standard : la <a href="https://github.com/nothings/stb">STB</a>, plus précisément pour charger une image, stb_image.
+                                        Une library simple d'utilisation est en un seul fichier. Il faut juste avec OpenGL penser a retourner les datas l'image car stb enregistre une image dehaut en bas et OpenGL lis l'information de bas en haut.  
+                                        Ensuite j'ai appris comment utiliser les matrices de projection, ce qui servira pour les cameras. Pour les manipuler et les utiliser je me suis servi de la library de math GLM optimisée et prévue pour être utilisée avec OpenGL.
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="OpenGL-Hidden-btn" href="javascript:FlipFlopSeeMore_2('OpenGL-Hidden')">(voir plus)</a><br>    
+                            </article>
 
-                        </div>
-                        <a class="hlink" id="flood-context-btn" href="javascript:FlipFlopSeeMore('flood-context')">(voir plus)</a><br>                            
+                            <article class="article" id="create-flood">
+                                <div class="text Header-2">Création du projet, gestion des fenêtres et système d'évèments :</div>
+                                <div class="hidden-element" id="flood-create-Hidden">
+                                    <div class="text">
+                                        Maintenant que je m'étais renseigné et avait appris les 2 plus points les plus bloquant du projet Il était temps de vraiment commencer.
+                                        Comme pour mes essais avec OpenGL j'allais gérer les gestion des fenêtres et des Inputs grâce à la <a href="https://www.glfw.org/">GLFW</a>, qui est une API open source permettant la gestion des fênetres, du contexte de rendu ou encore des Inputs.
+                                        Cette dernière est adapté pour OpenGL et Vulkan et est multiplateforme (Windows, macOS...).
+                                    </div>
+                                    <div class="paragraph-illu" id="event-system">
+                                        <div class="text" id="event-system-text">
+                                        
+                                            Ensuite il fallait gérer tous les évènements qui pourraient subvenir lors de l'utilisation d'un application : déplacer, fermer ou redimensionner une fenêtre, déplacer et cliquer avec la souris ou encore taêr sur les touches du clavier.
+                                            Dans un premier temps j'ai géré les évènements au moment où ils apparaissent, ce qui est plus facile à faire mais pas idéal. C'est encore cette version de l'Event System qui est utilisé dans le projet pour les evènements standards de fenêtre, souris ou clavier.
+                                            Cependant n'en étant pas satifais j'ai plus tard conçu un Event System capable d'enregistrer des évènements et de les interpréter au moment voulu, en me basant sur un Event System réalisé plus tôt par curiosité sur comment ces derniers pourraient marcher. 
+                                        </div>
+                                        <img src="res/imgs/event_system_CD.png" id="event-system-illu" alt="diagramme de classe de l'Event System custom">
+                                    </div>  
+                                </div>
+                                <a class="hidden-element-btn" id="flood-create-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-create-Hidden')">(voir plus)</a><br>    
+                            </article>
+
+                            <article class="article" id="Rendering-API">
+                                <div class="text Header-2">API de rendu :</div>
+                                <div class="hidden-element" id="flood-GAPI-Hidden">
+                                    <div class="text">
+                                        Il était temps maintenant de créer une API de rendu propre au projet pour commencer à voir des choses à l'écran. Pour ce faire j'ai réappliquer ce que j'avais appris avec mes tests de l'OpenGL en y ajoutant un nouveau principe : le Batch Rendering.
+                                        En effet il pouvait être intéressant de voir le fonctionnement du Batch rendring, du geometry batching. En programmation graphique un problème qui se pose en terme de performance est un trop grand nombre d'appel de rendu, de Draw Call.
+                                        <!--Aujourd'hui nos machines sont suffisement puissantes pour pouvoir gerer un grand nombre d'appel de rendu, cependant il est toujours bien de permettre l'optimisation quand ces techniques-->
+                                    </div>
+                                    <div class="paragraph-illu" id="batching">
+                                        <div class="text" id="batching-text">
+                                            Si l'ont dessine des objets à l'écran les voir de manière unique est plus simple, chaque objet sera un draw call. Cependant si un trop grand nombre d'objets sont présent à l'écran il devient difficile pour le GPU de suivre, c'est comme si on pointait du doigt sur une feuille un a graphiste les emplacements où l'on veut des touffes d'herbe.
+                                            Le geometry batching considère plusieurs objets comme en étant un seul, on va "empiler" la géométrie de plusieurs objets dans le même Vertex Buffer et ainsi celà revient à ne dessiner qu'un seul objet, pour continuer notre analogie, on dira au graphiste les zones où l'on veut des touffes d'herbe.
+                                            C'est très utile pour afficher de grandes cartes utilisant des tilemaps. 
+                                            Mais limiter les nombre de draw call ne sinifie pas avoir de meilleurs performances, si l'on en abuse trop c'est même l'inverse. Il faut limiter les conditions d'un draw call. De plus cette technique vient avec des inconvéniants, par exemple il est plus difficile d'utiliser des textures, ou même d'utiliser un shader différent.
+                                        </div>
+                                        <img src="res/imgs/geometry_batch_graph.png" alt="Geometry Batching graph" id="batching-illu">
+                                    </div>
+                                    <div class="text">
+                                        Dans cette API on arrêtera un Batch si l'ont dépasse un nombre de vertex, si l'on dépasse le nombre maximal de textures stockable au GPU par OpenGL (en général 32 pour un PC et 8 pour un téléphone). 
+                                            L'API ne gère pas encore la possibilté de changer de shader, n'étant qu'un projet pour rendre de la 2D, un seul Shader peut suffire pour a plus part des applications courantes. 
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-GAPI-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-GAPI-Hidden')">(voir plus)</a><br>    
+                            </article>
+
+                            <article class="article" id="dear-ImGUI">
+                                <div class="text Header-2">Interface de test :</div>
+                                <div class="hidden-element" id="flood-ImGUI-Hidden">
+                                    <div class="text">
+                                        Maintenant 
+                                        Bonne lib de rendu graphic user interface immédiate, facile a prendre en main et d'utilisation. Permettra des retour plus facile a lire qu'a la console et permettra du temps reel pour debug, compteur FPS, nb d'objets rendu a l'écrans, etc...
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-ImGUI-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-ImGUI-Hidden')">(voir plus)</a><br>    
+                            </article>
+
+                            <article class="article" id="ECS-in-Flood">
+                                <div class="text Header-2">Ajout de l'ECS et modifications de l'API  pour le moteur :</div>
+                                <div class="hidden-element" id="flood-ECS-Hidden">
+                                    <div class="text">
+                                        Impl lib ECS custom dans moteur + ajouter modif : -manager capable lister entités -recuperer liste entité avec certains composants via queries -callback quand composant ajouté car vient la création éditeur
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-ECS-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-ECS-Hidden')">(voir plus)</a><br>    
+                                
+                            </article>
+
+                            <article class="article" id="Editor-Impl">
+                                <div class="text Header-2">Création des outils de bases d'un moteur :</div>
+                                <div class="hidden-element" id="flood-Editor-Hidden">
+                                    <div class="text">
+                                        création de tous les panneaux d'interfaces pour manipulation utilisateur
+                                        Viewport : creation de Framebuffer pour rendre scene dans une texture a afficher dans panneau ImGUI pour servir de rendu visuel + selectionner entités par click picking
+                                        Inspector : permet modifier toutes les infos entités selectionnées, ajouter/supprimer composants avant lancement de la scene, changer entité nom...
+                                        Hierarchy : Ajouter/supprimer Entités dans la scene, les selectionner et a terme, donc pas encore dispo, le parentage des entités entre elles 
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-Editor-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-Editor-Hidden')">(voir plus)</a><br>    
+                                
+                            </article>
+
+                            <article class="article" id="Assets">
+                                <div class="text Header-2">Gestion et utilisation de Assets :</div>
+                                <div class="hidden-element" id="flood-Assets-Hidden">
+                                    <div class="text">
+                                        Creation d'un nouveau panneau permettant de visualiser ressources du projet.
+                                        Utilise OpenFileDialogs, une raison de pourquoi le projet est dépendant de Windows pour le moment.
+                                        Drag and drop des assets dans les autres panneaux comme des textures pour les entités ou les scenes dans le viewport. 
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-Assets-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-Assets-Hidden')">(voir plus)</a><br>    
+                            </article>
+                            <!--
+                                Flow:
+
+                              ✓ ECS
+                                Learn OpenGL
+                                Create Flood project : Window abstraction + Event system
+                                Dear ImGui
+                                Input handeling
+                                Rendering API -> Implement OpenGL
+                                Add ECS
+                                Editor(viewport, hierarchy, properties(Inspector))
+                                "Assets" -> Openfiledialog -> Content browser
+                            -->                  
                     </article>
 
-                    <article class="article" id="ECS">
-                        <div class="text Header-2">Pourquoi l'Entity Component System ?</div>
-                        <div class="text">
-                            La gestion des "objets" de jeu est donc réalisée par l'utilisation d'une technologie <abbr title="Entity Component System">ECS</abbr>.
-                            L'ECS est une méthode de programmation basée sur le paradigme de programmation : <abbr title="Data Driven Programming">DDP</abbr> ou encore du <abbr title="Data Oriented Programming">DOP</abbr>.
-                            L'idée est de baser la programmation non plus sur des objets mais sur les informations qu'ils contiennent.
-                        </div>
-                        <div class="text">        
-                            Aujourd'hui le paradigme de programmation le plus enseigné est l'<abbr title="Object Oriented Programming">OOP</abbr>, celui comporte 2 défauts qui nous intéresses. 
-                            Un manque de flexibilité et le cache miss. Prenons pour exemple un jeu dans lequel vous avez une classe "human" et une classe "goblin", vous voulez pouvoir des gobelins guerrier et des humains vendeurs. Pour se faire on peut créer une classe HumainShopkeeper héritant de human et une classe goblinWarrior héritant de goblin.
-                            Mais pour faire un gobelin vendeur il vous faudra créer une troisième classe, ce qui n'est pas très flexible.
-                        </div>
-                        <div class="text">
-                            C'est pour cette raison que dans le monde du jeu vidéo le paradigme de programmation le plus utilisé aujourd'hui est le <abbr title="Component Based Programming">CBP</abbr>. 
-                            Ce dernier se base sur des objets, qu'on appelle "composants", que l'on rattache à d'autres objets pour leur donner des comportements ou données différentes sans augmenter la complexitée de l'architecture.
-                            En reprenant notre exemple précédent des humains et des gobelins, nous aurions deux objets principaux "Human" et "Goblin" et deux composants "Shopkeeper" et "Warrior" que l'on rattacheraient à nos objets principaux. C'est plus flexible et plus évolutif.
-                        </div>
-                        <div class="text">
-                            Cependant cela ne règle pas le problème du cache miss. Ce dernier est un problème lié à comment l'information est stockée en mémoire dans nos ordinateurs et comment le processeur y accède.
-                            Quand le processeur veut accéder à de la mémoire pour effectuer des actions il va prendre un "morceau" d'une certaine taille dans la RAM. Ce qui veut dire que s'il veut acceder aux informations d'un objet, il y a des chances qu'il prenne des informations inutiles a l'action qu'il doit effectuer.
-                            Cela peut causer des problèmes de performance notamment quand les informations sont stockés a des endroit différents dans la mémoire, comme cela pourrait être le cas avec des listes chainées.
-                            Ce que l'ECS tend à faire est de stocker toutes les informations les plus proche possible les unes des des autres, comme avec un tableau. Les composants en ECS sont composés exclusivement de données et le plus possible de données contiguë.
-                            Les Systèmes quand à eux sont exclusivements des actions, des fonctions, du code, qui influra sur les entités possedant les composant nécessaire à son fonctionnement. Ainsi comme les informations sont le plus constante et continue possible on évite le cache miss.
-                        </div>
-                        <div class="text">
-                            Suite à ces recherches sur l'ECS j'ai commencé à concevoir un début de bibliothèque logicielle que j'allais utiliser avec la SFML (API avec laquelle je suis familier) pour tester et apporter des modifications à cette library.
-                            Voici un diagramme de classe représentant son état lors de la présentation de fin d'année d'étude.  
-                        </div>
-                        <img id="ECS-UML" src="res/imgs/placeholder.png" alt="UML class diagram ECS"></img>
-                    </article>
-
-                    <article class="article" id="OpenGL">
-                        <div class="text Header-2">Choix de la bibliothèque graphique :</div>
-                        <div class="text">
-                            Un domaine de la programmation avec lequel j'étais le plus étranger était la programmation graphique. J'en connaissais les fondements et les principes mais pas comment utiliser les APIs.
-                            La première chose à faire était de choisir une API. Je savais qu'il existait : DirectX, Metal, Vulkan ou encore OpenGL. DirectX étant uniquement dédiée à Windows et Metal à MacOS  je les ait mises de coté pour commencer.
-                            Il me restait à choisir entre Vulkan et OpenGL. Vulkan étant plus récent et mis a jour, contrairement à OpenGL depuis 2016, je me suis renseigner dessus. Au vu de la complexité et de mon objectif final, qui était de faire un prototype de moteur
-                            et non uniquement un moteur de rendu j'ai préféré opter pour OpenGL. De plus ce dernier est encore très présent dans l'industrie et possède beaucoup plus de tutoriels pour apprendre son fonctionnement. 
-                        </div>
-                    </article>
+                    
 
                     <article class="article" id="roadmap">
-                        <div class="paragraph">    
-                            Flood n'est, pour le moment, disponible que sous Windows et utilise OpenGL pour le rendu, il sera a terme, dans l'idéal, multiplateforme et permettra de choisir l'API graphique.
-                            <br><br>Roadmap:<br>
-                            <br>Ajouter un gestionnaire d'assets.
+                        <div class="paragraph">
+                            <div class="Header-1" style="margin-bottom:25px;">Roadmap:</div>
+                            <div class="text" style="margin-bottom:25px;">
+                                Flood n'est, pour le moment, disponible que sous Windows et utilise OpenGL pour le rendu, il sera à terme, dans l'idéal, multiplateforme et permettra de choisir l'API graphique.
+                            </div>    
+                            <!--<br>Ajouter un gestionnaire d'assets.
                             <br>Ajouter du son avec OpenAL ou via un moteur de son disponible (FMod, Wwise...).
                             <br>Retravailler l'API graphique en ajoutant Vulkan.
-                            <br>Modifier l'API ECS afin d'en améliorer les performance générale (mémoire, simplicitée d'utilisation, automatisation, etc...)
+                            <br>Modifier l'API ECS afin d'en améliorer les performance générale (mémoire, simplicitée d'utilisation, automatisation, etc...)-->
                         </div>
+                        <img src="res/imgs/Flood_Roadmap.png" alt="" id="Flood-roadmap" style="width:100%;">
                     </article>
 
                     <div class="paragraph text" id="project-footer">

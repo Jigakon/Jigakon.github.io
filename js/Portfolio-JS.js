@@ -175,3 +175,23 @@ function FlipFlopSeeMore(id) {
     }
     
 }
+
+function FlipFlopSeeMore_2(id) {
+    let articleContent = document.getElementById(id);
+    let btn = document.getElementById(id+"-btn");
+    
+    const className = "hidden-element";
+
+    let isHidden = articleContent.classList.contains(className);
+    if(isHidden)
+    {
+        articleContent.classList.remove(className);
+        btn.innerText = "(voir moins)";
+    }
+    else
+    {
+        articleContent.classList.add(className);
+        btn.innerText = "(voir plus)";
+    }
+}
+

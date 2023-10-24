@@ -8,6 +8,7 @@
     --back-elem-color: #243969;
     --projects-images-height:130px;
     --toolbar-height:60px;
+    --hidden-element-height:200px;
 }
 
 body{
@@ -77,6 +78,45 @@ img{
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+}
+
+.hidden-element{
+    position:relative;
+    max-height: var(--hidden-element-height);
+    overflow: hidden;
+}
+
+.hidden-element::before{
+    content: "";
+    position: absolute;
+    bottom:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(to top, var(--main-bg-color), transparent);
+}
+
+.hidden-element-btn{
+    background-color: var(--text-color);
+    margin-bottom: 30px;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 25px;
+    font-size: 25px;
+    height: 60px;
+    
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-weight: 1000;
+    color: var(--btns-color);
+    
+    border-radius: 12px;
+    box-shadow: 15px 15px 10px #0b0a13b6;
+    transition: 0.2s;
+    text-decoration: none;
+    border: none;
 }
 
 /* -------------- top bar style -------------- */
@@ -203,8 +243,6 @@ img{
     box-shadow: 15px 15px 10px #0b0a13b6;
     position: relative;
 }
-
-
 
 .project-btn:hover{
     transform: scale(1.1);
