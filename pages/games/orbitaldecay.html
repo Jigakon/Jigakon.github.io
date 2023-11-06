@@ -44,7 +44,7 @@
                         <div class="paragraph-illu" id="intro-p1">
                             <div class="text description" id="orbitaldecay-description">
                                 Orbital Decay est un projet étudiant réalisé avec une équipe de 5 infographistes et 5 programmeurs avec Unity 2021. C'est un jeu inspiré de Star Wars Battlefont 2 de <a class="hlink" href="https://fr.wikipedia.org/wiki/Pandemic_Studios">Pandemic Studios</a>.
-                                <br>L'objectif est détruire le vaisseau adverse en attaquant ces points sensibles à l'intérieur et à l'exterieur du vaisseau ou de vaincre suffisement de membres de l'équipe opposée. 
+                                <br>L'objectif est détruire le vaisseau adverse en attaquant ses points sensibles à l'intérieur et à l'extérieur du vaisseau ou de vaincre suffisamment de membres de l'équipe opposée. 
                                 <br>Le jeu est orienté multijoueurs et utilise l'API <a class="hlink" href="https://mirror-networking.com/">Mirror</a> pour la gestion du Online. 
                             </div>
                             <iframe id="orbitaldecay-trailer"
@@ -54,8 +54,8 @@
                         </div>
                         
                         <div class="text">
-                            Orbital decay est jouable seul contre des bots, cependant il prend son sens en multijoueur local ou en ligne. Lancez une partie avec d'autres joueurs et commencez à vous affronter.
-                            Montez dans un des chasseurs spaciaux du hangar de votre vaisseau mère et allez combattre l'équipe adverse. Détruisez les points sensibles du vaisseau mère ennemi ou abattez suffisement d'adversaires pour remporter la partie.
+                            Orbital Decay est jouable seul contre des bots, cependant il prend son sens en multijoueur local ou en ligne. Lancez une partie avec d'autres joueurs et commencez à vous affronter.
+                            Montez dans un des chasseurs spatiaux du hangar de votre vaisseau mère et allez combattre l'équipe adverse. Détruisez les points sensibles du vaisseau mère ennemi ou abattez suffisamment d'adversaires pour remporter la partie.
                         </div>
                     </article>
 
@@ -76,14 +76,14 @@
                             Contrôles des vaisseaux :<br>
                         </div>
                         <div class="text">
-                            Ce que nous voulions pour le gameplay du combat spacial était entre l'arcade, façon Battlefront, et simulation, une partie de l'équipe étant fan de jeux de simulation spaciale.
-                            Donc nous avons choisi de pouvoir controler tous les angles de rotation (roulis, tangage et lacet) ainsi que dans les axes de translation mais en gardant un freinage par "frottements" permettant au joueur de ralentir automatiquement pour qu'il ne se perde pas.
+                            Ce que nous voulions pour le gameplay du combat spatial était entre l'arcade, façon Battlefront, et simulation, une partie de l'équipe étant fan de jeux de simulation spatiale.
+                            Donc nous avons choisi de pouvoir contrôler tous les angles de rotation (roulis, tangage et lacet) ainsi que dans les axes de translation mais en gardant un freinage par "frottements" permettant au joueur de ralentir automatiquement pour qu'il ne se perde pas.
                             Pour cela nous avons choisi d'utiliser le moteur physique d'Unity, plus simple à mettre en place et facile d'utilisation pour une petite équipe.
                         </div>
                         <div class="paragraph-illu" id="aim">
                             <div class="text" id="aim-text">        
-                                Un autre point était de pouvoir tirer avec les armes du vaisseau quand le joueur en est le pilote. L'arme bouge selon un certain "point mort" et au dela d'un certain angle le vaisseau se mettra à tourner dans la direction de l'arme pour que le joueur ne peine pas trop à garder une cible en joue.
-                                Avec cela est venu un problème présent à cause de l'échelle de distance du jeu, la correction de visée. Si le joueur pointe son arme sur un ennemi au loin, l'angle que devra pendre le support de l'arme servant à la visée doit changer si l'ennemi est trop proche.
+                                Un autre point était de pouvoir tirer avec les armes du vaisseau quand le joueur en est le pilote. L'arme bouge selon un certain "point mort" et au-delà d'un certain angle le vaisseau se mettra à tourner dans la direction de l'arme pour que le joueur ne peine pas trop à garder une cible en joue.
+                                Avec cela est venu un problème présent à cause de l'échelle de distance du jeu, la correction de visée. Si le joueur pointe son arme sur un ennemi au loin, l'angle que devra prendre le support de l'arme servant à la visée doit changer si l'ennemi est trop proche.
                             </div>
                             <img src="res/gifs/aim_OD.gif" id="aim-gif" alt="aim correction">
                         </div>
@@ -98,12 +98,12 @@
                             Durant la suite du projet nous avons fait face à quelques difficultés avec notre contrôleur de personnage dues à notre manque d'expérience avec le moteur. Finalement avec l'évolution de nos besoins et idées de gameplay, nous avons convenu de le reprendre à zéro.
                         </div>
                         <div class="text" id="player-ctrls-base">
-                            Nous avions envisagé d'utiliser le Character Controller cependant le reste du projet étant majoritairement basé sur le moteur physique il était difficle de l'adapter dans les délais imposés. 
+                            Nous avions envisagé d'utiliser le Character Controller cependant le reste du projet étant majoritairement basé sur le moteur physique il était difficile de l'adapter dans les délais imposés. 
                             J'ai donc revu les mouvements classiques : marcher, courir et sauter. Il nous fallait aussi pouvoir gérer les pentes avec les différentes zones élevées du terrain dans le hangar des vaisseaux mères.
                         </div>
                         <div class="text" id="player-ctrls-slopes">
                             Pour la gestion des pentes j'ai "ancré" le joueur sur la surface sur laquelle il se tient. Je le déplace par rapport à un vecteur défini par la normale de la surface sur laquelle il se tient et du vecteur de direction dans laquelle il souhaite se diriger. Ainsi on évite ce problème de saut en montée et d'effet marche en descendant. 
-                            Avec cette méthode on peut aussi connaitre l'angle du sol par rapport au joueur et ainsi donner une limite à la pente qu'il peut gravir.   
+                            Avec cette méthode on peut aussi connaître l'angle du sol par rapport au joueur et ainsi donner une limite à la pente qu'il peut gravir.   
                         </div>
                     </article>
 
@@ -114,10 +114,10 @@
                         <div class="paragraph-illu" id="AI-Take-Off">
                             <img src="res/gifs/AI_Take_Off_OD.gif" id="AI-Take-Off-gif" alt="AIs Take Off">
                             <div class="text" id="AI-Take-Off-text">
-                                Pour avoir un peu de dynamisme avec peu de joueurs humains il fallait développer une intelligence artificielle pour le combat spacial.
+                                Pour avoir un peu de dynamisme avec peu de joueurs humains il fallait développer une intelligence artificielle pour le combat spatial.
                                 La première étape était de faire décoller le vaisseau si une IA au sol montait dedans. Le vaisseau mère ayant 8 points d'apparition de vaisseaux et une seule porte de sortie il fallait organiser la sortie d'un vaisseau.
-                                Le faire avec un pilotage vraiment autonome aurait été beaucoup trop de travail, alors il suffisait de faire suivre une courbe de bezier au vaisseau jusqu'à la sortie. En parallèle un script servant de "tour de contrôle" permettait
-                                de savoir quel vaisseau était en train decoller et quel vaisseau demandait l'autorisation de décoller.<br>                        
+                                Le faire avec un pilotage vraiment autonome aurait été beaucoup trop de travail, alors il suffisait de faire suivre une courbe de Bézier au vaisseau jusqu'à la sortie. En parallèle un script servant de "tour de contrôle" permettait
+                                de savoir quel vaisseau était en train de décoller et quel vaisseau demandait l'autorisation de décoller.<br>                        
                             </div>
                         </div>
                         <div class="text">
@@ -145,7 +145,7 @@
                         <div class="paragraph-illu" id="optim-1">
                             <div class="text" id="optim-1-text">
                                 Étant le membre avec le profil le plus orienté vers la technique et le bas niveau, je me suis chargé de garder un oeil sur l'optimisation générale du projet.
-                                J'ai assisté les membres de l'équipe de programmation avec leurs algorithmes quand ces derniers impactaient trop les performances du projet en réduisant leur complexité algorithmique (comparaison asymptotique, Big-O) ou en revoyant leur nécéssité et objectifs.
+                                J'ai assisté les membres de l'équipe de programmation avec leurs algorithmes quand ces derniers impactaient trop les performances du projet en réduisant leur complexité algorithmique (comparaison asymptotique, Big-O) ou en revoyant leur nécessité et objectifs.
                                 La majeur partie de l'optimisation que j'ai dû mettre en place était liée au rendu en jeu étant la principale perte de performance dans le projet.
                             </div>
                             <img src="res/imgs/BigO.jpg" alt="Big-O" id="optim-1-illu">
@@ -156,13 +156,13 @@
                                 <li>Réduire le nombre d'éléments à l'écran ou retravailler la complexité des modèles.</li>
                                 <li>Afficher des modèles de plus basse résolution en fonction de la distance à l'écran, les <abbr title="Level Of Detail">LODs</abbr>.</li>
                                 <li>"Fusionner" plusieurs modèles 3D ensemble pour les rendre en une seule fois, du batching. </li>
-                                <li>Ne pas rendre les modèles qui ne seront pas visible depuis l'intérieur d'un vaisseau mère, de l'occlusion culling.</li>
+                                <li>Ne pas rendre les modèles qui ne seront pas visibles depuis l'intérieur d'un vaisseau mère, de l'occlusion culling.</li>
                             </ul>
                         </div>
                         <div class="text">
                             Un autre domaine influant grandement les performances d'un jeu sont les lumières, plus particulièrement les lumières dynamiques. Cependant on ne peut pas se permettre de simplement les retirer pour des raisons de performances sans impacter l'esthétique du jeu.
-                            J'ai donc travaillé en collaboration avec un membre de l'équipe des artistes pour trouver des compromis visuels / performances acceptables, en réduisant, par exemple, le nombre de lumières dynamiques ou en ne les activants qu'à certains moments ou encore en pré-calculant des lumières présentes en permanence.
-                            J'ai aussi assisté les graphistes lors de l'implémentation d'assets pour donner des retour sur les performances et de ce qu'il faudrait changer pour éviter des pertes de performances trop importantes sur des modèles 3D.
+                            J'ai donc travaillé en collaboration avec un membre de l'équipe des artistes pour trouver des compromis visuels / performances acceptables, en réduisant, par exemple, le nombre de lumières dynamiques ou en ne les activant qu'à certains moments ou encore en pré-calculant des lumières présentes en permanence.
+                            J'ai aussi assisté les graphistes lors de l'implémentation d'assets pour donner des retours sur les performances et de ce qu'il faudrait changer pour éviter des pertes de performances trop importantes sur des modèles 3D.
                         </div>
                     </article>
 
@@ -170,7 +170,7 @@
                     <article class="article" id="orbital-footer">
                         <div style="display: flex; align-items:center;margin-top: 50px;">
                             <div class="text" id="prosk-footer" style="float:left; width:75%">
-                                Il s'agit un projet étudiant de fin de deuxième année d'étude, par conséquent beaucoup de choses sont à revoir, notamment le gestion du réseau ou encore les performances générales du jeu sur des petites machines. Gardez cela en tête si vous voulez tester le jeu.
+                                Il s'agit un projet étudiant de fin de deuxième année d'études, par conséquent beaucoup de choses sont à revoir, notamment le gestion du réseau ou encore les performances générales du jeu sur des petites machines. Gardez cela en tête si vous voulez tester le jeu.
                             </div><br>
                             <button class="customBtn downloadBtn" id="prosk-dl-btn" style="float:right; width:20%;" onclick="window.location.href='https://www.creajeux.fr/project/orbitaldecay';"><i class="fa fa-download"></i></button>
                         </div>
