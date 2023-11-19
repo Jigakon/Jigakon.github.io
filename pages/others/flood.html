@@ -252,11 +252,9 @@
                                 <div class="text Header-2">Gestion et utilisation de Assets :</div>
                                 <div class="hidden-element" id="flood-Assets-Hidden">
                                     <div class="text">
-                                        /!\ To write /!\<br>
-                                        Creation d'un nouveau panneau permettant de visualiser ressources du projet.
-                                        Utilise OpenFileDialogs, une raison de pourquoi le projet est dépendant de Windows pour le moment.
-                                        Drag and drop des assets dans les autres panneaux comme des textures pour les entités ou les scenes dans le viewport. 
-                                        <br>/!\ ========= /!\
+                                        Maintenant qu'il est possible de modifier et manipuler des entités dans l'éditeur, il faut pouvoir créer, ouvrir et lire des assets.
+                                        Pour simplifier la création de ce panneau de contrôle, qu'on appellera l'asset browser, j'ai utilisé des OpenFileDialogs, ce qui est une des raisons de pourquoi le projet est pour le moment dépendant de Windows.
+                                        Il est possible avec ce panneau de prendre des assets, comme une scene par exemple, et de la glisser dans le viewport (du drag and drop) pour ouvrir la scene en question. Il en va de même pour affecter une texture à un SpriteRenderer. 
                                     </div>
                                 </div>
                                 <a class="hidden-element-btn" id="flood-Assets-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-Assets-Hidden')">(voir plus)</a><br>    
