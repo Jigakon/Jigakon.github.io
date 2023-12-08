@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="../index.html">
+        <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+        <link rel="stylesheet" href="transitions.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="module" src="swup.js"></script>
+        <title>Projet - Orca-Waga</title>
+    </head>
+    
+    <body>
+        <main id="swup">
+            <link rel="stylesheet" href="Styles/Styles-Projects.css">
+            <link rel="stylesheet" href="Styles/Styles-Orcawaga.css">
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="projects.html">🡄</a>
+                <a class="topbarElem" id="topbar-lang" onclick="closeNav()" href="en/games/orcawaga.html">
+                    <img style="height:40px;" src="/res/imgs/en_flag.png" alt=""></img>
+                </a>
+            </div>
+
+            <div id="mySidePanel" class="sidepanel">
+                <a href="index.html" onclick="closeNav()" target="_self">Home</a>
+                <a>Projets</a>
+                <a href="about.html" onclick="closeNav()" target="_self">A Propos</a>
+            </div>
+
+            <div class ="transition-main" id="orcawaga-project">
+                <div id="orcawaga-header">
+                    <div class="title" id="orcawaga-logo-title"> 
+                        <img src="/res/imgs/orcawaga_title.png"/>
+                    </div>
+                    <div class="page-project-tags">
+                    </div>
+                </div>
+                    
+                <div class="content">                     
+                    <p class="text Header-1" id="orcawaga-prod">
+                        Date : courant 2023, durée de production : 10 semaines
+                    </p>  
+                    <article class="article" id="intro">
+                        <div class="paragraph-illu" id="intro-p1">
+                            <div class="text description" id="orcawaga-description">
+                                Orca-Waga est un projet étudiant. Vous devez protéger un cristal magique des vagues d'ennemis tout en construisant et améliorant votre base ainsi que vos capacités. Vous devrez explorer la carte de jeu pour obtenir des ressources de plus haut niveau et pour découvrir de nouveaux lieux. 
+                                Le jeu est réalisé avec Unreal Engine 5 par une équipe de 5 graphistes et 5 programmeurs et été inspiré par <a class="hlink" href="https://www.tribesofmidgard.com/">Tribes of Midgard</a> de <a class="hlink" href="https://norsfell.com">Norsfell</a>.
+                            </div>
+                            <iframe id="orcawaga-trailer"
+                            src="https://www.youtube-nocookie.com/embed/6gtWzXTQxcc?rel=0&amp;showinfo=0"
+                            frameborder="0"
+                            allowfullscreen=""></iframe>  
+                        </div>
+                        
+                        <div class="text">
+                            Inspiré par Tribes of Midgard et Clash of Clans, vous commencerez votre partie en temps qu'orc dans une vieille forêt. Il vous faudra récolter vos premières ressources pour commencer a construire votre base et défendre
+                            votre cristal. Rapidement des ennemis à distance et au corps à corps viendront tenter de le détruire et de vous battre, il vous faudra améliorer votre armure et vos capacités grâce aux ressources et aux dépouilles de vos ennemis pour facilter votre partie.
+                            Continuez à combattre vos ennemis et à défendre votre cristal jusqu'à ce qu'ils renoncent à vous faire partir.
+                        </div>
+                    </article>
+
+                    <article class="article" id="proto">
+                        <div class="text Header-2">
+                            Prototypage :<br>
+                        </div>
+                        <div class="text">
+                            Avant de commencer pour de bon la production nous avons fait un premier sprint du projet pour tester nos idées et le concept du projet afin de voir si le gameplay prévu fonctionnait.
+                            Le projet étant fait sous Unreal Engine 5 le Blueprint était parfait pour accomplir cet objectif. Ensuite nous passerions le projet avec du code C++ pour les fonctionnalités primaires du projet
+                            et nous garderions du code Blueprint pour les itégrations de son, <abbr title="Effets Spéciaux">FXs</abbr>, de feedback ou l'utilisation/gestion d'assets.
+                        </div>
+                    </article>
+
+                    <article class="article" id="overview">
+                        <p class="text Header-1">Mes implications dans le projet:</p>
+                        <p class="text">Le jeu étant un projet étudiant dans une petite équipe nous avons tous été plus ou moins touche à tout, cependant voici les principales tâches que j'ai réalisées.
+                            <ul>
+                                <li class="text">Construction de la base</li>
+                                <li class="text">IAs ennemis</li>
+                                <li class="text">Statistiques, équilibrage et améliorations</li>
+                                <li class="text">Bâtiments et ressources</li>
+                                <li class="text">Intégration Assets</li>
+                            </ul>
+                        </p>
+                    </article>
+                    <article class="article" id="base-building">
+                        <div class="text Header-2">
+                            Construction de la base :<br>
+                        </div>
+                        <div class="paragraph-illu" id="build">
+                            <div class="text" id="build-text">
+                                Après qu'un autre membre de l'équipe se soit occupé de la génération automatique d'une grille pour placer les bâtiments dans la base je me suis occupé de la partie placement desdits bâtiments.
+                                Vérifier si une case est occupée par un autre bâtiment, si le bâtiment ne dépasse pas de la grille ou encore si le joueur a assez de ressources pour le placer.
+                                Le jeu étant basé sur la protection d'un objectif il fallait pouvoir placer des murs facilement, concevoir une fonctionnalité permettant de placer plusieurs murs connectés les uns aux autres et d'actualiser leurs modèles 3D pour rendre le résultat homogène.
+                            </div>
+                            <iframe id="build-illu"
+                            src="https://www.youtube-nocookie.com/embed/HyXHEVEkdpg?rel=0&version=3&autoplay=1&loop=1&amp;"
+                            frameborder="0"></iframe>
+                        </div>
+                        <div class="text">
+                            Le joueur peut donc placer les murs en ligne droite ou en faisant des angles droits en priorisant l'horizontale ou la verticale.
+                            Il fallait aussi avoir la possibilité d'améliorer les bâtiments, pour qu'ils fassent plus de dégâts, résistent mieux etc... actualisant ainsi leur statistiques et leurs modèles 3D ou encore de les détruire s'ils gênent le joueur.
+                            Pour que le joueur puisse choisir les différents bâtiments qu'il veut placer, améliorer ou détruire il fallait faire une interface lisible et rapide à utiliser. Avec une membre de l'équipe d'artistes nous intégrée selon ses croquis l'interface et les fonctionnalités désirées.
+                        </div>
+                    </article>
+
+                    <article class="article" id="ias-enemies">
+                        <div class="text Header-2">
+                            IAs ennemis :<br>
+                        </div>
+                        <div class="text">
+                            Après le prototype il fallait créer le comportement des IAs lors des vagues d'assaut. Les vagues sont paramétrables grâce à des points d'apparition d'ennemis, en indiquant la vague dans laquelle l'ennemi apparaîtra ainsi que ses statistiques (vitesse, dégâts, points de vie...).
+                            Les ennemis ont deux façons de combattre différentes, au corps à corps ou à distance, leur comportement général sera le même.
+                        </div>
+                        <div class="paragraph-illu" id="enemies-behaviour">
+                            <iframe id="enemies-behaviour-illu"
+                            src="https://www.youtube-nocookie.com/embed/wdd3uX8WHv0?rel=0&version=3&autoplay=1&loop=1&amp;"
+                            frameborder="0"></iframe>
+                            <div class="text" id="enemies-behaviour-text">
+                                Pour ces ennemis apparaissant lors des vagues leur objectif premier est d'attaquer le cristal pour faire perdre le joueur. Si, pour accéder au cristal, l'IA doit passer par des murs alors elles se mettront à l'attaquer pour pouvoir passer. 
+                                Si elles se font attaquer lors de leur trajet elles attaqueront le joueur ou le bâtiment à l'origine des dégâts. 
+                                Pour faciliter la production et profiter des outils de Unreal Engine 5 la majeure partie des IAs ont été faites en utilisant le système d'arbre de comportement (Behaviour Tree).
+                            </div>
+                        </div>
+                        <div class="paragraph-illu" id="enemies">
+                            <div class="text" id="enemies-text">
+                                Pour que les IAs se déplacent nous avons utilisé le système de NavMesh de Unreal. Avec la possibilité de placer ou détruire des bâtiments, qui doivent servir d'obstacles, il fallait recalculer le NavMesh en utilisant la fonction dynamique des NavMesh de Unreal. 
+                                Mais un autre problème était survenu : placer, prévoir de placer ou détruire des bâtiments causait d'énormes pertes de performances car il fallait recalculer les chemins des ennemis présents en jeu.
+                            </div>
+                            <img src="res/imgs/NavMesh_OW.png" alt="dynamic navmesh" id="enemies-illu">
+                        </div>
+                        <div class="text">
+                            Une solution que nous avons mise en place est de ne pas faire participer au NavMesh les bâtiments que l'ont prévoit de placer et de ne recalculer le NavMesh qu'au placement des bâtiments. 
+                            Pour limiter le nombre de calculs de chemin simultanés j'ai mis en place un buffer de requêtes de calcul de chemin. De cette manière toutes les IAs ne recalculeront pas leur chemin pendant la même frame.  
+                        </div>
+                    </article>
+
+                    <article class="article" id="stats-upgrades">
+                        <div class="text Header-2">
+                            Statistiques, équilibrage et amélioration :<br>
+                        </div>
+                        <div class="paragraph-illu" id="upgrade">
+                            <img src="res/imgs/Upgrade_OW.png" alt="upgrade UI" id="upgrade-illu">
+                            <div class="text" id="upgrade-text">
+                                Pour permettre au joueur d'améliorer : sa vitesse, ses dégâts, etc... j'ai créé un système de statistiques plus complètes et applicable à plus d'entités en jeu.
+                                En effet l'implémentation d'un objet, un composant, utilisable sur toutes nos entités en jeu nous permettait à la fois d'avoir la possibilité d'améliorer lesdites statistiques mais aussi de faciliter la mise en place de l'équilibrage du jeu ou encore de créer des ennemis "élites".
+                                En jeu, les ennemis, les bâtiments et le joueur ont donc un composant de statistiques. J'ai décidé d'utiliser des "Datatables" de Unreal pour gérer les valeurs de bases ou d'améliorations ce qui nous a permis de gagner en fluidité pendant des phases d'équilibrage.
+                                En collaboration avec une membre de l'équipe des infographistes nous avons créé une interface pour que le joueur puisse améliorer ses statistiques, où il lui serait possible d'augmenter sa vitesse, son armure, ses points de vie, etc... 
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article" id="building-ressources">
+                        <div class="text Header-2">
+                            Bâtiments et ressources :<br>
+                        </div>
+                        <div class="paragraph-illu" id="Building-Res">
+                            <div class="text" id="Building-Res-text">
+                                Une des bases du projet étant de pouvoir construire des bâtiments aux utilités diverses contre des ressources. Il nous fallait une architecture de code pouvant permettre l'implémentation rapide et efficace de nouveaux bâtiments.
+                                Le concept d'origine du projet devait permettre au joueur de construire plus de bâtiments de nature différente, comme une forge pour avoir de nouvelles armes ou les améliorer.
+                                Cependant avec les changements d'effectifs de l'équipe nous avons revu nos priorités et avons enlevé des bâtiments tout en gardant la possibilité de travailler dessus si le temps nous le permettait.
+                            </div>
+                            <img src="res/imgs/Building_UML_CD.png" alt="Class Diagram Buildings" id="Building-Res-illu">
+                        </div>
+                        <div class="text">
+                            J'ai ensuite modifié le système d'inventaire pour permettre la recherche dans l'inventaire des matériaux nécessaires à la construction du bâtiment choisi ainsi que la quantité de bâtiments à construire en une fois (principalement pour les murs).  
+                            Les ressources, quand à elles, sont gérées grâce à une enum et une Datatable pour leur lier une icône ou d'autres informations nécessaires au gameplay.
+                            Les bâtiments ont une infrastructure similaire pour les informations dans la Datatable permettant ainsi de modifier rapidement leurs coûts en ressources à la construction ou à l'amélioration ou encore les modèles 3D qui y sont liés.
+                        </div>
+                        <img src="res/imgs/building_datatable.png" alt="building datatable example" id="building-datatable-illu">
+                    </article>
+
+                    <article class="article" id="assets">
+                        <div class="text Header-2">
+                            Intégration d'assets :<br>
+                        </div>
+                        <div class="text">
+                            Pour ajouter du dynamisme et de la vie aux bâtiments nous avons décidé de les animer. Pour ce faire j'ai travaillé en collaboration avec une membre de l'équipe des infographistes lors de l'implémentation des différents modèles 3D, animations, squelettes d'animation ou encore des matériaux à utiliser.
+                            Il a fallu voir ensemble, lors de l'intégration, la nomenclature, la création d'assets spécifiques à Unreal Engine (SkeletalMesh, <abbr title="Animation Blueprint">ABP</abbr>...).
+                            J'ai aussi vu avec d'autres membres de l'équipe des infographistes lors de la création ou l'implémentation de leurs assets ce qu'il faudrait changer pour ne pas trop impacter les performances du projet.
+                            Par exemple nous avons utilisé le système de foliages de Unreal, cependant ces derniers étaient présents en grande quantité et non optimisables en complexité de modèles 3D pour simuler un effet de mouvement par le vent.
+                            Une chose que l'on a modifié sur les assets les plus petits était leur capacité à projeter une ombre, peu visible et très gourmande en ressources. 
+                        </div>
+                    </article>
+
+                    <article class="article" id="orca-footer">
+                        <div style="display: flex; align-items:center;margin-top: 50px;">
+                            <div class="text" id="orca-footer" style="float:left; width:75%">
+                                Il s'agit un projet étudiant de dernière année d'études, par conséquent beaucoup de choses sont à revoir, notamment l'équilibrage ou encore l'impossibilité de sauvegarder une partie. Gardez cela en tête si vous voulez tester le jeu.
+                            </div><br>
+                            <button class="customBtn downloadBtn" id="orca-dl-btn" style="float:right; width:20%;" onclick="window.location.href='https://jigakon.itch.io/orca-waga';"><i class="fa fa-download"></i></button>
+                        </div>
+                    </article>
+
+                    <article class="article" id="credit">
+                        <p class="text" style="margin-left: auto;margin-right: auto;">Crédits :</p>
+                        <div style="display: flex; justify-content: center;">
+                            <div id="graphs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Graphistes :</div>
+                                <a class="hlink" href="https://fr.linkedin.com/in/amandinebrun">Amandine Brun</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/eve-itema">Eve Itema</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/l%C3%A9amaillard">Léa Maillard</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/ludivine-poplawski-133725288">Ludivine Poplawski</a><br>
+                            </div>
+                            <div id="progs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Programmeurs :</div>
+                                <a class="hlink" href="https://fr.linkedin.com/in/valentin-brun-4141181aa">Valentin Brun</a><br>               
+                                <a class="hlink" href="https://fr.linkedin.com/in/peterlandriau">Peter Landriau</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/philippe-naud-">Philippe Naud</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/linoninni">Lino Ninni</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/yannpatoux">Yann Patoux</a><br>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="paragraph text" id="project-footer">
+                        <p class="text footer-crea">Projet créé dans le cadre d'étude à <a class="hlink" href="www.creajeux.fr">Creajeux</a> l'école des métiers du jeu-vidéo à Nîmes en France.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="js/Portfolio-JS.js">PushTagsInGrid("orcawaga");</script>
+    </body>
+</html>
+
+

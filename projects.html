@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <base href="../index.html">
+        <base href="index.html">
         <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
         <link rel="stylesheet" href="transitions.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,12 +17,15 @@
             <div class="topbar">
                 <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
                 <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="index.html">🡄</a>
+                <a class="topbarElem" id="topbar-lang" onclick="closeNav()" href="en/projects.html">
+                    <img style="height:40px;" src="/res/imgs/en_flag.png" alt=""></img>
+                </a>
             </div>
 
             <div id="mySidePanel" class="sidepanel">
                 <a href="index.html" onclick="closeNav()" target="_self">Home</a>
                 <a>Projets</a>
-                <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
+                <a href="about.html" onclick="closeNav()" target="_self">A Propos</a>
             </div>
             
             <div class ="transition-main">
@@ -32,8 +35,6 @@
                 <div class="page-separator" id="separator-title-projects"></div>
             </div>
         </main>
-        <script src="js/Portfolio-JS.js">
-            CreateAllProjects();
-        </script>
+        <script src="js/Portfolio-JS.js"></script>
     </body>
 </html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="../../index.html">
+        <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+        <link rel="stylesheet" href="transitions.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="module" src="swup.js"></script>
+        <title>Projet - Flood</title>
+    </head>
+    
+    <body>
+        <main id="swup">
+            <link rel="stylesheet" href="Styles/Styles-Projects.css">
+            <link rel="stylesheet" href="Styles/Styles-Flood.css">
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="en/projects.html">🡄</a>
+                <a class="topbarElem" id="topbar-lang" onclick="closeNav()" href="others/flood.html">
+                    <img style="height:40px;" src="/res/imgs/fr_flag.png" alt=""></img>
+                </a>
+            </div>
+
+            <div id="mySidePanel" class="sidepanel">
+                <a href="index.html" onclick="closeNav()" target="_self">Home</a>
+                <a>Projets</a>
+                <a href="about.html" onclick="closeNav()" target="_self">A Propos</a>
+            </div>
+
+            <div class ="transition-main" id="flood-project">
+                <div id="flood-header">
+                    <div class="title" id="flood-logo-title"> 
+                        <img id="aaaa" src="/res/imgs/flood_title.png"></img>
+                    </div>
+                    <div class="page-project-tags">
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    <p class="text">
+                        Démarré en : 2023
+                    </p>
+                    <article class="article">
+                        <div class="text description">
+                            Flood est un projet de moteur de jeu 2D ayant pour but initial d'apprendre comment les moteurs de jeux fonctionnent. 
+                            Il est inspiré par la série de <a class="hlink" href="https://www.youtube.com/@TheCherno" target="_blank">TheCherno</a> sur la création d'un moteur 2D "<a class="hlink" href="https://hazelengine.com/" target="_blank":>Hazel</a>".
+                            Flood a commencé comme un projet de fin d'études et continue encore son développement.
+                        </div>
+                    </article>
+                    
+                    <article class="article" id="editor">
+                        <div class="paragraph-illu" id="editor-p1">
+                            <div class="paragraph text" id="editor-text">
+                                Le moteur contient un éditeur, l'interface est réalisée avec <a class="hlink" href="https://github.com/ocornut/imgui">dear ImGUI</a>, permettant de modifier différentes ressources et fonctionnalités d'un projet.
+                                Il est possible d'ouvrir, sauvegarder et fermer des "scènes". Vous pourrez retrouver vos assets et fichiers compatibles dans <span>l'explorateur de ressources</span><sup style="color:rgb(34, 177, 76)">1</sup>.
+                                Vous pourrez voir le contenu d'une "scène" dans <span>l'inspecteur de hiérarchie</span><sup style="color:rgb(237, 28, 36)">2</sup> et selectionner les différentes entités qu'elles pourraient contenir.
+                                Pour modifier les valeurs et composants d'une entité il suffit d'utiliser <span>l'inspecteur d'entités</span><sup style="color:rgb(255, 127, 39)">3</sup>.
+                                Tous ces éléments sont dockables dans la fenêtre principale du moteur.
+                            </div>
+                            <img id="aside-flood1" src="/res/imgs/flood_1.png"/> 
+                        </div>
+                    </article>
+
+                    <article class="article text" id="detail">
+                        <div class="text Header-1">Détails de la création du moteur</div>
+                            <br>
+                            <article class="article" id="context">
+                                <div class="text" id="context-text">
+                                    Pour ma dernière année d'études il fallait que je réalise un projet personnel d'étude, étant intéressé par la programmation bas niveau, de par mes précédentes études en électronique, et par
+                                    la création d'outils permettant la fluidification de créations par d'autres personnes j'ai décidé de me lancer dans la création d'un prototype de moteur de jeu.<br>
+                                    Je voulais aussi une particularité spéciale à cette création, j'ai donc choisi de créer et d'intégrer de l'<abbr title="Entity Component System">ECS</abbr> au moteur.
+                                </div>      
+                            </article>
+
+                            <article class="article" id="ECS">
+                                <div class="text Header-2">Pourquoi l'Entity Component System ?</div>
+                                <div class="hidden-element" id="ECS-Hidden">
+                                    <div class="text">
+                                        La gestion des "objets" de jeu est donc réalisée par l'utilisation d'une technologie <abbr title="Entity Component System">ECS</abbr>.
+                                        L'ECS est une méthode de programmation basée sur le paradigme de programmation : <abbr title="Data Driven Programming">DDP</abbr> ou encore du <abbr title="Data Oriented Programming">DOP</abbr>.
+                                        L'idée est de baser la programmation non plus sur des objets mais sur les informations qu'ils contiennent.
+                                    </div>
+                                    <div class="paragraph-illu" id="OOP">
+                                        <div class="text" id="OOP-text">        
+                                            Aujourd'hui le paradigme de programmation le plus enseigné est l'<abbr title="Object Oriented Programming">OOP</abbr>, celui-ci comporte 2 défauts qui nous intéressent : 
+                                            Un manque de flexibilité et le cache miss. Prenons pour exemple un jeu dans lequel vous avez une classe "human" et une classe "goblin", vous voulez pouvoir créer des gobelins guerriers et des humains vendeurs. Pour cee faire on peut créer une classe HumanShopkeeper héritant de human et une classe goblinWarrior héritant de goblin.
+                                            Mais pour faire un gobelin vendeur il vous faudra créer une troisième classe, ce qui n'est pas très flexible.
+                                        </div>
+                                        <img src="res/imgs/OOP.png" alt="OOP Exemple CD" id="OOP-illu">
+                                    </div>
+                                    <div class="paragraph-illu" id="CBP">
+                                        <img src="res/imgs/CBP.png" alt="CBP Exemple CD" id="CBP-illu">
+                                        <div class="text" id="CBP-text">
+                                            C'est pour cette raison que dans le monde du jeu vidéo le paradigme de programmation le plus utilisé aujourd'hui est le <abbr title="Component Based Programming">CBP</abbr>. 
+                                            Ce dernier se base sur des objets, qu'on appelle "composants", que l'on rattache à d'autres objets pour leur donner des comportements ou données différentes sans augmenter la complexité de l'architecture.
+                                            En reprenant notre exemple précédent des humains et des gobelins, nous aurions deux objets principaux "Human" et "Goblin" et deux composants "Shopkeeper" et "Warrior" que l'on rattacherait à nos objets principaux. C'est plus flexible et plus évolutif.
+                                        </div>
+                                    </div>
+                                    <div class="text" id="ECS-UML-text-1">
+                                        Cependant cela ne règle pas le problème du cache miss. Ce dernier est un problème lié à comment l'information est stockée en mémoire dans nos ordinateurs et comment le processeur y accède.
+                                        Quand le processeur veut accéder à de la mémoire pour effectuer des actions il va prendre un "morceau" d'une certaine taille dans la RAM. Ce qui veut dire que s'il veut accéder aux informations d'un objet, il y a des chances qu'il prenne des informations inutiles pour l'action qu'il doit effectuer.
+                                        Cela peut causer des problèmes de performance notamment quand les informations sont stockées à des endroits différents dans la mémoire, comme cela pourrait être le cas avec des listes chainées.
+                                    </div>
+                                    <div class="text" id="ECS-UML-text-2">    
+                                        Ce que l'ECS tend à faire est de stocker toutes les informations les plus proches possible les unes des des autres, comme avec un tableau. Les composants en ECS sont composés exclusivement de données et le plus possible de données contiguës.
+                                        Les Systèmes sont quand à eux sont exclusivement des actions, des fonctions, du code, qui influera sur les entités possédant les composants nécessaires à leur fonctionnement. Ainsi comme les informations sont le plus constantes et continues possible on évite le cache miss.
+                                    </div>
+                                    <div class="text" id="ECS-UML-text-3">
+                                        Suite à ces recherches sur l'ECS j'ai commencé à concevoir un début de bibliothèque logicielle que j'allais utiliser avec la SFML (API avec laquelle je suis familier) pour tester et apporter des modifications à cette library.
+                                        Voici un diagramme de classe représentant son état avant la création du projet Flood.  
+                                    </div>
+                                    <img id="ECS-UML" src="res/imgs/ECS_UML_CD.png" alt="UML class diagram ECS" id="ECS-UML"></img>
+                                </div>
+                                <a class="hidden-element-btn" id="ECS-Hidden-btn" href="javascript:FlipFlopSeeMore_2('ECS-Hidden')">(see more)</a><br>    
+                            </article>
+        
+                            <article class="article" id="OpenGL">
+                                <div class="text Header-2">Choix de la bibliothèque graphique :</div>
+                                <div class="hidden-element" id="OpenGL-Hidden">
+                                    <div class="text" id="OGL-text-1">
+                                        Un domaine de la programmation avec lequel j'étais le plus étranger était la programmation graphique. J'en connaissais les fondements et les principes mais pas comment utiliser les APIs.
+                                        La première chose à faire était de choisir une API. Je savais qu'il existait : DirectX, Metal, Vulkan ou encore OpenGL. DirectX étant uniquement dédiée à Windows et Metal à MacOS je les ai mises de côté pour commencer.
+                                        Il me restait à choisir entre Vulkan et OpenGL. Vulkan étant plus récent et mis à jour, contrairement à OpenGL depuis 2016, je me suis renseigné dessus. Au vu de la complexité et de mon objectif final, qui était de faire un prototype de moteur
+                                        et non uniquement un moteur de rendu j'ai préféré opter pour OpenGL. De plus ce dernier est encore très présent dans l'industrie et possède beaucoup plus de tutoriels pour apprendre son fonctionnement.                                     
+                                    </div>
+                                    <div class="paragraph-illu" id="OGL-buffer">
+                                        <div class="text" id="OGL-buffer-text">
+                                            Maintenant que j'avais choisi une API graphique je devais apprendre les fondamentaux de la programmation graphique. Par exemple un vertex c'est quoi ?
+                                            On pense souvent qu'un vertex, un sommet en français, est une position mais en fait c'est simplement de l'information. Un vertex peut contenir effectivement une position mais aussi une couleur, les coordonnées dans une texture pour l'afficher, etc... cette dernière doit être arrangée toujours de la même manière pour interpréter les données de façon cohérente, on appelle ça un Layout. <br>
+                                            Pour dessiner des triangles à l'écran on doit stocker dans l'ordre les vertices par trois formant les triangles. C'est le principe du Vertex Buffer, c'est dans ce dernier que l'on stockera tous les vertices. <br>
+                                            Un problème vient se poser quant à l'utilisation d'un Vertex Buffer seul est la répétition de l'information ce qui utilisera inutilement de la mémoire. C'est là qu'intervient l'Index Buffer, il va permettre de stocker les indexes des vertices pour former les triangles, ainsi on évite bien la répétition d'information.
+                                            </div>
+                                        <img id="OGL-buffer-illu" src="res/imgs/OpenGL_graph.png" alt="OpenGL buffers graphique"></img>
+                                    </div>
+                                    <div class="text" id="OGL-text-2">
+                                        Enfin il existe un dernier objet qui est spécifique a OpenGL : le vertex Array, ce dernier lie le Vertex Buffer au Layout pour éviter de le définir à chaque image de rendu.
+                                    </div>
+                                    <div class="text" id="OGL-text-3">
+                                        Un autre point à voir est l'utilisation de textures. Pour pouvoir utiliser des textures il faut d'abord pouvoir les charger, pour cela j'ai utilisé une library standard : la <a class="hlink" href="https://github.com/nothings/stb">STB</a>, plus précisément pour charger une image, stb_image.
+                                        Une library simple d'utilisation est en un seul fichier. Il faut juste avec OpenGL penser a retourner les datas l'image car stb enregistre une image de haut en bas et OpenGL lit l'information de bas en haut.  
+                                        Ensuite j'ai appris comment utiliser les matrices de projection, ce qui servira pour les cameras. Pour les manipuler et les utiliser je me suis servi de la library de math GLM optimisée et prévue pour être utilisée avec OpenGL.
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="OpenGL-Hidden-btn" href="javascript:FlipFlopSeeMore_2('OpenGL-Hidden')">(see more)</a><br>    
+                            </article>
+
+                            <article class="article" id="create-flood">
+                                <div class="text Header-2">Création du projet, gestion des fenêtres et système d'évèments :</div>
+                                <div class="hidden-element" id="flood-create-Hidden">
+                                    <div class="text">
+                                        Maintenant que je m'étais renseigné et avait appris les 2 points plus points les plus bloquants du projet Il était temps de vraiment commencer.
+                                        Comme pour mes essais avec OpenGL j'allais gérer les fenêtres et des Inputs grâce à la <a class="hlink" href="https://www.glfw.org/">GLFW</a>, qui est une API open source permettant la gestion des fenêtres, du contexte de rendu ou encore des Inputs.
+                                        Cette dernière est adaptée pour OpenGL et Vulkan et est multiplateforme (Windows, macOS...).
+                                    </div>
+                                    <div class="paragraph-illu" id="event-system">
+                                        <div class="text" id="event-system-text">
+                                        
+                                            Ensuite il fallait gérer tous les évènements qui pourraient survenir lors de l'utilisation d'un application : déplacer, fermer ou redimensionner une fenêtre, déplacer et cliquer avec la souris ou encore taper sur les touches du clavier.
+                                            Dans un premier temps j'ai géré les évènements au moment où ils apparaissent, ce qui est plus facile à faire mais pas idéal. C'est encore cette version de l'Event System qui est utilisée dans le projet pour les évènements standards de fenêtre, souris ou clavier.
+                                            Cependant n'en étant pas satifait j'ai plus tard conçu un Event System capable d'enregistrer des évènements et de les interpréter au moment voulu, en me basant sur un Event System réalisé plus tôt par curiosité sur comment ces derniers pourraient fonctionner. 
+                                        </div>
+                                        <img src="res/imgs/event_system_CD.png" id="event-system-illu" alt="diagramme de classe de l'Event System custom">
+                                    </div>  
+                                </div>
+                                <a class="hidden-element-btn" id="flood-create-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-create-Hidden')">(see more)</a><br>    
+                            </article>
+
+                            <article class="article" id="Rendering-API">
+                                <div class="text Header-2">API de rendu :</div>
+                                <div class="hidden-element" id="flood-GAPI-Hidden">
+                                    <div class="text">
+                                        Il était temps maintenant de créer une API de rendu propre au projet pour commencer à voir des choses à l'écran. Pour ce faire j'ai réappliqué ce que j'avais appris avec mes tests de l'OpenGL en y ajoutant un nouveau principe : le Batch Rendering.
+                                        En effet il pouvait être intéressant de voir le fonctionnement du Batch rendring, du geometry batching. En programmation graphique un problème qui se pose en termes de performance est un trop grand nombre d'appels de rendu, de Draw Call.
+                                        <!--Aujourd'hui nos machines sont suffisement puissantes pour pouvoir gerer un grand nombre d'appel de rendu, cependant il est toujours bien de permettre l'optimisation quand ces techniques-->
+                                    </div>
+                                    <div class="paragraph-illu" id="batching">
+                                        <div class="text" id="batching-text">
+                                            Si l'on dessine des objets à l'écran les voir de manière unique est plus simple, chaque objet sera un draw call. Cependant si un trop grand nombre d'objets sont présents à l'écran il devient difficile pour le GPU de suivre, c'est comme si on pointait du doigt sur une feuille à un graphiste les emplacements où l'on veut des touffes d'herbe.
+                                            Le geometry batching considère plusieurs objets comme en étant un seul, on va "empiler" la géométrie de plusieurs objets dans le même Vertex Buffer et ainsi cela revient à ne dessiner qu'un seul objet. Pour continuer notre analogie, on dira au graphiste les zones où l'on veut des touffes d'herbe.
+                                            C'est très utile pour afficher de grandes cartes utilisant des tilemaps. 
+                                            Mais limiter les nombre de draw call ne signifie pas avoir de meilleurs performances, si l'on en abuse (trop) c'est même l'inverse. Il faut limiter les conditions d'un draw call. De plus cette technique vient avec des inconvénients, par exemple il est plus difficile d'utiliser des textures, ou même d'utiliser un shader différent.
+                                        </div>
+                                        <img src="res/imgs/geometry_batch_graph.png" alt="Geometry Batching graph" id="batching-illu">
+                                    </div>
+                                    <div class="text">
+                                        Dans cette API on arrêtera un Batch si l'on dépasse un nombre de vertex, si l'on dépasse le nombre maximal de textures stockables au GPU par OpenGL (en général 32 pour un PC et 8 pour un téléphone). 
+                                        L'API ne gère pas encore la possibilité de changer de shader, n'étant qu'un projet pour rendre de la 2D, un seul Shader peut suffire pour la plupart des applications courantes. 
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-GAPI-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-GAPI-Hidden')">(see more)</a><br>    
+                            </article>
+
+                            <article class="article" id="dear-ImGUI">
+                                <div class="text Header-2">Interface de test :</div>
+                                <div class="hidden-element" id="flood-ImGUI-Hidden">
+                                    <div class="text">
+                                        La base du rendu étant faite il faut maintenant un moyen d'avoir des retours ou de faire des modifications à la volée simplement. Et pour cela je vais utiliser <a class="hlink" href="https://github.com/ocornut/imgui">Dear ImGUI</a>. 
+                                        Dear ImGUI est une library d'interface graphique utilisateur immédiate, ou immediate graphic user interface, qui comme son nom l'indique permet de faire des interfaces utilisateur rapidement et facilement.
+                                        Cette library est facile à prendre en main et à utiliser, elle est utilisée dans beaucoup de domaines pour créer des outils custom.
+                                        Elle me permettra de faire des retours plus faciles à lire qu'avec la console et aussi d'avoir les informations en temps réel pour débugger en faisant par exemple un conteur de FPS, du nombre de triangles à l'écran, de draw call.
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-ImGUI-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-ImGUI-Hidden')">(see more)</a><br>    
+                            </article>
+
+                            <article class="article" id="ECS-in-Flood">
+                                <div class="text Header-2">Ajout de l'ECS et modifications de l'API pour le moteur :</div>
+                                <div class="hidden-element" id="flood-ECS-Hidden">
+                                    <div class="text">
+                                        Maintenant que des interfaces sont disponibles et que l'ont peut rendre des objets à l'image il est temps d'implémenter dans le projet l'ECS précédemment étudié et conçu.<br>
+                                        Cependant j'en ai profité pour apporter des modifications à l'API qui se verront utiles dans le cadre du projet. Par exemple, désormais le Manager garde lui-même en mémoire la liste des entités créées dans la scène, contenant elle-même le manager.
+                                        Ainsi nous avons un moyen d'acceder à toutes ces données à un endroit centralisé et de les afficher grâce à Dear ImGUI.
+                                        Il est aussi possible de récupérer une liste d'entités possédant certains composants via une requête (query). On pourra s'en servir dans les Systems par exemple pour faire les actions que l'on veut, ou encore au début ne pas utiliser les systems pour des tests ou faire des recherches dans la liste d'entités.
+                                        Aussi un ajout directement lié au moteur est l'ajout d'une fonction de rappel, une callback, qui s'effectue à l'ajout d'un composant, qui sera très pratique lors de la création de l'éditeur. 
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-ECS-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-ECS-Hidden')">(voir plus)</a><br>    
+                                
+                            </article>
+
+                            <article class="article" id="Editor-Impl">
+                                <div class="text Header-2">Création des outils de base d'un moteur :</div>
+                                <div class="hidden-element" id="flood-Editor-Hidden">
+                                    <div class="text">
+                                        Justement il est temps de commencer la création de l'éditeur, et comme ImGUI est déjà présent dans le projet et que la library est très complète, le docking ayant été ajouté, le choix est tout indiqué.
+                                        Je me suis donc attelé à la création des différents panneaux d'interface pour l'utilisateur. Dans un premier temps, le "Viewport". 
+                                    </div>
+                                    <div class="text"> 
+                                        Le Viewport est le panneau qui affichera le rendu du jeu et de l'éditeur. Il permettra aussi de sélectionner les entités dans la scène en cliquant dessus, du mouse picking. 
+                                        Pour faire tout cela il fallait créer des "framebuffer" qui, au lieu de se rendre directement dans la fenêtre, se rendent dans une texture qui elle sera affichée grâce a ImGUI dans le panneau. 
+                                        Faire des framebuffers permet aussi le mouse picking en rendant dans une autre texture un aplat de couleur pour tout un objet, si on clique sur un pixel d'une certaine couleur cela nous permet de savoir sur quel objet on a cliqué et ainsi le sélectionner.
+                                    </div>
+                                    <div class="text">
+                                        Vient ensuite le panneau de hiérarchie de scène, il permettra d'ajouter, supprimer ou de sélectionner les entités de la scène. 
+                                        À terme il pourra aussi afficher et de modifier la parenté des entités, cette mécanique n'étant pas encore présente pour le moment.
+                                    </div>
+                                    <div class="text">
+                                        J'ai aussi créé le panneau d'inspection des entités, l'Inspector. Il est similaire à celui de Unity, on sélectionne une entité et il affichera ses informations. On peut modifier le nom de l'entité, ajouter ou supprimer des composants et aussi d'en modifier les informations.
+                                        Un cas particulier utilisant les callback précédemment vu est le composant de caméra. En ajoutant ce dernier il faut modifier la taille du rendu de la caméra aux dimensions du Viewport, sinon l'image sera déformée.
+                                    </div>
+
+                                    <div class="paragraph-illu" id="panels-illus">
+                                        <img src="res/gifs/hierarchy_panel.gif" alt="Panneau de hiérarchie" id="hierarchy-panel"></img>
+                                        <img src="res/gifs/inspector_panel.gif" alt="Panneau d'Inspection" id="inspector-panel"></img>
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-Editor-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-Editor-Hidden')">(voir plus)</a><br>
+                                
+                            </article>
+
+                            <article class="article" id="Assets">
+                                <div class="text Header-2">Gestion et utilisation de Assets :</div>
+                                <div class="hidden-element" id="flood-Assets-Hidden">
+                                    <div class="text">
+                                        Maintenant qu'il est possible de modifier et manipuler des entités dans l'éditeur, il faut pouvoir créer, ouvrir et lire des assets.
+                                        Pour simplifier la création de ce panneau de contrôle, qu'on appellera l'asset browser, j'ai utilisé des OpenFileDialogs, ce qui est une des raisons de pourquoi le projet est pour le moment dépendant de Windows.
+                                        Il est possible avec ce panneau de prendre des assets, comme une scene par exemple, et de la glisser dans le viewport (du drag and drop) pour ouvrir la scene en question. Il en va de même pour affecter une texture à un SpriteRenderer. 
+                                    </div>
+                                </div>
+                                <a class="hidden-element-btn" id="flood-Assets-Hidden-btn" href="javascript:FlipFlopSeeMore_2('flood-Assets-Hidden')">(voir plus)</a><br>    
+                            </article>
+                            <!--
+                                Flow:
+
+                              ✓ ECS
+                                Learn OpenGL
+                                Create Flood project : Window abstraction + Event system
+                                Dear ImGui
+                                Input handeling
+                                Rendering API -> Implement OpenGL
+                                Add ECS
+                                Editor(viewport, hierarchy, properties(Inspector))
+                                "Assets" -> Openfiledialog -> Content browser
+                            -->                  
+                    </article>
+
+                    
+
+                    <article class="article" id="roadmap">
+                        <div class="paragraph">
+                            <div class="Header-1" style="margin-bottom:25px;">Roadmap:</div>
+                            <div class="text" style="margin-bottom:25px;">
+                                Flood n'est, pour le moment, disponible que sous Windows et utilise OpenGL pour le rendu, il sera à terme, dans l'idéal, multiplateforme et permettra de choisir l'API graphique.
+                            </div>    
+                            <!--<br>Ajouter un gestionnaire d'assets.
+                            <br>Ajouter du son avec OpenAL ou via un moteur de son disponible (FMod, Wwise...).
+                            <br>Retravailler l'API graphique en ajoutant Vulkan.
+                            <br>Modifier l'API ECS afin d'en améliorer les performance générale (mémoire, simplicitée d'utilisation, automatisation, etc...)-->
+                        </div>
+                        <img src="res/imgs/Flood_Roadmap.png" alt="" id="Flood-roadmap" style="width:100%;">
+                    </article>
+
+                    <div class="paragraph text" id="project-footer">
+                        <p class="text footer-crea">Project created as part of the end of study at <a class="hlink" href="www.creajeux.fr">Creajeux</a> the video game career school in Nîmes in France.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="js/Portfolio-JS.js">
+            PushTagsInGrid("flood");
+        </script>
+    </body>
+</html>
+
+

@@ -4,8 +4,8 @@
         "name" : "flood",
         "tags" : ["CPP", "OPENGL", "SOLO"],
         "description" : {
-            "fr_fr" : "Flood est un prototype moteur de jeu 2D permettant de réaliser des prototypes. Il est en cours de développement.",
-            "en_us" : "Engrish"
+            "fr" : "Flood est un prototype moteur de jeu 2D permettant de réaliser des prototypes. Il est en cours de développement.",
+            "en" : "Flood is a 2D game engine prototype allowing you to conceive prototypes. It's still on develepment."
         },
         "category" : "others",
         "download_link" : "https://github.com/Jigakon/Flood"
@@ -13,8 +13,8 @@
         "name" : "orcawaga",
         "tags" : ["CPP", "UE5", "GROUP"],
         "description" : {
-            "fr_fr" : "Orca-Waga est un projet étudiant. C'est un tower defense inspiré par Tribes of Midgard et ajoute la possibilité de construire sa base.",
-            "en_us" : "Engrish"
+            "fr" : "Orca-Waga est un projet étudiant. C'est un tower defense inspiré par Tribes of Midgard et ajoute la possibilité de construire sa base.",
+            "en" : "Orca-Waga is a student project. It is a tower defense game inspired by Tribes of Midgard that adds the possibility to build your own base."
         },
         "category" : "games",
         "download_link" : "https://jigakon.itch.io/orcawaga"
@@ -22,8 +22,8 @@
         "name" : "orbitaldecay",
         "tags" : ["CS", "UNITY", "GROUP"],
         "description" : {
-            "fr_fr" : "Orbital Decay est un projet étudiant, il s'inspire de Star Wars Battlefront 2 sur PS2. C'est un jeu multijoueur de combat dans des vaisseaux spatiaux.",
-            "en_us" : "Engrish"
+            "fr" : "Orbital Decay est un projet étudiant, il s'inspire de Star Wars Battlefront 2 sur PS2. C'est un jeu multijoueur de combat dans des vaisseaux spatiaux.",
+            "en" : "Orbital Decay is a student project, it's inspired by Star Wars Battlefront 2 on PS2. It's a spaceship fighting multiplayer game."
         },
         "category" : "games",
         "download_link" : "https://www.creajeux.fr/project/orbitaldecay"
@@ -31,8 +31,8 @@
         "name" : "proskynitis",
         "tags" : ["C", "SFML", "GROUP"],
         "description" : {
-            "fr_fr" : "Proskynitis est un projet étudiant inspiré du jeu Faster Than Light (FTL) et ajoute une dimension de récolte de ressources sur des planètes.",
-            "en_us" : "Engrish"
+            "fr" : "Proskynitis est un projet étudiant inspiré du jeu Faster Than Light (FTL) et ajoute une dimension de récolte de ressources sur des planètes.",
+            "en" : "Proskynitis is a student project inspired by Faster Than Light (FTL) and adds a resources harvesting game mechanic on planets."
         },
         "category" : "games",
         "download_link" : "https://jigakon.itch.io/proskynitis"

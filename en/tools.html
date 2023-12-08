@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tools</title>
+        <base href="../index.html">
+        <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+    </head>
+
+    <body>
+        <main id = "swup"> 
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="en/index.html">🡄</a>
+                <a class="topbarElem" id="topbar-lang" onclick="closeNav()" href="tools.html">
+                    <img style="height:40px;" src="/res/imgs/fr_flag.png" alt=""></img>
+                </a>
+            </div>
+
+            <div id="mySidePanel" class="sidepanel">
+                <a href="en/index.html"onclick="closeNav()" target="_self">Home</a>
+                <a>Projects</a>
+                <a href="en/projects.html"onclick="closeNav()" target="_self">  Games</a>
+                <a>  Tools</a>
+                <a href="en/about.html" onclick="closeNav()" target="_self">About</a>
+            </div>
+
+            <div class ="transition-main">
+                <h1 class="title">Tools</h1>
+                <p>tool 1</p>
+                <p>tool 2</p>
+                <p>tool 3</p>
+            </div>
+        </main>
+        <script src="js/Portfolio-JS.js"></script>
+    </body>
+</html>
+
+

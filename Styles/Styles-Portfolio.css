@@ -156,6 +156,13 @@ img{
     transform: translate(60px, -50%);
     text-decoration: none;
 }
+#topbar-lang{
+    font-size: 30px;
+    line-height: 43px;
+    right: 20px;
+
+    text-decoration: none;
+}
 #topbar-menu{
     border:none;
     font-size: 28px;
@@ -299,6 +306,8 @@ img{
 .project-snapshot {
     width: 100%;
     height: var(--projects-images-height);
+    border-radius: 0px;
+    margin-top: 4px;
     object-fit: cover;
 }
 

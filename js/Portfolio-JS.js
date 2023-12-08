@@ -1,28 +1,22 @@
 class Tag
 {
-    constructor (imagePath, typeTag="tag: undefined")
-    {
-        this.imagePath = imagePath;
-        this.typeTag = typeTag;
-    }
-
-    CreateElement()
+    static CreateElement(tagImage, tagText)
     {
         return `
         <div class="tooltip">
-            <img class="project-tag" src="` + this.imagePath + `"/>
-            <span class="tooltiptext">` + this.typeTag + `</span>
+            <img class="project-tag" src="` + tagImage + `"/>
+            <span class="tooltiptext">` + tagText + `</span>
         </div>`
     }
 }
 
 class Project
 {
-    constructor(name, tagsID, description, type, downloadLink = "")
+    constructor(name, tagsID, descriptions, type, downloadLink = "")
     {
         this.name = name;
         this.tagsIDs = tagsID;
-        this.description = description;
+        this.descriptions = descriptions;
         this.downloadLink = downloadLink;
         this.type = type;
     }
@@ -33,8 +27,14 @@ class Project
     }
     
     // passing one variable containing all the HTML elements in one
-    CreateElement(tagsElement, delay = 1)
+    CreateElement(tagsElement, lang, delay = 1)
     {
+        console.log(lang);
+        let langUrl = ""
+        switch(lang)
+        {
+            case "en" : langUrl = "en/";
+        }
         let btn = "";
         if (!isMobile())
         {
@@ -49,7 +49,7 @@ class Project
                 <div class="project-tag-grid">` + tagsElement + `
                 </div>
                 <div class="project-btn">
-                    <a class="project-link" href="pages/`+this.type+`/`+this.name+`.html">
+                    <a class="project-link" href="`+langUrl+this.type+`/`+this.name+`.html">
                         <div class="project-images">
                             <div class="blur-load" id="`+this.name+`-title-blur">
                                 <img class="project-title" src="res/imgs/`+this.name+`_title.png" loading="lazy"/>
@@ -60,7 +60,7 @@ class Project
                             </div>
                         </div>
                         <div class="separator horizontal"></div>
-                        <p class="project-description"><b>`+this.description+`</b></p>
+                        <p class="project-description"><b>`+this.descriptions[lang]+`</b></p>
                     </a>
                 </div>` + btn + `
             </div>
@@ -87,13 +87,21 @@ class ProjectCreator
         return this.tags.get(id);
     }
     
-    CreateAllTagsElements(ProjectID)
+    async CreateAllTagsElements(ProjectID, lang = "fr")
     {
         // get tags
-        let tagsIDs = this.GetProject(ProjectID).GetTagsIDs();
+        const tags = await fetch("./res/jsons/tags.json")
+        .then(response => response.json());
+        let project = this.GetProject(ProjectID);
+        if (project == null)
+        {
+            console.log(this)
+            return ;
+        }
+        let tagsIDs = project.GetTagsIDs();
         let tagsElement = ``;
         for(let i = 0; i < tagsIDs.length; i++)
-            tagsElement += this.tags.get(tagsIDs[i]).CreateElement();
+            tagsElement += await Tag.CreateElement(tags.Images[tagsIDs[i]], tags.Text[lang][tagsIDs[i]]);
         // create HTML element
         return tagsElement;
     }
@@ -103,13 +111,13 @@ class ProjectCreator
         return this.projects.get(id);
     }
 
-    PushProjectsElements()
+    async PushProjectsElements(lang = "fr_fr")
     {
         const keys = this.projects.keys();
         for(let i = 0; i < this.projects.size; i++)
         {
             const elem = document.createElement("template");
-            elem.innerHTML = this.CreateProjectElement(keys.next().value, i+1);
+            elem.innerHTML = await this.CreateProjectElement(keys.next().value, i+1, lang);
             document.getElementById("swup").append(elem.content);
         }
     }
@@ -119,10 +127,10 @@ class ProjectCreator
         this.projects.set(name, project);
     }
     
-    CreateProjectElement(name, delay)
+    async CreateProjectElement(name, delay, lang = "fr")
     {
-        let tagsElement = this.CreateAllTagsElements(name);
-        return this.GetProject(name).CreateElement(tagsElement, delay);
+        let tagsElement = await this.CreateAllTagsElements(name, lang);
+        return this.GetProject(name).CreateElement(tagsElement, lang, delay);
     }
 
     resetCount()
@@ -130,8 +138,6 @@ class ProjectCreator
         this.projectCount = 0;
     }
 }
-
-let pc = new ProjectCreator();
 
 function flipflopPanel()
 {
@@ -166,6 +172,7 @@ function FlipFlopSeeMore(id) {
     if (text.style.display == "block")
     {
         text.style.display = "none";
+
         btn.innerText = "(voir plus)";
     }
     else
@@ -186,12 +193,20 @@ function FlipFlopSeeMore_2(id) {
     if(isHidden)
     {
         articleContent.classList.remove(className);
-        btn.innerText = "(voir moins)";
+        switch (document.getElementsByTagName("html")[0].getAttribute("lang"))
+        {
+            case "en" : btn.innerText = "(see less)"; break;
+            default : btn.innerText = "(voir moins)"; break;
+        }
     }
     else
     {
         articleContent.classList.add(className);
-        btn.innerText = "(voir plus)";
+        switch (document.getElementsByTagName("html")[0].getAttribute("lang"))
+        {
+            case "en" : btn.innerText = "(see more)"; break;
+            default : btn.innerText = "(voir plus)"; break;
+        }
     }
 }
 

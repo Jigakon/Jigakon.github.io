@@ -1,5 +1,5 @@
  <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +17,16 @@
             <link rel="stylesheet" href="Styles/Styles-Proskynitis.css">
             <div class="topbar">
                 <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
-                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="pages/projects.html">🡄</a>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="en/projects.html">🡄</a>
+                <a class="topbarElem" id="topbar-lang" onclick="closeNav()" href="games/proskynitis.html">
+                    <img style="height:40px;" src="/res/imgs/fr_flag.png" alt=""></img>
+                </a>
             </div>
 
             <div id="mySidePanel" class="sidepanel">
                 <a href="index.html" onclick="closeNav()" target="_self">Home</a>
                 <a>Projets</a>
-                <a href="pages/about.html" onclick="closeNav()" target="_self">A Propos</a>
+                <a href="about.html" onclick="closeNav()" target="_self">A Propos</a>
             </div>
 
             <div class ="transition-main" id="proskynitis-project">
@@ -123,7 +126,7 @@
 
                         <div class="text">
                             Pour permettre une certaine flexibilité aux infographistes j'ai mis en place la possibilté de définir la durée d'affichage d'un sprite à l'écran. Suite à ce changement les fichiers d'animation commençaient à être de plus en plus complexe à rédiger. J'ai décidé de réaliser un outil permettant de les écrire automatiquement, réduisant ainsi les erreurs d'écritures
-                            et fluidifiant grandement le processus de création de l'animation. Plus de détails sur l'<a class="hlink" href="pages/tools/proskynitis-animator.html">outil d'animation</a>.
+                            et fluidifiant grandement le processus de création de l'animation. Plus de détails sur l'<a class="hlink" href="tools/proskynitis-animator.html">outil d'animation</a>.
                         </div>
                         <div class="paragraph-illu" id="paragraph-depth">
                             <img src="/res/gifs/depth.gif" alt="how depth render" id="depth-file"/>
@@ -245,7 +248,7 @@
                     </article>
 
                     <div class="paragraph text" id="project-footer">
-                        <p class="text footer-crea">Projet créé dans le cadre d'études à <a class="hlink" href="www.creajeux.fr">Creajeux</a> l'école des métiers du jeu-vidéo à Nîmes en France.</p>
+                        <p class="text footer-crea">Project created as part of study at <a class="hlink" href="www.creajeux.fr">Creajeux</a> the video game career school in Nîmes in France.</p>
                     </div>
                 </div>
             </div>

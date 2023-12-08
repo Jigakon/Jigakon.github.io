@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Contact</title>
+        <base href="index.html">
+        <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    
+    <body style="background-color: rgb(22, 22, 22);">
+        <main id = "swup"> 
+            <link rel="stylesheet" href="Styles/Styles-Projects.css">
+            <link rel="stylesheet" href="Styles/Styles-About.css">
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="index.html">🡄</a>
+                <a class="topbarElem" id="topbar-lang" onclick="closeNav()" href="en/about.html">
+                    <img style="height:40px;" src="/res/imgs/en_flag.png" alt=""></img>
+                </a>
+            </div>
+            
+            <div id="mySidePanel" class="sidepanel">
+                <a href="index.html" onclick="closeNav()" target="_self">Home</a>
+                <a href="projects.html" onclick="closeNav()" target="_self">Projets</a>
+                <a>A Propos</a>
+            </div>
+            <div class ="transition-main" id="contact">
+                <div class="title" style="text-align: center;margin-right: 10%;">
+                    A Propos
+                </div>
+                <div class="content">                     
+                    <article class="article" id="intro" style="margin-top:75px;">
+                        <div class="text description" id="orcawaga-description">
+                            Je suis un jeune programmeur en sortie d'études depuis juillet 2023. J'aime la programmation bas niveau et ai été formé
+                            à la programmation généraliste de jeu vidéo. Voici les différents moyens de me contacter ou de voir mes projets
+                            personnels ou de groupe.<br>
+                            Je suis à la recherche d'un premier emploi dans le milieu du jeu vidéo.
+                        </div>
+                        <div class="paragraph-illu" id="all-links"></a>
+                            <div class="paragraph-illu pack" id="projects-link"></a>
+                                <a href="https://github.com/Jigakon" target="_blank"><img class="contactBtn" src="res/svgs/github.svg" alt="github"/></a>
+                                <a href="https://jigakon.itch.io/" target="_blank"><img class="contactBtn" src="res/svgs/itchio.svg" alt="itchio"/></a>
+                            </div>
+                            <div class="paragraph-illu pack" id="contact-link"></a>
+                                <a href="https://www.linkedin.com/in/philippe-naud-/" target="_blank"><img class="contactBtn" src="res/imgs/linkedin.png" alt="linkedin"/></a>
+                                <a href="mailto: philippenaud.pn@gmail.com" target="_blank"><img class="contactBtn" src="res/svgs/email.svg" alt="email"/></a>
+                            </div>
+                        </div>
+                        <div class="text description" id="orcawaga-description" style="text-align: center;width: auto; margin-top: 0px;">
+                            Vous trouverez ci-dessous un CV téléchargeable
+                        </div>
+                        <a class="customBtn downloadBtn" id="cvBtn" href="res/pdfs/CV_PhilippeNaud.pdf" download="CV_PhilippeNaud"><i class="fa fa-download"></i></a>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <script src="js/Portfolio-JS.js"></script>
+    </body>
+</html>
+
+

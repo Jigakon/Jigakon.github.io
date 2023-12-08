@@ -1,6 +1,6 @@
 {
     "Text" : {
-        "fr_fr" : 
+        "fr" : 
         {
             "CPP" : "Langage: C++",
             "CS" : "Langage: C#",
@@ -15,7 +15,7 @@
             "SOLO" : "Equipe : Seul",
             "GROUP" : "Equipe : Groupe"
         },
-        "en_us" : 
+        "en" : 
         {
             "CPP" : "Language: C++",
             "CS" : "Language: C#",

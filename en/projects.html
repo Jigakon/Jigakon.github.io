@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="../../index.html">
+        <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+        <link rel="stylesheet" href="transitions.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="module" src="swup.js"></script>
+        <title>Projects</title>
+    </head>
+    
+    <body>
+        <main id="swup"> 
+            <link rel="stylesheet" href="Styles/Styles-Projects.css">
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="en/index.html">🡄</a>
+                <a class="topbarElem" id="topbar-lang" onclick="closeNav()" href="projects.html">
+                    <img style="height:40px;" src="/res/imgs/fr_flag.png" alt=""></img>
+                </a>
+            </div>
+
+            <div id="mySidePanel" class="sidepanel">
+                <a href="en/index.html" onclick="closeNav()" target="_self">Home</a>
+                <a>Projects</a>
+                <a href="en/about.html" onclick="closeNav()" target="_self">About</a>
+            </div>
+            
+            <div class ="transition-main">
+                <h1 class="title">Projects</h1>
+                <div class="page-separator" id="separator-title-1st-projects"></div>
+                <div class="page-description">Here's a list of differents projects which I work on or I worked on in a group or alone.</div>
+                <div class="page-separator" id="separator-title-projects"></div>
+            </div>
+            <script src="js/Portfolio-JS.js"></script>
+        </main>
+    </body>
+</html>

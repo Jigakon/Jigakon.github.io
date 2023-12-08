@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="../index.html">
+        <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+        <link rel="stylesheet" href="transitions.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="module" src="swup.js"></script>
+        <title>Projet - Orbital Decay</title>
+    </head>
+    
+    <body>
+        <main id="swup">
+            <link rel="stylesheet" href="Styles/Styles-Projects.css">
+            <link rel="stylesheet" href="Styles/Styles-OrbitalDecay.css">
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="projects.html">🡄</a>
+                <a class="topbarElem" id="topbar-lang" onclick="closeNav()" href="en/games/orbitaldecay.html">
+                    <img style="height:40px;" src="/res/imgs/en_flag.png" alt=""></img>
+                </a>
+            </div>
+
+            <div id="mySidePanel" class="sidepanel">
+                <a href="index.html" onclick="closeNav()" target="_self">Home</a>
+                <a>Projets</a>
+                <a href="about.html" onclick="closeNav()" target="_self">A Propos</a>
+            </div>
+
+            <div class ="transition-main" id="orbitaldeca-project">
+                <div id="orbitaldecay-header">
+                    <div class="title" id="orbitaldecay-logo-title"> 
+                        <img src="/res/imgs/orbitaldecay_title.png">
+                            <div class="orbitaldecay-title-text">Orbital<br>Decay</div>
+                        </img>
+                    </div>
+                    <div class="page-project-tags">
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="text Header-1" id="orbitaldecay-prod">
+                        Date : courant 2022, durée de production : 8 semaines
+                    </p>  
+                    <article class="article" id="intro">
+                        <div class="paragraph-illu" id="intro-p1">
+                            <div class="text description" id="orbitaldecay-description">
+                                Orbital Decay est un projet étudiant réalisé avec une équipe de 5 infographistes et 5 programmeurs avec Unity 2021. C'est un jeu inspiré de Star Wars Battlefont 2 de <a class="hlink" href="https://fr.wikipedia.org/wiki/Pandemic_Studios">Pandemic Studios</a>.
+                                <br>L'objectif est détruire le vaisseau adverse en attaquant ses points sensibles à l'intérieur et à l'extérieur du vaisseau ou de vaincre suffisamment de membres de l'équipe opposée. 
+                                <br>Le jeu est orienté multijoueurs et utilise l'API <a class="hlink" href="https://mirror-networking.com/">Mirror</a> pour la gestion du Online. 
+                            </div>
+                            <iframe id="orbitaldecay-trailer"
+                            src="https://www.youtube-nocookie.com/embed/Pa2na1aY2K0?rel=0&amp;showinfo=0"
+                            frameborder="0"
+                            allowfullscreen=""></iframe>  
+                        </div>
+                        
+                        <div class="text">
+                            Orbital Decay est jouable seul contre des bots, cependant il prend son sens en multijoueur local ou en ligne. Lancez une partie avec d'autres joueurs et commencez à vous affronter.
+                            Montez dans un des chasseurs spatiaux du hangar de votre vaisseau mère et allez combattre l'équipe adverse. Détruisez les points sensibles du vaisseau mère ennemi ou abattez suffisamment d'adversaires pour remporter la partie.
+                        </div>
+                    </article>
+
+                    <article class="article" id="overview">
+                        <p class="text Header-1">Mes implications dans le projet:</p>
+                        <p class="text">Le jeu étant un projet étudiant dans une petite équipe nous avons tous plus ou moins touché à tout, cependant voici les principales tâches que j'ai réalisées.
+                            <ul>
+                                <li class="text">Contrôles des vaisseaux</li>
+                                <li class="text">Contrôles du joueur au sol</li>
+                                <li class="text">Intelligence artificielle des vaisseaux</li>
+                                <li class="text">Travail d'optimisation/soutien</li>
+                            </ul>
+                        </p>
+                    </article>
+
+                    <article class="article" id="ships-ctrls">
+                        <div class="text Header-2">
+                            Contrôles des vaisseaux :<br>
+                        </div>
+                        <div class="text">
+                            Ce que nous voulions pour le gameplay du combat spatial était entre l'arcade, façon Battlefront, et simulation, une partie de l'équipe étant fan de jeux de simulation spatiale.
+                            Donc nous avons choisi de pouvoir contrôler tous les angles de rotation (roulis, tangage et lacet) ainsi que dans les axes de translation mais en gardant un freinage par "frottements" permettant au joueur de ralentir automatiquement pour qu'il ne se perde pas.
+                            Pour cela nous avons choisi d'utiliser le moteur physique d'Unity, plus simple à mettre en place et facile d'utilisation pour une petite équipe.
+                        </div>
+                        <div class="paragraph-illu" id="aim">
+                            <div class="text" id="aim-text">        
+                                Un autre point était de pouvoir tirer avec les armes du vaisseau quand le joueur en est le pilote. L'arme bouge selon un certain "point mort" et au-delà d'un certain angle le vaisseau se mettra à tourner dans la direction de l'arme pour que le joueur ne peine pas trop à garder une cible en joue.
+                                Avec cela est venu un problème présent à cause de l'échelle de distance du jeu, la correction de visée. Si le joueur pointe son arme sur un ennemi au loin, l'angle que devra prendre le support de l'arme servant à la visée doit changer si l'ennemi est trop proche.
+                            </div>
+                            <img src="res/gifs/aim_OD.gif" id="aim-gif" alt="aim correction">
+                        </div>
+                    </article>
+
+                    <article class="article" id="player-ctrls">
+                        <div class="text Header-2">
+                           Contrôles du joueur au sol :<br>
+                        </div>
+                        <div class="text">
+                            À la création du projet nous avons choisi d'utiliser le moteur physique de Unity pour effectuer les déplacements plutôt que d'utiliser le Character Controller embarqué d'Unity.
+                            Durant la suite du projet nous avons fait face à quelques difficultés avec notre contrôleur de personnage dues à notre manque d'expérience avec le moteur. Finalement avec l'évolution de nos besoins et idées de gameplay, nous avons convenu de le reprendre à zéro.
+                        </div>
+                        <div class="text" id="player-ctrls-base">
+                            Nous avions envisagé d'utiliser le Character Controller cependant le reste du projet étant majoritairement basé sur le moteur physique il était difficile de l'adapter dans les délais imposés. 
+                            J'ai donc revu les mouvements classiques : marcher, courir et sauter. Il nous fallait aussi pouvoir gérer les pentes avec les différentes zones élevées du terrain dans le hangar des vaisseaux mères.
+                        </div>
+                        <div class="text" id="player-ctrls-slopes">
+                            Pour la gestion des pentes j'ai "ancré" le joueur sur la surface sur laquelle il se tient. Je le déplace par rapport à un vecteur défini par la normale de la surface sur laquelle il se tient et du vecteur de direction dans laquelle il souhaite se diriger. Ainsi on évite ce problème de saut en montée et d'effet marche en descendant. 
+                            Avec cette méthode on peut aussi connaître l'angle du sol par rapport au joueur et ainsi donner une limite à la pente qu'il peut gravir.   
+                        </div>
+                    </article>
+
+                    <article class="article" id="AI-ships">
+                        <div class="text Header-2">
+                            Intelligence artificielle des vaisseaux :<br>
+                        </div>
+                        <div class="paragraph-illu" id="AI-Take-Off">
+                            <img src="res/gifs/AI_Take_Off_OD.gif" id="AI-Take-Off-gif" alt="AIs Take Off">
+                            <div class="text" id="AI-Take-Off-text">
+                                Pour avoir un peu de dynamisme avec peu de joueurs humains il fallait développer une intelligence artificielle pour le combat spatial.
+                                La première étape était de faire décoller le vaisseau si une IA au sol montait dedans. Le vaisseau mère ayant 8 points d'apparition de vaisseaux et une seule porte de sortie il fallait organiser la sortie d'un vaisseau.
+                                Le faire avec un pilotage vraiment autonome aurait été beaucoup trop de travail, alors il suffisait de faire suivre une courbe de Bézier au vaisseau jusqu'à la sortie. En parallèle un script servant de "tour de contrôle" permettait
+                                de savoir quel vaisseau était en train de décoller et quel vaisseau demandait l'autorisation de décoller.<br>                        
+                            </div>
+                        </div>
+                        <div class="text">
+                            Une fois le vaisseau hors du hangar il fallait le faire piloter jusqu'à un point sensible du vaisseau adverse ou vers un ennemi en vol, le tout sans se crasher, challenge...
+                        </div>
+                        <div class="text" style="margin-top: 25px;">
+                            Pour faire se déplacer les vaisseaux contrôlés par des IAs nous pouvions soit forcer les déplacements des vaisseaux ou bien simuler des inputs et utiliser le même contrôleur que les joueurs.
+                            Nous avons préféré utiliser la deuxième option, nous semblant plus cohérente et homogène pour le gameplay, la première avantageant trop les IAs et demandant plus de travail pour rendre les mouvements naturels.
+                        </div>
+
+                        <div class="paragraph-illu" id="AI-controls">
+                            <div class="text" id="AI-controls-text">
+                                Pour utiliser le contrôleur des vaisseaux, j'ai simulé les inputs grâce à des tracés de rayon (qu'on appelera RayCast) rendant le chasseur capable de "percevoir" son environnement.
+                                Pour ce faire j'ai créé un éditeur de RayCast, définissant sur quel contrôle(s) ils allaient influer et permettant d'ajuster le pilotage de l'IA en fonction du vaisseau utilisé.
+                                L'IA en suite se déplacera en fonction de poids donnés aux mouvements en fonction de leurs intensités (si un obstacle est proche) et de leur importance (l'objectif à détruire du vaisseau mère).
+                            </div>
+                            <img src="res/gifs/AI_Controls_OD.gif" alt="AI controls" id="AI-controls-gif">
+                        </div>
+                    </article>
+
+                    <article class="article" id="misc">
+                        <div class="text Header-2">
+                            Travail de optimisation/soutien :<br>
+                        </div>
+                        <div class="paragraph-illu" id="optim-1">
+                            <div class="text" id="optim-1-text">
+                                Étant le membre avec le profil le plus orienté vers la technique et le bas niveau, je me suis chargé de garder un oeil sur l'optimisation générale du projet.
+                                J'ai assisté les membres de l'équipe de programmation avec leurs algorithmes quand ces derniers impactaient trop les performances du projet en réduisant leur complexité algorithmique (comparaison asymptotique, Big-O) ou en revoyant leur nécessité et objectifs.
+                                La majeur partie de l'optimisation que j'ai dû mettre en place était liée au rendu en jeu étant la principale perte de performance dans le projet.
+                            </div>
+                            <img src="res/imgs/BigO.jpg" alt="Big-O" id="optim-1-illu">
+                        </div>
+                        <div class="text">
+                            Avec l'équipe artistique du projet nous avons testé des méthodes d'optimisation de rendu 3D :
+                            <ul>
+                                <li>Réduire le nombre d'éléments à l'écran ou retravailler la complexité des modèles.</li>
+                                <li>Afficher des modèles de plus basse résolution en fonction de la distance à l'écran, les <abbr title="Level Of Detail">LODs</abbr>.</li>
+                                <li>"Fusionner" plusieurs modèles 3D ensemble pour les rendre en une seule fois, du batching. </li>
+                                <li>Ne pas rendre les modèles qui ne seront pas visibles depuis l'intérieur d'un vaisseau mère, de l'occlusion culling.</li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            Un autre domaine influant grandement les performances d'un jeu sont les lumières, plus particulièrement les lumières dynamiques. Cependant on ne peut pas se permettre de simplement les retirer pour des raisons de performances sans impacter l'esthétique du jeu.
+                            J'ai donc travaillé en collaboration avec un membre de l'équipe des artistes pour trouver des compromis visuels / performances acceptables, en réduisant, par exemple, le nombre de lumières dynamiques ou en ne les activant qu'à certains moments ou encore en pré-calculant des lumières présentes en permanence.
+                            J'ai aussi assisté les graphistes lors de l'implémentation d'assets pour donner des retours sur les performances et de ce qu'il faudrait changer pour éviter des pertes de performances trop importantes sur des modèles 3D.
+                        </div>
+                    </article>
+
+
+                    <article class="article" id="orbital-footer">
+                        <div style="display: flex; align-items:center;margin-top: 50px;">
+                            <div class="text" id="prosk-footer" style="float:left; width:75%">
+                                Il s'agit un projet étudiant de fin de deuxième année d'études, par conséquent beaucoup de choses sont à revoir, notamment le gestion du réseau ou encore les performances générales du jeu sur des petites machines. Gardez cela en tête si vous voulez tester le jeu.
+                            </div><br>
+                            <button class="customBtn downloadBtn" id="prosk-dl-btn" style="float:right; width:20%;" onclick="window.location.href='https://www.creajeux.fr/project/orbitaldecay';"><i class="fa fa-download"></i></button>
+                        </div>
+                    </article>
+
+                    <article class="article" id="credit">
+                        <p class="text" style="margin-left: auto;margin-right: auto;">Crédits :</p>
+                        <div style="display: flex; justify-content: center;">
+                            <div id="graphs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Graphistes :</div>
+                                <a class="hlink" href="https://fr.linkedin.com/in/antoine-bernoud">Antoine Bernoud</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/timbernoud">Tim Bernoud</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/romain-espinosa">Romain Espinosa</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/alexandrelaguigner">Alexandre Laguignier</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/quentinnedelec">Quentin Nedelec</a><br>
+                            </div>
+                            <div id="progs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Programmeurs :</div>
+                                <a class="hlink" href="https://fr.linkedin.com/in/valentin-brun-4141181aa">Valentin Brun</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/noah-burnel">Noah Burnel</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/basilemillereux">Basile Millereux</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/philippe-naud-">Philippe Naud</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/yannpatoux">Yann Patoux</a><br>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="paragraph text" id="project-footer">
+                        <p class="text footer-crea">Projet créé dans le cadre d'étude à <a class="hlink" href="www.creajeux.fr">Creajeux</a> l'école des métiers du jeu-vidéo à Nîmes en France.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="js/Portfolio-JS.js"></script>
+    </body>
+</html>
+
+

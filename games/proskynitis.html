@@ -1,0 +1,258 @@
+ <!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="../index.html">
+        <link rel="stylesheet" href="Styles/Styles-Portfolio.css">
+        <link rel="stylesheet" href="transitions.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="module" src="swup.js"></script>
+        <title>Projet - Proskynitis</title>
+    </head>
+    
+    <body>
+        <main id="swup">
+            <link rel="stylesheet" href="Styles/Styles-Projects.css">
+            <link rel="stylesheet" href="Styles/Styles-Proskynitis.css">
+            <div class="topbar">
+                <button class="topbarElem" id="topbar-menu" onclick="flipflopPanel()">☰</button>
+                <a class="topbarElem transition-fade" id="topbar-back" onclick="closeNav()" href="projects.html">🡄</a>
+                <a class="topbarElem" id="topbar-lang" onclick="closeNav()" href="en/games/proskynitis.html">
+                    <img style="height:40px;" src="/res/imgs/en_flag.png" alt=""></img>
+                </a>
+            </div>
+
+            <div id="mySidePanel" class="sidepanel">
+                <a href="index.html" onclick="closeNav()" target="_self">Home</a>
+                <a>Projets</a>
+                <a href="about.html" onclick="closeNav()" target="_self">A Propos</a>
+            </div>
+
+            <div class ="transition-main" id="proskynitis-project">
+                <div id="proskynitis-header">
+                    <div style="height:300px; translate:0px 75px;">
+                        <div class="title" id="proskynitis-logo-title" > 
+                            <img src="/res/imgs/proskynitis_title.png"/>
+                        </div>
+                    </div>
+                    <div class="page-project-tags" id="proskynitis-page-tags">
+                    </div>
+                </div>
+                <div class="content">    
+                    <p class="text Header-1" id="prokynitis-prod">
+                        Date : courant 2021, durée de production : 8 semaines
+                    </p>  
+
+                    <article class="article" id="intro">
+                        <div class="paragraph-illu" id="intro-p1">
+                            <div class="text description" id="prokynitis-description">
+                                Proskynitis est un projet étudiant réalisé avec une équipe de 4 infographistes et 5 programmeurs. Le jeu est inspiré par <a class="hlink" href="https://subsetgames.com/ftl.html">FTL</a> de <a class="hlink" href="https://subsetgames.com/">Subset Games</a>.
+                                <br>Le but du jeu est de vaincre un vaisseau amiral puissant, vous devrez parcourir différents systèmes stéllaires afin de récolter des ressources sur des planètes ou lors d'évènements sur votre chemin pour améliorer les capacités de votre vaisseau et de votre personnage.
+                                <br>Le jeu est réalisé avec l'API multimedia CSFML dérivée de la <a class="hlink" href="https://www.sfml-dev.org/index-fr.php">SFML</a> en C pur.
+                            </div>
+                            <iframe id="proskynitis-trailer"
+                            src="https://www.youtube-nocookie.com/embed/3OIKCUW6B-M?rel=0&amp;showinfo=0"
+                            frameborder="0"
+                            allowfullscreen=""></iframe>  
+                        </div>
+                        
+                        <div class="text">
+                            Vous commencerez le jeu dans une galaxie et vous vous déplacerez entre les différents systèmes stellaires. Chaque déplacement dans un nouveau système provoquera un évènement aléatoire de nature diverse.
+                            Vous pourrez aussi vous déplacer au sein du système en sautant de planète en planète. Les planètes telluriques sont explorables et ont souvent des missions aléatoires à remplir pour obtenir différentes ressources. Les planètes sont divisées en 3 biomes contenant différents matériaux.
+                            Ces matériaux servent à améliorer votre vaisseau, construire des armes pour l'exploration ou encore peuvent être vendus dans les magasins disponibles dans l'orbite de certaines géantes gazeuses.
+                            Il vous faudra améliorer suffisament votre équipement pour vaincre le boss final du jeu, indiqué d'un point rouge sur la carte, et ainsi gagner la partie.<br>
+                            Le jeu ne dispose pas de système de sauvegarde. 
+                        </div>
+                    </article>
+
+                    <article class="article" id="overview">
+                        <p class="text Header-1">Mes implications dans le projet:</p>
+                        <p class="text">Le jeu étant un projet étudiant dans une petite équipe nous avons tous plus ou moins touché à tout, cependant voici les principales tâches que j'ai réalisées.
+                            <ul>
+                                <li>Génération de la carte de jeu</li>
+                                <li>Système d'animation et rendu de profondeur</li>
+                                <li>Mini-jeux dans le vaisseau</li>
+                                <li>Magasin et inventaire</li>
+                            </ul>
+                        </p>
+                    </article>
+
+                    <article class="article" id="map-gen">
+                        <div class="text Header-2">
+                            Génération de la carte de jeu :<br>
+                        </div>
+                        <div class="text">
+                            Ma première tâche a été de créer la carte de jeu pour pouvoir se déplacer. Nous avons choisi d'avoir une carte similaire à celle de FTL à la différence qu'aucun chemin ne se superpose.
+                            Pour ce faire j'ai choisi la triangulation de Delaunay avec l'algorithme de Bowyer-Watson. 
+                            <div class="hidden-text" id="prosk-delaunay">contenu des listes chainées et de l'algo</div>
+                            <div class="tooltip">
+                                <a class="hlink" id="prosk-delaunay-btn" href="javascript:FlipFlopSeeMore('prosk-delaunay')">(voir plus)</a><br>
+                                <span class="tooltiptext" style="bottom: 50px;">Détails technique</span>
+                            </div>
+                        </div>
+                        <div class="paragraph-illu" style="margin-top: 20px;">
+                            <img src="/res/imgs/FTL_map.png" id="FTL_Map"></img>
+                            <img src="/res/imgs/proskynitis_map_1.png" id="proskynitis_Map"></img>
+                        </div>
+                        <div class="paragraph-illu" id="paragraph-map-system">
+                            <div class="text" id="proskynitis-map-text-2">
+                                Il fallait maintenant avoir la possibilité de se déplacer dans les systèmes stellaires. Pour ce faire je "génère" quelques planètes. Deux types de planètes sont générables: les planètes gazeuses autour desquelles un magasin peut être en orbite et les planètes telluriques sur lesquelles le joueur peut se poser, accomplir une misson ou simplement récolter des ressources. 
+                                Les planètes se génèrent par 4 et prennent le nom le l'étoile de leur système. Il y a au maximum 3 planètes telluriques aux biomes différents qui se génèreront sur chaque système stellaire.
+                            </div>
+                            <img src="/res/imgs/Planet_gen.png" id="proskynitis_Map_diagram"></img>
+                        </div>
+
+                        <div class="paragraph-illu" id="paragraph-map-render">
+                            <img src="/res/imgs/proskynitis_map_2.png" id="proskynitis_Map-2"></img>
+                            <div class="text" id="proskynitis-map-text-3">
+                                Le rendu de la carte est lui aussi procédural. Il dépend du nombre de planètes, de leurs natures, de leurs ressources et de la présence, ou non, d'un magasin.
+                                On peut aussi voir la jauge de carburant du vaisseau du joueur, chaque élément orange représente un point de carburant, un déplacement entre systèmes stéllaires coûte 2 unités et les déplacements entre planètes une seule unité de carburant.
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article" id="render">
+                        <div class="text Header-2">
+                            Animation et affichage :<br><br>
+                        </div>
+                        <div class="paragraph-illu" id="paragraph-animation">
+                            <div class="text" id="paragraph-animation-text">
+                                La SFML n'étant qu'une bibliothèque logicielle et non un moteur de jeu complet, il nous fallait un système d'animation et rendu d'effet profondeur des entités en mode exploration. J'ai donc conçu un animateur lisant un fichier texte contenant les informations concernant les dites animations.
+                                Le fichier texte stocke le chemin relatif des images par rapport au sien ainsi le nombre d'images. Chaque animation est nommée, donne le nombre de sprite dans l'animation et sa fréquence d'images.
+                            </div>
+                            <img src="/res/imgs/animation_file.png" alt="how animator file looks like" id="animator-file"/>
+                        </div>
+
+                        <div class="text">
+                            Pour permettre une certaine flexibilité aux infographistes j'ai mis en place la possibilté de définir la durée d'affichage d'un sprite à l'écran. Suite à ce changement les fichiers d'animation commençaient à être de plus en plus complexe à rédiger. J'ai décidé de réaliser un outil permettant de les écrire automatiquement, réduisant ainsi les erreurs d'écritures
+                            et fluidifiant grandement le processus de création de l'animation. Plus de détails sur l'<a class="hlink" href="tools/proskynitis-animator.html">outil d'animation</a>.
+                        </div>
+                        <div class="paragraph-illu" id="paragraph-depth">
+                            <img src="/res/gifs/depth.gif" alt="how depth render" id="depth-file"/>
+                            <div class="text" id="depth-text">
+                                Il a ensuite fallu s'occuper de l'effet de rendu de profondeur, notamment pour la partie exploration de planètes, avec cette vue top-down inspirée de <a class="hlink" href="https://enterthegungeon.com/">Enter the Gungeon</a> par <a class="hlink" href="https://dodgeroll.com/">Dodgeroll</a>.  
+                                Pour se faire les éléments "inscrit" comme devant être rendu en profondeur sont triés du plus haut au plus bas dans l'écran. Ce qui nous permet de les dessiner dans le bon ordre.   
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article" id="mini-games">
+                        <div class="text Header-2">
+                            Mini-jeux :<br><br>
+                        </div>
+                        <div class="text">
+                            Afin de rendre les de combats spatiaux un peu plus dynamique nous avons décidé d'ajouter dans les salles du vaisseau des mini-jeux. Ils permettent soit d'augmenter les capacitées d'une salle pendant un lapse de temps donné, soit de réparer le vaisseau afin que l'oxygène ne s'en échappe pas, ou bien encore de se soigner.<br><br>
+                        </div>
+
+                        <div class="container-minigames">
+                            
+                            <table class="container-minigames-elem">
+                                <tr><td valign="top">
+                                    <div class="text container-minigames-title">Mini-jeu d'armement</div>
+                                    <div class="text container-minigames-text">Ce mini-jeu sert à activer et utiliser les armes secondaire du vaisseau. Pour se faire il faut mettre la cellule dans le bas de l'interface et appuyer sur les boutons.<br></div>
+                                </td></tr>
+                                <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/weapon.gif" alt="placeholder"/>
+                                </td></tr>
+                            </table>
+                            <table class="container-minigames-elem">
+                                <tr><td valign="top">
+                                    <div class="text container-minigames-title">Mini-jeu de navigation</div>
+                                    <div class="text container-minigames-text">Il permet d'augmenter les chances d'esquive. Pour activer ce bonus il faut cliquer sur les flèches de l'interface qui correspondront à l'écran du mini-jeu.<br></div>
+                                </td></tr>
+                                <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/navigation.gif" alt="placeholder"/>
+                                </td></tr>
+                            </table>
+                            <table class="container-minigames-elem">
+                                <tr><td valign="top">
+                                    <div class="text container-minigames-title">Mini-jeu de bouclier</div>
+                                    <div class="text container-minigames-text">Il permet d'augmenter les capacités de defense pendant une courte période. Il faut ajuster les niveaux d'énergie de chaque zones du bouclier comme sur l'écran de référence.<br></div>
+                                </td></tr>
+                                <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/shield.gif" alt="placeholder"/>
+                                </td></tr>
+                            </table>
+                            <table class="container-minigames-elem">
+                                <tr><td valign="top">             
+                                    <div class="text container-minigames-title">Mini-jeu de soin</div>
+                                    <div class="text container-minigames-text">Il consiste à faire tourner une poignée dans le sens antihoraire. Le joueur se soigne à mesure qu'il tourne la poignée. Le joueur peut voir sa quantité restante de point de vie dans la croix centrale du mini-jeu.<br></div>    
+                                </td></tr>
+                                <tr><td valign="bottom">             
+                                    <img class="container-minigames-gif" src="res/gifs/heal.gif" alt="placeholder"/>
+                                </td></tr>
+                            </table>
+                            <table class="container-minigames-elem">
+                                <tr><td valign="top">
+                                    <div class="text container-minigames-title">Mini-jeu de réparation</div>
+                                    <div class="text container-minigames-text">Quand le vaisseau est endommagé des impacts apparaissent. Ils sont plus ou moins nombreux et de tailles différents en fonction de la quantité de dégats reçus dans la salle. Il faut cliquer sur les impacts plusieurs fois pour les réparer.<br></div>
+                                </td></tr>
+                                <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/repair.gif" alt="placeholder"/>
+                                </td></tr>
+                            </table>
+                            <table class="container-minigames-elem">
+                                <tr><td valign="top">
+                                    <div class="text container-minigames-title">Mini-jeu d'oxygène</div>
+                                    <div class="text container-minigames-text">Pendant un court instant il augmente la production d'oxygène. Pour profiter de ce bonus temporaire il faut "brancher" le tube de la plante à la machine et cliquer sur un bouton.<br></div>
+                                </td></tr>
+                               <tr><td valign="bottom">
+                                    <img class="container-minigames-gif" src="res/gifs/oxygen.gif" alt="placeholder"/>
+                                </td></tr>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="article" id="shop">
+                        <div class="text Header-2">
+                            Magasin :<br><br>
+                        </div>
+                        <div class="paragraph-illu" id="paragraph-shop">
+                            <div class="text" id="shop-text">
+                                Après tout cela il restait à s'occuper des magasins disponibles sur les planètes gazeuses, ces derniers ne sont pas présents dans tous les systèmes stellaires, mais ils sont indiqués sur les planètes par un sprite.
+                                Inspiré par le magasin de <abbr title="Faster Than Light">FTL</abbr> vous pourrez y acheter des armes, des munitions, du carburant ou encore y faire réparer votre vaisseau. Vous pourrez aussi y vendre des ressources que vous avez récoltées au préalable.
+                            </div>
+                            <img src="res/gifs/shop.gif" alt="Shop-render" id="shop-gif"/>
+                        </div>
+                    </article>
+
+                    <article class="article" id="prosk-footer">
+                        <div style="display: flex; align-items:center;margin-top: 50px;">
+                            <div class="text" id="prosk-footer" style="float:left; width:75%">
+                                Il s'agit un projet étudiant de fin de première année d'étude, par conséquent beaucoup de choses sont à revoir, notamment l'équilibrage ou encore l'impossibilité de sauvegarder une partie. Gardez cela en tête si vous voulez tester le jeu.
+                            </div><br>
+                            <button class="customBtn downloadBtn" id="prosk-dl-btn" style="float:right; width:20%;" onclick="window.location.href='https://jigakon.itch.io/proskynitis';"><i class="fa fa-download"></i></button>
+                        </div>
+                    </article>
+
+                    <article class="article" id="credit">
+                        <p class="text" style="margin-left: auto;margin-right: auto;">Crédits :</p>
+                        <div style="display: flex; justify-content: center;">
+                            <div id="graphs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Graphistes :</div>
+                                <a class="hlink" href="https://fr.linkedin.com/in/antoine-bernoud">Antoine Bernoud</a><br>   
+                                <a class="hlink" href="https://fr.linkedin.com/in/thomasdalmasso">Thomas Dalmasso</a><br>    
+                                <a class="hlink" href="https://fr.linkedin.com/in/romain-espinosa">Romain Espinosa</a><br>     
+                                <a class="hlink" href="https://fr.linkedin.com/in/alexandrelaguigner">Alexandre Laguignier</a><br>
+                            </div>
+                            <div id="progs" style="width:200px; text-align: center;">
+                                <div class="text" style="margin-left: auto; margin-right: auto;">Programmeurs :</div>
+                                <a class="hlink" href="https://fr.linkedin.com/in/valentin-brun-4141181aa">Valentin Brun</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/alexis-clement-technicien-maintenance-industrielle">Alexis Clement</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/basilemillereux">Basile Millereux</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/philippe-naud-">Philippe Naud</a><br>
+                                <a class="hlink" href="https://fr.linkedin.com/in/yannpatoux">Yann Patoux</a><br>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="paragraph text" id="project-footer">
+                        <p class="text footer-crea">Projet créé dans le cadre d'études à <a class="hlink" href="www.creajeux.fr">Creajeux</a> l'école des métiers du jeu-vidéo à Nîmes en France.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="js/Portfolio-JS.js"></script>
+    </body>
+</html>
