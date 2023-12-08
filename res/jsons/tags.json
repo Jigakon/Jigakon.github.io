@@ -1,0 +1,48 @@
+{
+    "Text" : {
+        "fr_fr" : 
+        {
+            "CPP" : "Langage: C++",
+            "CS" : "Langage: C#",
+            "C" : "Langage: C",
+            
+            "OPENGL" : "API Graphique : OpenGL",
+            "SFML" : "API multimédia : SFML",
+            
+            "UNITY" : "Moteur : Unity",
+            "UE5" : "Moteur : Unreal Engine 5",
+            
+            "SOLO" : "Equipe : Seul",
+            "GROUP" : "Equipe : Groupe"
+        },
+        "en_us" : 
+        {
+            "CPP" : "Language: C++",
+            "CS" : "Language: C#",
+            "C" : "Language: C",
+            
+            "OPENGL" : "Rendering API : OpenGL",
+            "SFML" : "Multimedia API : SFML",
+            
+            "UNITY" : "Engine : Unity",
+            "UE5" : "Engine : Unreal Engine 5",
+            
+            "SOLO" : "Team : Solo",
+            "GROUP" : "Team : Group"
+        }
+    },
+    "Images" : {
+        "CPP" :     "res/imgs/cpp.png",         
+        "CS" :      "res/imgs/cs.png",          
+        "C" :       "res/imgs/c.png",           
+
+        "OPENGL" :  "res/imgs/opengl.png",      
+        "SFML" :    "res/imgs/sfml.png",        
+        
+        "UNITY" :   "res/imgs/ue5.png",         
+        "UE5" :     "res/imgs/unity.png",       
+
+        "SOLO" :    "res/imgs/soloproject.png", 
+        "GROUP" :   "res/imgs/groupproject.png"
+    }
+}
