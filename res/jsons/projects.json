@@ -17,7 +17,7 @@
             "en" : "Orca-Waga is a student project. It is a tower defense game inspired by Tribes of Midgard that adds the possibility to build your own base."
         },
         "category" : "games",
-        "download_link" : "https://jigakon.itch.io/orca-waga"
+        "download_link" : "https://jigaphil.itch.io/orca-waga"
     },{
         "name" : "orbitaldecay",
         "tags" : ["CS", "UNITY", "GROUP"],
@@ -35,6 +35,6 @@
             "en" : "Proskynitis is a student project inspired by Faster Than Light (FTL) and adds a resources harvesting game mechanic on planets."
         },
         "category" : "games",
-        "download_link" : "https://jigakon.itch.io/proskynitis"
+        "download_link" : "https://jigaphil.itch.io/proskynitis"
     }
 ]
