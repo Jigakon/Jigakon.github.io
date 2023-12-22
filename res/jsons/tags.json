@@ -39,8 +39,8 @@
         "OPENGL" :  "res/imgs/opengl.png",      
         "SFML" :    "res/imgs/sfml.png",        
         
-        "UNITY" :   "res/imgs/ue5.png",         
-        "UE5" :     "res/imgs/unity.png",       
+        "UNITY" :   "res/imgs/unity.png",         
+        "UE5" :     "res/imgs/ue5.png",       
 
         "SOLO" :    "res/imgs/soloproject.png", 
         "GROUP" :   "res/imgs/groupproject.png"
