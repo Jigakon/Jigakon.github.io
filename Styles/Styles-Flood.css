@@ -15,7 +15,7 @@
     content:"lood";
     font-size: clamp(80px, 10vw, 175px);
     margin-left: calc(var(--flood-logo-height) * -0.44);
-    margin-top: calc(var(--flood-logo-height) * 0.23);
+    margin-top: calc(var(--flood-logo-height) * 0.12);
 }
 
 #editor{
@@ -150,6 +150,21 @@
         height:auto;
         max-height: none;
         min-height: none;
+    }
+    #OOP, #CBP, #panels-illus, #batching, #OGL-buffer, #event-system{
+        display: inline-block;
+    }
+    #OOP-text, #CBP-text, #batching-text, #OGL-buffer-text, #event-system-text
+    {
+        width:100%;
+        margin: 20px 0px 20px 0px;
+    }
+    #OOP-illu, #CBP-illu, #batching-illu, #OGL-buffer-illu, #event-system-illu,
+    #hierarchy-panel, #inspector-panel{
+        
+        width:90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }
 
